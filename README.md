@@ -2,39 +2,7 @@
 
 Official installable Families, Features, and Workspaces for [Rank Hunter](https://github.com/crhillresearch/rank-hunter).
 
-This RELEASE branch in the development repository is the curated publication source mirrored to the public `rh-plugins` repository. It contains **20 published Family plugins** and **3 published extensions**. Development experiments, local databases, candidate exports, and unfinished research branches do not belong here.
-
-## Install
-
-Official Rank Hunter releases pin this repository as the core checkout's
-`plugins` Git submodule. A normal installation therefore needs no separate
-plugin clone:
-
-```bash
-cd ~/rank-hunter
-bash install.sh
-```
-
-For an existing Rank Hunter checkout, the low-level equivalent is:
-
-```bash
-cd ~/rank-hunter
-git submodule update --init plugins
-```
-
-The parent Rank Hunter commit pins the exact official plugin revision, just as
-it pins the native sources under `vendor/`. Updating Rank Hunter updates the
-expected plugin revision; the installer checks out that pinned revision rather
-than following plugin `main` implicitly.
-
-Plugin enable/disable state remains Rank Hunter database state. Updating the
-submodule changes plugin files only and must not silently re-enable a plugin the
-user disabled.
-
-Developers working directly on this repository may clone
-`https://github.com/crhillresearch/rh-plugins.git`, but end users should use
-the Rank Hunter submodule/install path above.
-
+---
 
 ## Plugin types
 
