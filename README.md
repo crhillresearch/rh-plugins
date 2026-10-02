@@ -14,8 +14,6 @@ Official installable Families, Features, and Workspaces for [Rank Hunter](https:
 
 Every installable plugin is its own directory with a `plugin.json` manifest. Rank Hunter recognizes manifest types `family`, `feature`, and `extension` (shown in the UI as a Workspace).
 
-**RELEASE policy for new Families:** Candidate Generation alone is not release-complete. New Family plugins must also provide working **Family Search** and **Target Search** adapters with focused tests. Older audited plugins may expose a narrower capability set where their manifest says so.
-
 ## Published Families
 
 | Family | Version | Purpose |
