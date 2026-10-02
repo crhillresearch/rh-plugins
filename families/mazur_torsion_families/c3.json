@@ -1,0 +1,14 @@
+{
+  "name": "Mazur torsion C3 direct torsion slice",
+  "generic_rank": null,
+  "parameter": "t",
+  "a_invariants": [
+    "t",
+    "0",
+    "1",
+    "0",
+    "0"
+  ],
+  "sections": [],
+  "notes": "A direct C3 slice with (0,0) of order 3. Low-level Tate-normal-form normalization has twist/scaling subtleties, so this slice is not advertised as exhaustive."
+}

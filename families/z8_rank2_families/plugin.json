@@ -1,0 +1,736 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "z8_rank2_families",
+  "name": "Z/8 Rank-2 Families · Dujella–Kazalicki–Peral",
+  "version": "0.1.0",
+  "icon": ":material/hub:",
+  "description": "Seven pairwise non-isomorphic one-parameter Z/8Z families of exact generic rank 2 consolidated by Dujella, Kazalicki and Peral (2021).",
+  "enabled_by_default": true,
+  "default_variant": "dp1",
+  "generic_rank": 2,
+  "generic_rank_status": "Theorem 1 of the 2021 paper proves exact generic rank 2 and the full free basis for all seven variants; Rank Hunter exact-certifies each two-generator basis at the paper control.",
+  "historical_generic_rank_lower": 2,
+  "verified_generic_rank_lower": 2,
+  "generic_rank_claim_state": "generic_lower_bound_verified",
+  "minimum_rank_hunter_version": "0.9.2",
+  "search_adapter": "search_adapter.py",
+  "capabilities": [
+    "candidate_generation",
+    "family_search",
+    "target_search",
+    "known_subgroup",
+    "free_search"
+  ],
+  "torsion_groups": [
+    "C8"
+  ],
+  "torsion_provider_role": "prescribed_subfamily",
+  "torsion_record": {
+    "rank_lower": 6,
+    "goal_rank": 7,
+    "source": {
+      "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+      "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+      "as_of": "2026-10-02"
+    },
+    "secondary_family_search_recommended": true
+  },
+  "variants": [
+    {
+      "id": "dp1",
+      "name": "Dujella–Peral I",
+      "curve_family_name": "Z/8 rank-2 · Dujella–Peral I",
+      "generic_rank": 2,
+      "historical_generic_rank_lower": 2,
+      "verified_generic_rank_lower": 2,
+      "generic_rank_claim_state": "generic_lower_bound_verified",
+      "validation_parameter": "22",
+      "torsion_groups": [
+        "C8"
+      ],
+      "torsion_provider_role": "prescribed_subfamily",
+      "family": {
+        "kind": "module",
+        "spec": "z8_rank2_dp1",
+        "file": "variants/dp1.py",
+        "aliases": [
+          "z8-r2-dp1"
+        ]
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,2000,10000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 7,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Prescribed-C8 record hunt: exact C8 torsion gate, published rank-2 baseline, then search for independent extras."
+      },
+      "known_controls": [
+        {
+          "parameter": "22",
+          "role": "paper injective specialization / exact-rank control",
+          "published_exact_generic_rank": 2
+        }
+      ],
+      "provenance": {
+        "authors": "Andrej Dujella, Matija Kazalicki, Juan Carlos Peral",
+        "paper": "Elliptic curves with torsion groups Z/8Z and Z/2Z × Z/6Z",
+        "journal": "RACSAM 115 (2021), Article 169",
+        "arxiv": "2105.06215",
+        "section": "§4.1",
+        "origin": "Dujella–Peral (2013), first rank-2 family",
+        "release_claim_boundary": "Theorem 1 exact-rank/full-basis claim is provenance; Rank Hunter locally certifies the two displayed free generators at the paper control."
+      }
+    },
+    {
+      "id": "dp2",
+      "name": "Dujella–Peral II",
+      "curve_family_name": "Z/8 rank-2 · Dujella–Peral II",
+      "generic_rank": 2,
+      "historical_generic_rank_lower": 2,
+      "verified_generic_rank_lower": 2,
+      "generic_rank_claim_state": "generic_lower_bound_verified",
+      "validation_parameter": "19",
+      "torsion_groups": [
+        "C8"
+      ],
+      "torsion_provider_role": "prescribed_subfamily",
+      "family": {
+        "kind": "module",
+        "spec": "z8_rank2_dp2",
+        "file": "variants/dp2.py",
+        "aliases": [
+          "z8-r2-dp2"
+        ]
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,2000,10000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 7,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Prescribed-C8 record hunt: exact C8 torsion gate, published rank-2 baseline, then search for independent extras."
+      },
+      "known_controls": [
+        {
+          "parameter": "19",
+          "role": "paper injective specialization / exact-rank control",
+          "published_exact_generic_rank": 2
+        }
+      ],
+      "provenance": {
+        "authors": "Andrej Dujella, Matija Kazalicki, Juan Carlos Peral",
+        "paper": "Elliptic curves with torsion groups Z/8Z and Z/2Z × Z/6Z",
+        "journal": "RACSAM 115 (2021), Article 169",
+        "arxiv": "2105.06215",
+        "section": "§4.2",
+        "origin": "Dujella–Peral (2013), second rank-2 family",
+        "release_claim_boundary": "Theorem 1 exact-rank/full-basis claim is provenance; Rank Hunter locally certifies the two displayed free generators at the paper control."
+      }
+    },
+    {
+      "id": "new1",
+      "name": "New I",
+      "curve_family_name": "Z/8 rank-2 · New I",
+      "generic_rank": 2,
+      "historical_generic_rank_lower": 2,
+      "verified_generic_rank_lower": 2,
+      "generic_rank_claim_state": "generic_lower_bound_verified",
+      "validation_parameter": "11",
+      "torsion_groups": [
+        "C8"
+      ],
+      "torsion_provider_role": "prescribed_subfamily",
+      "family": {
+        "kind": "module",
+        "spec": "z8_rank2_new1",
+        "file": "variants/new1.py",
+        "aliases": [
+          "z8-r2-new1"
+        ]
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,2000,10000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 7,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Prescribed-C8 record hunt: exact C8 torsion gate, published rank-2 baseline, then search for independent extras."
+      },
+      "known_controls": [
+        {
+          "parameter": "11",
+          "role": "paper injective specialization / exact-rank control",
+          "published_exact_generic_rank": 2
+        }
+      ],
+      "provenance": {
+        "authors": "Andrej Dujella, Matija Kazalicki, Juan Carlos Peral",
+        "paper": "Elliptic curves with torsion groups Z/8Z and Z/2Z × Z/6Z",
+        "journal": "RACSAM 115 (2021), Article 169",
+        "arxiv": "2105.06215",
+        "section": "§4.3",
+        "origin": "Dujella–Kazalicki–Peral (2021), first new family",
+        "release_claim_boundary": "Theorem 1 exact-rank/full-basis claim is provenance; Rank Hunter locally certifies the two displayed free generators at the paper control."
+      }
+    },
+    {
+      "id": "macleod1",
+      "name": "MacLeod I",
+      "curve_family_name": "Z/8 rank-2 · MacLeod I",
+      "generic_rank": 2,
+      "historical_generic_rank_lower": 2,
+      "verified_generic_rank_lower": 2,
+      "generic_rank_claim_state": "generic_lower_bound_verified",
+      "validation_parameter": "17",
+      "torsion_groups": [
+        "C8"
+      ],
+      "torsion_provider_role": "prescribed_subfamily",
+      "family": {
+        "kind": "module",
+        "spec": "z8_rank2_macleod1",
+        "file": "variants/macleod1.py",
+        "aliases": [
+          "z8-r2-macleod1"
+        ]
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,2000,10000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 7,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Prescribed-C8 record hunt: exact C8 torsion gate, published rank-2 baseline, then search for independent extras."
+      },
+      "known_controls": [
+        {
+          "parameter": "17",
+          "role": "paper injective specialization / exact-rank control",
+          "published_exact_generic_rank": 2
+        }
+      ],
+      "provenance": {
+        "authors": "Andrej Dujella, Matija Kazalicki, Juan Carlos Peral",
+        "paper": "Elliptic curves with torsion groups Z/8Z and Z/2Z × Z/6Z",
+        "journal": "RACSAM 115 (2021), Article 169",
+        "arxiv": "2105.06215",
+        "section": "§4.4",
+        "origin": "MacLeod (2014), first rank-2 family",
+        "release_claim_boundary": "Theorem 1 exact-rank/full-basis claim is provenance; Rank Hunter locally certifies the two displayed free generators at the paper control."
+      }
+    },
+    {
+      "id": "macleod2",
+      "name": "MacLeod II",
+      "curve_family_name": "Z/8 rank-2 · MacLeod II",
+      "generic_rank": 2,
+      "historical_generic_rank_lower": 2,
+      "verified_generic_rank_lower": 2,
+      "generic_rank_claim_state": "generic_lower_bound_verified",
+      "validation_parameter": "3",
+      "torsion_groups": [
+        "C8"
+      ],
+      "torsion_provider_role": "prescribed_subfamily",
+      "family": {
+        "kind": "module",
+        "spec": "z8_rank2_macleod2",
+        "file": "variants/macleod2.py",
+        "aliases": [
+          "z8-r2-macleod2"
+        ]
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,2000,10000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 7,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Prescribed-C8 record hunt: exact C8 torsion gate, published rank-2 baseline, then search for independent extras."
+      },
+      "known_controls": [
+        {
+          "parameter": "3",
+          "role": "paper injective specialization / exact-rank control",
+          "published_exact_generic_rank": 2
+        }
+      ],
+      "provenance": {
+        "authors": "Andrej Dujella, Matija Kazalicki, Juan Carlos Peral",
+        "paper": "Elliptic curves with torsion groups Z/8Z and Z/2Z × Z/6Z",
+        "journal": "RACSAM 115 (2021), Article 169",
+        "arxiv": "2105.06215",
+        "section": "§4.5",
+        "origin": "MacLeod (2014), second rank-2 family",
+        "release_claim_boundary": "Theorem 1 exact-rank/full-basis claim is provenance; Rank Hunter locally certifies the two displayed free generators at the paper control."
+      }
+    },
+    {
+      "id": "new2",
+      "name": "New II",
+      "curve_family_name": "Z/8 rank-2 · New II",
+      "generic_rank": 2,
+      "historical_generic_rank_lower": 2,
+      "verified_generic_rank_lower": 2,
+      "generic_rank_claim_state": "generic_lower_bound_verified",
+      "validation_parameter": "-48",
+      "torsion_groups": [
+        "C8"
+      ],
+      "torsion_provider_role": "prescribed_subfamily",
+      "family": {
+        "kind": "module",
+        "spec": "z8_rank2_new2",
+        "file": "variants/new2.py",
+        "aliases": [
+          "z8-r2-new2"
+        ]
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,2000,10000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 7,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Prescribed-C8 record hunt: exact C8 torsion gate, published rank-2 baseline, then search for independent extras."
+      },
+      "known_controls": [
+        {
+          "parameter": "-48",
+          "role": "paper injective specialization / exact-rank control",
+          "published_exact_generic_rank": 2
+        }
+      ],
+      "provenance": {
+        "authors": "Andrej Dujella, Matija Kazalicki, Juan Carlos Peral",
+        "paper": "Elliptic curves with torsion groups Z/8Z and Z/2Z × Z/6Z",
+        "journal": "RACSAM 115 (2021), Article 169",
+        "arxiv": "2105.06215",
+        "section": "§4.6",
+        "origin": "Dujella–Kazalicki–Peral (2021), second new family",
+        "release_claim_boundary": "Theorem 1 exact-rank/full-basis claim is provenance; Rank Hunter locally certifies the two displayed free generators at the paper control."
+      }
+    },
+    {
+      "id": "new3",
+      "name": "New III",
+      "curve_family_name": "Z/8 rank-2 · New III",
+      "generic_rank": 2,
+      "historical_generic_rank_lower": 2,
+      "verified_generic_rank_lower": 2,
+      "generic_rank_claim_state": "generic_lower_bound_verified",
+      "validation_parameter": "10",
+      "torsion_groups": [
+        "C8"
+      ],
+      "torsion_provider_role": "prescribed_subfamily",
+      "family": {
+        "kind": "module",
+        "spec": "z8_rank2_new3",
+        "file": "variants/new3.py",
+        "aliases": [
+          "z8-r2-new3"
+        ]
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,2000,10000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 7,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Prescribed-C8 record hunt: exact C8 torsion gate, published rank-2 baseline, then search for independent extras."
+      },
+      "known_controls": [
+        {
+          "parameter": "10",
+          "role": "paper injective specialization / exact-rank control",
+          "published_exact_generic_rank": 2
+        }
+      ],
+      "provenance": {
+        "authors": "Andrej Dujella, Matija Kazalicki, Juan Carlos Peral",
+        "paper": "Elliptic curves with torsion groups Z/8Z and Z/2Z × Z/6Z",
+        "journal": "RACSAM 115 (2021), Article 169",
+        "arxiv": "2105.06215",
+        "section": "§4.7",
+        "origin": "Dujella–Kazalicki–Peral (2021), third new family",
+        "release_claim_boundary": "Theorem 1 exact-rank/full-basis claim is provenance; Rank Hunter locally certifies the two displayed free generators at the paper control."
+      }
+    }
+  ],
+  "search_options": {
+    "family": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "ratpoints height stages",
+        "default": "1000,10000,100000",
+        "help": "Ascending exact point-search heights.",
+        "group": "Point search",
+        "group_help": "Search for points beyond the published rank-2 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 20,
+        "min": 1,
+        "max": 3600,
+        "help": "Hard runtime budget per ratpoints stage.",
+        "group": "Point search",
+        "group_help": "Search for points beyond the published rank-2 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "max_points",
+        "type": "int",
+        "label": "Maximum new exact points",
+        "default": 32,
+        "min": 0,
+        "max": 2000,
+        "help": "Maximum extras returned by one plugin run.",
+        "group": "Point search",
+        "group_help": "Search for points beyond the published rank-2 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "model_prep_timeout",
+        "type": "int",
+        "label": "Minimal-model prep timeout",
+        "default": 10,
+        "min": 0,
+        "max": 600,
+        "help": "Bounded exact minimal-model preparation before ratpoints.",
+        "group": "Point search",
+        "group_help": "Search for points beyond the published rank-2 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "include_generic",
+        "type": "bool",
+        "label": "Include published rank-2 basis",
+        "default": true,
+        "help": "Reconstruct the selected variant's two published free generators.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "exact_candidates",
+        "type": "int",
+        "label": "Exact candidates",
+        "default": 32,
+        "min": 1,
+        "max": 256,
+        "help": "Maximum returned candidates core may exact-certify.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "certificate_timeout",
+        "type": "int",
+        "label": "Exact certificate timeout",
+        "default": 180,
+        "min": 1,
+        "max": 7200,
+        "help": "Budget for core-owned exact independence certification.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      }
+    ],
+    "target": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "ratpoints height stages",
+        "default": "1000,10000,100000,1000000",
+        "help": "Ascending exact point-search heights.",
+        "group": "Point search",
+        "group_help": "Search for points beyond the published rank-2 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 30,
+        "min": 1,
+        "max": 3600,
+        "help": "Hard runtime budget per ratpoints stage.",
+        "group": "Point search",
+        "group_help": "Search for points beyond the published rank-2 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "max_points",
+        "type": "int",
+        "label": "Maximum new exact points",
+        "default": 64,
+        "min": 0,
+        "max": 2000,
+        "help": "Maximum extras returned by one plugin run.",
+        "group": "Point search",
+        "group_help": "Search for points beyond the published rank-2 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "model_prep_timeout",
+        "type": "int",
+        "label": "Minimal-model prep timeout",
+        "default": 15,
+        "min": 0,
+        "max": 600,
+        "help": "Bounded exact minimal-model preparation before ratpoints.",
+        "group": "Point search",
+        "group_help": "Search for points beyond the published rank-2 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "include_generic",
+        "type": "bool",
+        "label": "Include published rank-2 basis",
+        "default": true,
+        "help": "Reconstruct the selected variant's two published free generators.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "exact_candidates",
+        "type": "int",
+        "label": "Exact candidates",
+        "default": 64,
+        "min": 1,
+        "max": 256,
+        "help": "Maximum returned candidates core may exact-certify.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "certificate_timeout",
+        "type": "int",
+        "label": "Exact certificate timeout",
+        "default": 300,
+        "min": 1,
+        "max": 7200,
+        "help": "Budget for core-owned exact independence certification.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      }
+    ]
+  },
+  "search_presets": [
+    {
+      "id": "scan",
+      "label": "Scan",
+      "description": "Balanced Z/8 rank-2 scan.",
+      "candidate": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,2000,10000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "family": {
+        "stages": "1000,10000",
+        "timeout": 15,
+        "max_points": 24,
+        "model_prep_timeout": 10,
+        "include_generic": true,
+        "exact_candidates": 24,
+        "certificate_timeout": 120
+      },
+      "target": {
+        "stages": "1000,10000,100000",
+        "timeout": 20,
+        "max_points": 48,
+        "model_prep_timeout": 10,
+        "include_generic": true,
+        "exact_candidates": 48,
+        "certificate_timeout": 180
+      }
+    },
+    {
+      "id": "widen",
+      "label": "Widen",
+      "description": "Broader rational-parameter scan.",
+      "candidate": {
+        "a_min": -10000,
+        "a_max": 10000,
+        "b_min": 1,
+        "b_max": 1000,
+        "stage_bounds": "500,2000,10000",
+        "stage_keeps": "40000,6000,1000",
+        "top": 1000,
+        "engine": "sieve"
+      },
+      "family": {
+        "stages": "1000,10000,100000",
+        "timeout": 20,
+        "max_points": 32,
+        "model_prep_timeout": 10,
+        "include_generic": true,
+        "exact_candidates": 32,
+        "certificate_timeout": 180
+      },
+      "target": {
+        "stages": "1000,10000,100000,1000000",
+        "timeout": 30,
+        "max_points": 64,
+        "model_prep_timeout": 15,
+        "include_generic": true,
+        "exact_candidates": 64,
+        "certificate_timeout": 240
+      }
+    },
+    {
+      "id": "deep",
+      "label": "Deep",
+      "description": "Focused Z/8 attack with deeper exact point search.",
+      "candidate": {
+        "a_min": -5000,
+        "a_max": 5000,
+        "b_min": 1,
+        "b_max": 500,
+        "stage_bounds": "1000,5000,20000",
+        "stage_keeps": "20000,4000,800",
+        "top": 800,
+        "engine": "sieve"
+      },
+      "family": {
+        "stages": "1000,10000,100000,1000000",
+        "timeout": 45,
+        "max_points": 96,
+        "model_prep_timeout": 20,
+        "include_generic": true,
+        "exact_candidates": 96,
+        "certificate_timeout": 300
+      },
+      "target": {
+        "stages": "1000,10000,100000,1000000,5000000",
+        "timeout": 60,
+        "max_points": 160,
+        "model_prep_timeout": 30,
+        "include_generic": true,
+        "exact_candidates": 128,
+        "certificate_timeout": 600
+      }
+    }
+  ],
+  "provenance": {
+    "authors": "Andrej Dujella, Matija Kazalicki, Juan Carlos Peral",
+    "paper": "Elliptic curves with torsion groups Z/8Z and Z/2Z × Z/6Z",
+    "journal": "RACSAM 115 (2021), Article 169",
+    "arxiv": "2105.06215",
+    "source_url": "https://web.math.pmf.unizg.hr/~mkazal/reprints/Z8.pdf",
+    "theorem_reference": "Theorem 1, §4.8",
+    "variant_count": 7,
+    "claim_boundary": "Paper exact rank 2/full generators remain theorem provenance; Rank Hunter reproduces exact lower bound 2 and specialized torsion/rank evidence."
+  },
+  "pipeline_search": {
+    "certificate_timeout": 180,
+    "exact_candidates": 64,
+    "strategy_note": "Variant-aware prescribed-C8 hunt: Nagao screen, exact published rank-2 baseline, plugin-local ratpoints, core-owned independence."
+  }
+}

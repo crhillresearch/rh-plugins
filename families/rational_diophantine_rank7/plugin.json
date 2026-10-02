@@ -1,0 +1,377 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "rational_diophantine_rank7",
+  "name": "Dujella–Peral · Rational Diophantine Triple Rank ≥7",
+  "version": "0.1.0",
+  "icon": ":material/hub:",
+  "description": "The 2020 Dujella–Peral infinite family of rational-Diophantine-triple curves with torsion Z/2 × Z/2 and rank at least 7, realized on its genus-1 quartic base.",
+  "enabled_by_default": true,
+  "generic_rank": 7,
+  "generic_rank_status": "Operational lower bound 7 over the genus-1 quartic base function field. The paper proves an infinite family with rank >=7; exact generic rank 7 is not claimed.",
+  "historical_generic_rank_lower": 7,
+  "verified_generic_rank_lower": 7,
+  "generic_rank_claim_state": "generic_lower_bound_verified",
+  "validation_parameter": "26",
+  "minimum_rank_hunter_version": "0.9.2",
+  "family": {
+    "kind": "module",
+    "spec": "rational_diophantine_rank7",
+    "file": "family.py",
+    "aliases": [
+      "highranktriples-r7",
+      "diophantine-genus1-r7"
+    ]
+  },
+  "search_adapter": "search_adapter.py",
+  "capabilities": [
+    "candidate_generation",
+    "family_search",
+    "target_search",
+    "known_subgroup",
+    "free_search"
+  ],
+  "torsion_groups": [
+    "C2 × C2"
+  ],
+  "torsion_provider_role": "prescribed_subfamily",
+  "torsion_record": {
+    "rank_lower": 15,
+    "goal_rank": 16,
+    "source": {
+      "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+      "url": "https://dujella.github.io/tors/tors.html",
+      "as_of": "2026-10-02"
+    },
+    "secondary_family_search_recommended": true
+  },
+  "candidate_defaults": {
+    "a_min": -300,
+    "a_max": 120,
+    "b_min": 1,
+    "b_max": 12,
+    "stage_bounds": "200,1000,5000",
+    "stage_keeps": "10000,2000,500",
+    "top": 500,
+    "engine": "sieve"
+  },
+  "auto_search": {
+    "target_rank": 16,
+    "pool_size": 180,
+    "deep_keep": 36,
+    "upper_timeout": 8,
+    "final_upper_timeout": 30,
+    "exact_candidates": 96,
+    "strategy_note": "Search only exact rational points of the paper's genus-1 rank-7 base; local quartic square filtering is built into finite-field candidate scoring."
+  },
+  "known_controls": [
+    {
+      "parameter": "26",
+      "role": "paper independence control on genus-1 base",
+      "expected_generic_lower": 7,
+      "published_specialized_rank": 7,
+      "companion_parameter": "-76/3"
+    }
+  ],
+  "search_options": {
+    "family": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "ratpoints height stages",
+        "default": "1000,10000,100000",
+        "help": "Ascending exact point-search heights after reconstructing the seven rank-7 base sections.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the rank-7 genus-1-base subgroup.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 20,
+        "min": 1,
+        "max": 3600,
+        "help": "Hard runtime budget per ratpoints stage.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the rank-7 genus-1-base subgroup.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "max_points",
+        "type": "int",
+        "label": "Maximum new exact points",
+        "default": 32,
+        "min": 0,
+        "max": 2000,
+        "help": "Maximum extras returned by one plugin run.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the rank-7 genus-1-base subgroup.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "model_prep_timeout",
+        "type": "int",
+        "label": "Minimal-model prep timeout",
+        "default": 10,
+        "min": 0,
+        "max": 600,
+        "help": "Bounded exact minimal-model preparation before completed-square ratpoints.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the rank-7 genus-1-base subgroup.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "include_generic",
+        "type": "bool",
+        "label": "Include seven rank-7 base sections",
+        "default": true,
+        "help": "Reconstruct the six curve-(12) sections and transported seventh section exactly.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence certification and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "exact_candidates",
+        "type": "int",
+        "label": "Exact candidates",
+        "default": 32,
+        "min": 1,
+        "max": 256,
+        "help": "Maximum returned candidates core may exact-certify.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence certification and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "certificate_timeout",
+        "type": "int",
+        "label": "Exact certificate timeout",
+        "default": 360,
+        "min": 1,
+        "max": 7200,
+        "help": "Budget for core-owned exact independence certification.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence certification and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      }
+    ],
+    "target": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "ratpoints height stages",
+        "default": "1000,10000,100000,1000000",
+        "help": "Ascending exact point-search heights after reconstructing the seven rank-7 base sections.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the rank-7 genus-1-base subgroup.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 30,
+        "min": 1,
+        "max": 3600,
+        "help": "Hard runtime budget per ratpoints stage.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the rank-7 genus-1-base subgroup.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "max_points",
+        "type": "int",
+        "label": "Maximum new exact points",
+        "default": 64,
+        "min": 0,
+        "max": 2000,
+        "help": "Maximum extras returned by one plugin run.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the rank-7 genus-1-base subgroup.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "model_prep_timeout",
+        "type": "int",
+        "label": "Minimal-model prep timeout",
+        "default": 15,
+        "min": 0,
+        "max": 600,
+        "help": "Bounded exact minimal-model preparation before completed-square ratpoints.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the rank-7 genus-1-base subgroup.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "include_generic",
+        "type": "bool",
+        "label": "Include seven rank-7 base sections",
+        "default": true,
+        "help": "Reconstruct the six curve-(12) sections and transported seventh section exactly.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence certification and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "exact_candidates",
+        "type": "int",
+        "label": "Exact candidates",
+        "default": 64,
+        "min": 1,
+        "max": 256,
+        "help": "Maximum returned candidates core may exact-certify.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence certification and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "certificate_timeout",
+        "type": "int",
+        "label": "Exact certificate timeout",
+        "default": 480,
+        "min": 1,
+        "max": 7200,
+        "help": "Budget for core-owned exact independence certification.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence certification and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      }
+    ]
+  },
+  "search_presets": [
+    {
+      "id": "scan",
+      "label": "Scan",
+      "description": "Scan small rational w3 values with local quartic-solubility filtering.",
+      "candidate": {
+        "a_min": -300,
+        "a_max": 120,
+        "b_min": 1,
+        "b_max": 12,
+        "stage_bounds": "200,1000,5000",
+        "stage_keeps": "10000,2000,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "family": {
+        "stages": "1000,10000",
+        "timeout": 15,
+        "max_points": 24,
+        "model_prep_timeout": 10,
+        "include_generic": true,
+        "exact_candidates": 24,
+        "certificate_timeout": 300
+      },
+      "target": {
+        "stages": "1000,10000,100000",
+        "timeout": 20,
+        "max_points": 48,
+        "model_prep_timeout": 10,
+        "include_generic": true,
+        "exact_candidates": 48,
+        "certificate_timeout": 360
+      }
+    },
+    {
+      "id": "widen",
+      "label": "Widen",
+      "description": "Broader rational w3 box over the elliptic-base locus.",
+      "candidate": {
+        "a_min": -1500,
+        "a_max": 800,
+        "b_min": 1,
+        "b_max": 50,
+        "stage_bounds": "200,1000,5000",
+        "stage_keeps": "30000,5000,1000",
+        "top": 1000,
+        "engine": "sieve"
+      },
+      "family": {
+        "stages": "1000,10000,100000",
+        "timeout": 25,
+        "max_points": 48,
+        "model_prep_timeout": 15,
+        "include_generic": true,
+        "exact_candidates": 48,
+        "certificate_timeout": 360
+      },
+      "target": {
+        "stages": "1000,10000,100000,1000000",
+        "timeout": 35,
+        "max_points": 80,
+        "model_prep_timeout": 20,
+        "include_generic": true,
+        "exact_candidates": 80,
+        "certificate_timeout": 480
+      }
+    },
+    {
+      "id": "deep",
+      "label": "Deep",
+      "description": "Focused record attack on exact rank-7 base fibers.",
+      "candidate": {
+        "a_min": -3000,
+        "a_max": 2000,
+        "b_min": 1,
+        "b_max": 120,
+        "stage_bounds": "500,2500,10000",
+        "stage_keeps": "60000,8000,1500",
+        "top": 1500,
+        "engine": "sieve"
+      },
+      "family": {
+        "stages": "1000,10000,100000,1000000",
+        "timeout": 60,
+        "max_points": 128,
+        "model_prep_timeout": 30,
+        "include_generic": true,
+        "exact_candidates": 128,
+        "certificate_timeout": 600
+      },
+      "target": {
+        "stages": "1000,10000,100000,1000000,5000000",
+        "timeout": 90,
+        "max_points": 192,
+        "model_prep_timeout": 45,
+        "include_generic": true,
+        "exact_candidates": 160,
+        "certificate_timeout": 900
+      }
+    }
+  ],
+  "provenance": {
+    "authors": "Andrej Dujella and Juan Carlos Peral",
+    "paper": "High rank elliptic curves induced by rational Diophantine triples",
+    "journal": "Glasnik Matematički 55(2) (2020), 237–252",
+    "doi": "10.3336/gm.55.2.05",
+    "arxiv": "2005.10706",
+    "section": "§3, equations (8)–(13)",
+    "base_quartic": "z^2 = 54 w3^4 + 2736 w3^3 + 66592 w3^2 + 2987712 w3 + 64393056",
+    "base_elliptic_curve": "y^2 = x^3 + x^2 - 28174550 x + 45644288448 (rank 3 in the paper)",
+    "control": "(w2,w3)=(-76/3,26)",
+    "published_claim": "The seven points in equation (13) are independent for infinitely many rational base points, proving an infinite family with rank >=7.",
+    "exact_rank_boundary": "The paper does not prove exact generic rank 7 for the genus-1 base family. Rank Hunter records only a verified lower bound 7.",
+    "second_family_boundary": "The paper gives a second infinite rank>=7 construction from substitutions 2 and 5, but does not print the explicit transported seventh-section formula needed for a release variant; it remains provenance only.",
+    "candidate_boundary": "Generic rational w3 values are rank-6 parent fibers. Rank Hunter curve(w3) accepts only exact rational square points of equation (10); curve_mod_p applies the corresponding local square condition during Nagao scoring."
+  },
+  "pipeline_search": {
+    "certificate_timeout": 360,
+    "exact_candidates": 96,
+    "strategy_note": "Genus-1-base rank-7 subgroup plus plugin-local ratpoints; core owns exact certification and promotion."
+  }
+}

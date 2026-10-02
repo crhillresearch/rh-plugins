@@ -1,0 +1,14 @@
+{
+  "name": "Mazur torsion C2 direct torsion slice",
+  "generic_rank": null,
+  "parameter": "t",
+  "a_invariants": [
+    "0",
+    "t",
+    "0",
+    "t",
+    "0"
+  ],
+  "sections": [],
+  "notes": "A direct C2 slice with forced rational 2-torsion at (0,0). It is not advertised as an exhaustive twist parametrization."
+}

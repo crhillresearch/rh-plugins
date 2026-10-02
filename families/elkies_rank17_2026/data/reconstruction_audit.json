@@ -1,0 +1,13 @@
+{
+  "schema": "rank-hunter-elkies-2026-plugin-audit-v1",
+  "source": "arXiv:2608.25406v1",
+  "surface": "y^2=x^3-27*S(t)*x+(27/4)*T(t)",
+  "section_count": 17,
+  "published_y_leading_signs": "-+-+++++-+-+++-++",
+  "reconstruction_checks": {
+    "all_17_rhs_are_exact_polynomial_squares": true,
+    "published_y1_matches_exactly": true,
+    "height_gram_matches_paper_entrywise": true,
+    "height_gram_determinant": 948
+  }
+}

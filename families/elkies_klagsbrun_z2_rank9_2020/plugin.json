@@ -1,0 +1,738 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "elkies_klagsbrun_z2_rank9_2020",
+  "name": "Elkies-Klagsbrun Z/2 K3",
+  "version": "1.2.4",
+  "generic_rank": 9,
+  "historical_generic_rank_lower": 9,
+  "generic_rank_claim_state": "sections_verified",
+  "description": "Published Z/2-torsion K3 family of generic rank 9 with an unconditionally proven rank-20 specialization; exact sections, native/PGL2 Nagao candidate generation, family-aware search, target point search, and published controls.",
+  "enabled_by_default": false,
+  "default_variant": "u11_5",
+  "search_adapter": "search_adapter.py",
+  "capabilities": [
+    "candidate_generation",
+    "family_search",
+    "target_search",
+    "known_subgroup",
+    "pgl2_search",
+    "free_search"
+  ],
+  "candidate_defaults": {
+    "a_min": -5000,
+    "a_max": 5000,
+    "b_min": 1,
+    "b_max": 250,
+    "stage_bounds": "1000,5000",
+    "stage_keeps": "10000,1000",
+    "top": 1000,
+    "engine": "sieve"
+  },
+  "variants": [
+    {
+      "id": "u11_5",
+      "name": "u = 11/5 · native",
+      "generic_rank": 9,
+      "curve_family_name": "Elkies-Klagsbrun Z/2 K3 u = 11/5 · native",
+      "validation_parameter": "0",
+      "candidate_defaults": {
+        "a_min": -20000,
+        "a_max": 20000,
+        "b_max": 500
+      },
+      "family": {
+        "kind": "json",
+        "file": "families/u11_5.json"
+      },
+      "u": "11/5",
+      "m": "-7",
+      "chart": "native",
+      "search_presets": [
+        {
+          "id": "casual",
+          "label": "Casual",
+          "description": "Small, fast sanity-check run.",
+          "candidate": {
+            "a_min": -5000,
+            "a_max": 5000,
+            "b_min": 1,
+            "b_max": 125,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "2500,250",
+            "top": 100,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 10,
+            "quick_timeout": 30,
+            "strong_timeout": 120,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 60
+          }
+        },
+        {
+          "id": "scan",
+          "label": "Scan",
+          "description": "Balanced screening profile for routine hunting.",
+          "candidate": {
+            "a_min": -20000,
+            "a_max": 20000,
+            "b_min": 1,
+            "b_max": 500,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "10000,1000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 50,
+            "quick_timeout": 60,
+            "strong_timeout": 300,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 90
+          }
+        },
+        {
+          "id": "widen",
+          "label": "Widen",
+          "description": "Explore a substantially larger rational parameter box.",
+          "candidate": {
+            "a_min": -60000,
+            "a_max": 60000,
+            "b_min": 1,
+            "b_max": 1500,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "20000,2000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 80,
+            "quick_timeout": 90,
+            "strong_timeout": 600,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 120
+          }
+        },
+        {
+          "id": "deep",
+          "label": "Deep",
+          "description": "Keep the family region focused and spend much more arithmetic effort per survivor.",
+          "candidate": {
+            "a_min": -20000,
+            "a_max": 20000,
+            "b_min": 1,
+            "b_max": 500,
+            "stage_bounds": "1000,5000,25000",
+            "stage_keeps": "10000,1000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 20,
+            "quick_timeout": 180,
+            "strong_timeout": 1200,
+            "quick_only": false,
+            "fast_screen": false,
+            "strong_on_timeout": true,
+            "generic_certificate_timeout": 240,
+            "strong_certificate_timeout": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "u2_5",
+      "name": "u = 2/5 · native",
+      "generic_rank": 9,
+      "curve_family_name": "Elkies-Klagsbrun Z/2 K3 u = 2/5 · native",
+      "validation_parameter": "0",
+      "candidate_defaults": {},
+      "family": {
+        "kind": "json",
+        "file": "families/u2_5.json"
+      },
+      "u": "2/5",
+      "m": "2",
+      "chart": "native",
+      "search_presets": [
+        {
+          "id": "casual",
+          "label": "Casual",
+          "description": "Small, fast sanity-check run.",
+          "candidate": {
+            "a_min": -1250,
+            "a_max": 1250,
+            "b_min": 1,
+            "b_max": 62,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "2500,250",
+            "top": 100,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 10,
+            "quick_timeout": 30,
+            "strong_timeout": 120,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 60
+          }
+        },
+        {
+          "id": "scan",
+          "label": "Scan",
+          "description": "Balanced screening profile for routine hunting.",
+          "candidate": {
+            "a_min": -5000,
+            "a_max": 5000,
+            "b_min": 1,
+            "b_max": 250,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "10000,1000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 50,
+            "quick_timeout": 60,
+            "strong_timeout": 300,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 90
+          }
+        },
+        {
+          "id": "widen",
+          "label": "Widen",
+          "description": "Explore a substantially larger rational parameter box.",
+          "candidate": {
+            "a_min": -15000,
+            "a_max": 15000,
+            "b_min": 1,
+            "b_max": 750,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "20000,2000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 80,
+            "quick_timeout": 90,
+            "strong_timeout": 600,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 120
+          }
+        },
+        {
+          "id": "deep",
+          "label": "Deep",
+          "description": "Keep the family region focused and spend much more arithmetic effort per survivor.",
+          "candidate": {
+            "a_min": -5000,
+            "a_max": 5000,
+            "b_min": 1,
+            "b_max": 250,
+            "stage_bounds": "1000,5000,25000",
+            "stage_keeps": "10000,1000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 20,
+            "quick_timeout": 180,
+            "strong_timeout": 1200,
+            "quick_only": false,
+            "fast_screen": false,
+            "strong_on_timeout": true,
+            "generic_certificate_timeout": 240,
+            "strong_certificate_timeout": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "u2_13",
+      "name": "u = 2/13 · native",
+      "generic_rank": 9,
+      "curve_family_name": "Elkies-Klagsbrun Z/2 K3 u = 2/13 · native",
+      "validation_parameter": "0",
+      "candidate_defaults": {},
+      "family": {
+        "kind": "json",
+        "file": "families/u2_13.json"
+      },
+      "u": "2/13",
+      "m": "7/4",
+      "chart": "native",
+      "search_presets": [
+        {
+          "id": "casual",
+          "label": "Casual",
+          "description": "Small, fast sanity-check run.",
+          "candidate": {
+            "a_min": -1250,
+            "a_max": 1250,
+            "b_min": 1,
+            "b_max": 62,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "2500,250",
+            "top": 100,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 10,
+            "quick_timeout": 30,
+            "strong_timeout": 120,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 60
+          }
+        },
+        {
+          "id": "scan",
+          "label": "Scan",
+          "description": "Balanced screening profile for routine hunting.",
+          "candidate": {
+            "a_min": -5000,
+            "a_max": 5000,
+            "b_min": 1,
+            "b_max": 250,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "10000,1000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 50,
+            "quick_timeout": 60,
+            "strong_timeout": 300,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 90
+          }
+        },
+        {
+          "id": "widen",
+          "label": "Widen",
+          "description": "Explore a substantially larger rational parameter box.",
+          "candidate": {
+            "a_min": -15000,
+            "a_max": 15000,
+            "b_min": 1,
+            "b_max": 750,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "20000,2000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 80,
+            "quick_timeout": 90,
+            "strong_timeout": 600,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 120
+          }
+        },
+        {
+          "id": "deep",
+          "label": "Deep",
+          "description": "Keep the family region focused and spend much more arithmetic effort per survivor.",
+          "candidate": {
+            "a_min": -5000,
+            "a_max": 5000,
+            "b_min": 1,
+            "b_max": 250,
+            "stage_bounds": "1000,5000,25000",
+            "stage_keeps": "10000,1000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 20,
+            "quick_timeout": 180,
+            "strong_timeout": 1200,
+            "quick_only": false,
+            "fast_screen": false,
+            "strong_on_timeout": true,
+            "generic_certificate_timeout": 240,
+            "strong_certificate_timeout": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "u22_13",
+      "name": "u = 22/13 · native",
+      "generic_rank": 9,
+      "curve_family_name": "Elkies-Klagsbrun Z/2 K3 u = 22/13 · native",
+      "validation_parameter": "0",
+      "candidate_defaults": {},
+      "family": {
+        "kind": "json",
+        "file": "families/u22_13.json"
+      },
+      "u": "22/13",
+      "m": "8",
+      "chart": "native",
+      "search_presets": [
+        {
+          "id": "casual",
+          "label": "Casual",
+          "description": "Small, fast sanity-check run.",
+          "candidate": {
+            "a_min": -1250,
+            "a_max": 1250,
+            "b_min": 1,
+            "b_max": 62,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "2500,250",
+            "top": 100,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 10,
+            "quick_timeout": 30,
+            "strong_timeout": 120,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 60
+          }
+        },
+        {
+          "id": "scan",
+          "label": "Scan",
+          "description": "Balanced screening profile for routine hunting.",
+          "candidate": {
+            "a_min": -5000,
+            "a_max": 5000,
+            "b_min": 1,
+            "b_max": 250,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "10000,1000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 50,
+            "quick_timeout": 60,
+            "strong_timeout": 300,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 90
+          }
+        },
+        {
+          "id": "widen",
+          "label": "Widen",
+          "description": "Explore a substantially larger rational parameter box.",
+          "candidate": {
+            "a_min": -15000,
+            "a_max": 15000,
+            "b_min": 1,
+            "b_max": 750,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "20000,2000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 80,
+            "quick_timeout": 90,
+            "strong_timeout": 600,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 120
+          }
+        },
+        {
+          "id": "deep",
+          "label": "Deep",
+          "description": "Keep the family region focused and spend much more arithmetic effort per survivor.",
+          "candidate": {
+            "a_min": -5000,
+            "a_max": 5000,
+            "b_min": 1,
+            "b_max": 250,
+            "stage_bounds": "1000,5000,25000",
+            "stage_keeps": "10000,1000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 20,
+            "quick_timeout": 180,
+            "strong_timeout": 1200,
+            "quick_only": false,
+            "fast_screen": false,
+            "strong_on_timeout": true,
+            "generic_certificate_timeout": 240,
+            "strong_certificate_timeout": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "u11_5_published_chart_search",
+      "name": "u = 11/5 · published Möbius chart search model",
+      "generic_rank": 9,
+      "curve_family_name": "Elkies-Klagsbrun Z/2 K3 u = 11/5 · published Möbius chart search model",
+      "validation_parameter": "0",
+      "candidate_defaults": {
+        "a_min": -250000,
+        "a_max": 250000,
+        "b_min": 1,
+        "b_max": 2000,
+        "stage_bounds": "1000,5000",
+        "stage_keeps": "20000,2000",
+        "top": 1000,
+        "engine": "sieve"
+      },
+      "family": {
+        "kind": "json",
+        "file": "families/u11_5_published_chart_search.json"
+      },
+      "u": "11/5",
+      "m": "-7",
+      "chart": "published_mobius_search_model",
+      "search_representation": true,
+      "native_variant": "u11_5",
+      "search_presets": [
+        {
+          "id": "casual",
+          "label": "Casual",
+          "description": "Small, fast sanity-check run.",
+          "candidate": {
+            "a_min": -62500,
+            "a_max": 62500,
+            "b_min": 1,
+            "b_max": 500,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "5000,500",
+            "top": 100,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 10,
+            "quick_timeout": 30,
+            "strong_timeout": 120,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 60
+          }
+        },
+        {
+          "id": "scan",
+          "label": "Scan",
+          "description": "Balanced screening profile for routine hunting.",
+          "candidate": {
+            "a_min": -250000,
+            "a_max": 250000,
+            "b_min": 1,
+            "b_max": 2000,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "20000,2000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 50,
+            "quick_timeout": 60,
+            "strong_timeout": 300,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 90
+          }
+        },
+        {
+          "id": "widen",
+          "label": "Widen",
+          "description": "Explore a substantially larger rational parameter box.",
+          "candidate": {
+            "a_min": -750000,
+            "a_max": 750000,
+            "b_min": 1,
+            "b_max": 6000,
+            "stage_bounds": "1000,5000",
+            "stage_keeps": "40000,4000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 80,
+            "quick_timeout": 90,
+            "strong_timeout": 600,
+            "quick_only": true,
+            "fast_screen": true,
+            "generic_certificate_timeout": 120
+          }
+        },
+        {
+          "id": "deep",
+          "label": "Deep",
+          "description": "Keep the family region focused and spend much more arithmetic effort per survivor.",
+          "candidate": {
+            "a_min": -250000,
+            "a_max": 250000,
+            "b_min": 1,
+            "b_max": 2000,
+            "stage_bounds": "1000,5000,25000",
+            "stage_keeps": "20000,2000",
+            "top": 1000,
+            "engine": "sieve"
+          },
+          "family": {
+            "limit": 20,
+            "quick_timeout": 180,
+            "strong_timeout": 1200,
+            "quick_only": false,
+            "fast_screen": false,
+            "strong_on_timeout": true,
+            "generic_certificate_timeout": 240,
+            "strong_certificate_timeout": 240
+          }
+        }
+      ]
+    }
+  ],
+  "default_chart": "published_u11_5",
+  "charts": [
+    {
+      "id": "published_u11_5",
+      "label": "Published Möbius chart",
+      "variant": "u11_5_published_chart_search",
+      "native_variant": "u11_5",
+      "native_family_key": "elkies_klagsbrun_z2_rank9_2020:u11_5",
+      "matrix": [
+        "-1",
+        "2",
+        "1",
+        "-6"
+      ],
+      "candidate_defaults": {
+        "a_min": -250000,
+        "a_max": 250000,
+        "b_min": 1,
+        "b_max": 2000,
+        "stage_bounds": "1000,5000",
+        "stage_keeps": "20000,2000",
+        "top": 1000,
+        "engine": "sieve"
+      },
+      "metadata": {
+        "source": "Elkies-Klagsbrun 2020 published search chart",
+        "native_map": "(2-s)/(s-6)",
+        "rank20_chart_control": "-68559/326291",
+        "rank20_native_control": "-721141/2026305"
+      }
+    }
+  ],
+  "search_options": {
+    "family": [
+      {
+        "key": "quick_timeout",
+        "type": "int",
+        "label": "Quick timeout",
+        "default": 120,
+        "min": 1
+      },
+      {
+        "key": "strong_timeout",
+        "type": "int",
+        "label": "Strong timeout",
+        "default": 600,
+        "min": 1
+      },
+      {
+        "key": "quick_strategy",
+        "type": "choice",
+        "label": "PARI quick engine",
+        "default": "pari",
+        "choices": [
+          "pari",
+          "mwrank"
+        ]
+      },
+      {
+        "key": "fast_screen",
+        "type": "bool",
+        "label": "Fast screen",
+        "default": true
+      },
+      {
+        "key": "quick_only",
+        "type": "bool",
+        "label": "Quick only",
+        "default": false
+      },
+      {
+        "key": "strong_on_timeout",
+        "type": "bool",
+        "label": "Strong on quick timeout",
+        "default": false
+      },
+      {
+        "key": "generic_certificate_timeout",
+        "type": "int",
+        "label": "Generic-section certificate timeout",
+        "default": 120,
+        "min": 1
+      },
+      {
+        "key": "strong_certificate_timeout",
+        "type": "int",
+        "label": "Strong generator certificate timeout",
+        "default": 120,
+        "min": 1
+      }
+    ],
+    "target": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "ratpoints stages",
+        "default": "1000,10000,100000"
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 20,
+        "min": 1
+      },
+      {
+        "key": "exact_candidates",
+        "type": "int",
+        "label": "Exact extra candidates",
+        "default": 8,
+        "min": 0
+      },
+      {
+        "key": "certificate_timeout",
+        "type": "int",
+        "label": "Extra certificate timeout",
+        "default": 120,
+        "min": 1
+      }
+    ]
+  },
+  "minimum_rank_hunter_version": "0.9.2",
+  "provenance": {
+    "source": "Noam D. Elkies and Zev Klagsbrun, New Rank Records For Elliptic Curves Having Rational Torsion, Open Book Series 4 (2020), 233–250",
+    "source_url": "https://arxiv.org/abs/2003.00077",
+    "doi": "10.2140/obs.2020.4.233",
+    "arxiv": "2003.00077",
+    "arxiv_date": "2020-02-28",
+    "theorem_reference": "Section 9 and Appendix A; rank-20 control in Appendix B.2",
+    "published_generic_group": "For admissible u with 5-u^2 a square and u != ±1,±2, E_u(Q(t)) = Z/2Z × Z^9.",
+    "published_rank20_status": "The u=11/5 specialization at native t=-721141/2026305 has unconditional exact rank 20 in the paper.",
+    "rank20_chart_note": "The paper prints transformed parameter -68559/32629, but exact inversion of its stated Möbius map at the published native parameter gives -68559/326291; both are retained and the corrected value is used operationally.",
+    "release_claim_boundary": "Generic rank 9 is published mathematics and all nine bundled sections are exact-symbolically verified. Rank Hunter still exact-certifies specialized independence before promoting a specialization lower bound."
+  }
+}

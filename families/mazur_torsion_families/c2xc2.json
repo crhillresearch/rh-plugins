@@ -1,0 +1,14 @@
+{
+  "name": "Mazur torsion C2 × C2 direct torsion slice",
+  "generic_rank": null,
+  "parameter": "t",
+  "a_invariants": [
+    "0",
+    "-(1+t)",
+    "0",
+    "t",
+    "0"
+  ],
+  "sections": [],
+  "notes": "Legendre-type direct slice y^2=x(x-1)(x-t), forcing full rational 2-torsion. It is a useful prescribed-torsion lane, not advertised as an exhaustive twist parametrization of every C2 × C2 Q-isomorphism class."
+}

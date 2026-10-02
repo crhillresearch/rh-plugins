@@ -1,0 +1,13 @@
+{
+  "name": "Kloosterman explicit elliptic K3, rank 15 over Q(t)",
+  "generic_rank": null,
+  "parameter": "t",
+  "a_invariants": [
+    "0",
+    "0",
+    "0",
+    "2*(t^8 + 2*t^4 + 1)",
+    "-4*t^2*(t^8 - 6*t^4 + 1)"
+  ],
+  "sections": []
+}

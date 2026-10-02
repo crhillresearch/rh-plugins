@@ -1,0 +1,83 @@
+# Python bytecode / test / type-check caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+.hypothesis/
+
+# Coverage / profiling
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+*.prof
+*.pstats
+
+# Python build / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Environments
+.venv/
+.venv-*/
+venv/
+env/
+ENV/
+
+# Rank Hunter runtime/cache state
+.rank42-cache/
+.rank42-ui/
+*.db
+*.db-*
+*.db.*
+*.sqlite
+*.sqlite3
+
+# Generated search / job artifacts
+*.log
+*.pid
+*.tmp
+*.temp
+candidates/
+candidate_exports/
+certs/
+certificates/
+search_outputs/
+backups/
+
+# Local development links / backups
+*.symlink-backup.*
+plugins.symlink-backup.*
+themes.symlink-backup.*
+*.bak
+*.backup
+*~
+*.orig
+*.rej
+*.swp
+*.swo
+
+# Archives / ad-hoc exports
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# Notebook / IDE / OS noise
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Windows download metadata
+*:Zone.Identifier

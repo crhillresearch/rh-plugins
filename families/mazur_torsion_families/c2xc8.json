@@ -1,0 +1,14 @@
+{
+  "name": "Mazur torsion C2 × C8 universal family",
+  "generic_rank": null,
+  "parameter": "t",
+  "a_invariants": [
+    "1-(((2*(2*(t+4)/(8-t^2))-1)*((2*(t+4)/(8-t^2))-1))/(2*(t+4)/(8-t^2)))",
+    "-((2*(2*(t+4)/(8-t^2))-1)*((2*(t+4)/(8-t^2))-1))",
+    "-((2*(2*(t+4)/(8-t^2))-1)*((2*(t+4)/(8-t^2))-1))",
+    "0",
+    "0"
+  ],
+  "sections": [],
+  "notes": "C8 Tate family with alpha=2(t+4)/(8-t^2); full rational 2-torsion is forced."
+}

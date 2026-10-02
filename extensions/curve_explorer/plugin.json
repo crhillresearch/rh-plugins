@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "plugin_type": "extension",
+  "id": "curve_explorer",
+  "name": "Curve Explorer",
+  "version": "0.4.8",
+  "description": "Interactive real-locus explorer with theme-aware plotting, reliable P/Q selection, exact cached or on-selection P,Q->R->-R playback, subgroup filters, and robust framing for stored Rank Hunter curves.",
+  "enabled_by_default": false,
+  "icon": ":material/insights:",
+  "menu": {
+    "id": "curve_explorer",
+    "label": "Curve Explorer",
+    "section": "Analysis",
+    "icon": ":material/insights:"
+  },
+  "entrypoint": "extension.py"
+}

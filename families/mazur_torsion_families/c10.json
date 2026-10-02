@@ -1,0 +1,14 @@
+{
+  "name": "Mazur torsion C10 universal family",
+  "generic_rank": null,
+  "parameter": "t",
+  "a_invariants": [
+    "1-((2*t^3-3*t^2+t)/(t-(t-1)^2))",
+    "-(((2*t^3-3*t^2+t)/(t-(t-1)^2))*t^2/(t-(t-1)^2))",
+    "-(((2*t^3-3*t^2+t)/(t-(t-1)^2))*t^2/(t-(t-1)^2))",
+    "0",
+    "0"
+  ],
+  "sections": [],
+  "notes": "Kubert–Tate normal form with (0,0) of order 10."
+}

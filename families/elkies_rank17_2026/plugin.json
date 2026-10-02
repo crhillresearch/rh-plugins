@@ -1,0 +1,444 @@
+{
+  "schema_version": 1,
+  "id": "elkies_rank17_2026",
+  "name": "Elkies Rank-17 K3",
+  "version": "1.3.1",
+  "generic_rank": 17,
+  "curve_family_name": "Elkies 2026 elliptic K3, exact Mordell-Weil rank 17 over Q(t)",
+  "description": "Primary classical record-hunt family: exact published Elkies rank-17 K3 with all 17 generic sections, rigorous specialization-baseline certification, Auto Search integral-native staging through rank 24, rational/affine search from rank 25 onward, staged Nagao screening, classical 2-coverings, and exact independence certification.",
+  "enabled_by_default": true,
+  "family": {
+    "kind": "json",
+    "file": "family.json"
+  },
+  "search_adapter": "search_adapter.py",
+  "capabilities": [
+    "candidate_generation",
+    "family_search",
+    "target_search",
+    "known_subgroup",
+    "free_search"
+  ],
+  "validation_parameter": "0",
+  "candidate_defaults": {
+    "a_min": -5000,
+    "a_max": 5000,
+    "b_min": 1,
+    "b_max": 1000,
+    "engine": "sieve",
+    "stage_bounds": "1000,2000,4000",
+    "stage_keeps": "20000,4000,500",
+    "top": 500
+  },
+  "provenance": {
+    "author": "Noam D. Elkies",
+    "paper": "An elliptic K3 surface X/Q(t) with Mordell-Weil rank 17 I: Formulas for X and base changes of ranks 18 and 19",
+    "arxiv": "2608.25406v1",
+    "date": "2026-08-26",
+    "claim": "Theorem 4 gives the exact surface and 17 integral sections; the published height-pairing Gram matrix has determinant 948, proving the sections independent. The paper states rank 17 is maximal over Q(t) for an elliptic K3 surface.",
+    "source_model": "y^2 = x^3 - 27*S(t)*x + (27/4)*T(t)",
+    "generic_rank_status": "exactly 17 by Elkies: 17 independent sections and the maximal-rank bound for elliptic K3 surfaces over Q(t)",
+    "section_reconstruction": "x_1..x_17 and y_1 are printed in full; y_2..y_17 are reconstructed exactly as degree-6 polynomial square roots of the published RHS using the paper's leading-coefficient sign string -+-+++++-+-+++-++.",
+    "record_hunt": "v1.3 exposes the exact published MW17 subgroup directly to core Auto Search. Auto Search certifies the 17 specialized sections, searches denominator-1 x on a global minimal integral model while the rigorous lower is below 25, and unlocks general exact affine/rational x charts at rank >=25. The rank-25 threshold is an explicit Rank Hunter search policy, not an attribution of an unpublished historical procedure.",
+    "source_url": "https://arxiv.org/abs/2608.25406",
+    "doi": "10.48550/arXiv.2608.25406",
+    "theorem_reference": "Theorem 4 and §2.2",
+    "release_audit_baseline": "36d37730ded550a04ceb383434c466afd81e54c9",
+    "release_claim_boundary": "The generic rank-17 theorem is literature provenance for the family. Rank Hunter does not turn it into a specialization lower bound until the 17 specialized sections are exact-certified independent on that fiber."
+  },
+  "known_controls": [
+    {
+      "t": "-2/377",
+      "rank_lower": 25
+    },
+    {
+      "t": "-308/251",
+      "rank_lower": 26
+    },
+    {
+      "t": "2456/135",
+      "rank_lower": 27
+    },
+    {
+      "t": "-9529/5471",
+      "rank_lower": 28
+    }
+  ],
+  "search_presets": [
+    {
+      "id": "casual",
+      "label": "Casual",
+      "description": "Small, fast sanity-check run.",
+      "candidate": {
+        "a_min": -1250,
+        "a_max": 1250,
+        "b_min": 1,
+        "b_max": 250,
+        "engine": "sieve",
+        "stage_bounds": "1000,2000",
+        "stage_keeps": "5000,1000",
+        "top": 100
+      },
+      "family": {
+        "limit": 10,
+        "stages": "1000",
+        "timeout": 8,
+        "baseline_certificate": true,
+        "baseline_timeout": 90,
+        "covering_search": false,
+        "selmer_gate": false,
+        "exact_candidates": 8,
+        "certificate_timeout": 90
+      }
+    },
+    {
+      "id": "scan",
+      "label": "Scan",
+      "description": "Balanced screening profile for routine hunting.",
+      "candidate": {
+        "a_min": -5000,
+        "a_max": 5000,
+        "b_min": 1,
+        "b_max": 1000,
+        "engine": "sieve",
+        "stage_bounds": "1000,2000,4000",
+        "stage_keeps": "20000,4000,500",
+        "top": 500
+      },
+      "family": {
+        "limit": 50,
+        "stages": "1000,10000",
+        "timeout": 12,
+        "baseline_certificate": true,
+        "baseline_timeout": 120,
+        "covering_search": false,
+        "selmer_gate": false,
+        "exact_candidates": 16,
+        "certificate_timeout": 120
+      }
+    },
+    {
+      "id": "widen",
+      "label": "Widen",
+      "description": "Explore a substantially larger rational parameter box.",
+      "candidate": {
+        "a_min": -15000,
+        "a_max": 15000,
+        "b_min": 1,
+        "b_max": 3000,
+        "engine": "sieve",
+        "stage_bounds": "1000,2000,4000",
+        "stage_keeps": "40000,8000,1000",
+        "top": 1000
+      },
+      "family": {
+        "limit": 80,
+        "stages": "1000,10000",
+        "timeout": 15,
+        "baseline_certificate": true,
+        "baseline_timeout": 150,
+        "covering_search": false,
+        "selmer_gate": false,
+        "exact_candidates": 16,
+        "certificate_timeout": 150
+      }
+    },
+    {
+      "id": "deep",
+      "label": "Deep",
+      "description": "Keep the family region focused and spend much more arithmetic effort per survivor.",
+      "candidate": {
+        "a_min": -5000,
+        "a_max": 5000,
+        "b_min": 1,
+        "b_max": 1000,
+        "engine": "sieve",
+        "stage_bounds": "1000,2000,4000,20000",
+        "stage_keeps": "20000,4000,500",
+        "top": 500
+      },
+      "family": {
+        "limit": 20,
+        "stages": "1000,10000,100000",
+        "timeout": 30,
+        "baseline_certificate": true,
+        "baseline_timeout": 240,
+        "covering_search": true,
+        "selmer_gate": true,
+        "selmer_timeout": 300,
+        "covering_timeout": 1200,
+        "exact_candidates": 64,
+        "certificate_timeout": 300
+      }
+    }
+  ],
+  "auto_search": {
+    "target_rank": 31,
+    "baseline_certificate_timeout": 240,
+    "pool_size": 50,
+    "deep_keep": 12,
+    "upper_timeout": 8,
+    "final_upper_timeout": 60,
+    "exact_candidates": 64,
+    "strategy_note": "Rank Hunter policy: certify the 17-section specialization first; while rigorous lower <25 search denominator-1 x on a global minimal integral model; at rigorous lower >=25 unlock general exact affine/rational x charts. This is a search policy, not a historical-method attribution.",
+    "integral_minimal_until_rank": 25
+  },
+  "pipeline_search": {
+    "target_rank": 31,
+    "recommended_preset": "high_baseline_rank_hunter",
+    "certificate_timeout": 240,
+    "exact_candidates": 64,
+    "strategy_note": "Pipeline-native record hunt: certify the rank-17 family baseline, then use the high-baseline Rank Hunter recipe toward rank 31."
+  },
+  "search_options": {
+    "family": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "Direct ratpoints height stages",
+        "default": "1000,10000"
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per direct ratpoints stage",
+        "default": 15,
+        "min": 1,
+        "max": 3600
+      },
+      {
+        "key": "baseline_certificate",
+        "type": "bool",
+        "label": "Certify specialized 17-section baseline",
+        "default": true
+      },
+      {
+        "key": "baseline_timeout",
+        "type": "int",
+        "label": "Baseline certificate timeout",
+        "default": 120,
+        "min": 10,
+        "max": 7200
+      },
+      {
+        "key": "covering_search",
+        "type": "bool",
+        "label": "Classical 2-covering point search",
+        "default": false
+      },
+      {
+        "key": "selmer_gate",
+        "type": "bool",
+        "label": "Rigorous 2-Selmer gate before coverings",
+        "default": false
+      },
+      {
+        "key": "covering_engine",
+        "type": "choice",
+        "label": "2-covering engine",
+        "default": "simon_known",
+        "choices": [
+          "simon_known",
+          "mwrank_coverings"
+        ]
+      },
+      {
+        "key": "selmer_timeout",
+        "type": "int",
+        "label": "2-Selmer gate timeout",
+        "default": 180,
+        "min": 10,
+        "max": 14400
+      },
+      {
+        "key": "covering_timeout",
+        "type": "int",
+        "label": "2-covering search timeout",
+        "default": 300,
+        "min": 10,
+        "max": 28800
+      },
+      {
+        "key": "covering_n_aux",
+        "type": "int",
+        "label": "mwrank auxiliary sieve primes",
+        "default": 33,
+        "min": 8,
+        "max": 64
+      },
+      {
+        "key": "covering_first_limit",
+        "type": "int",
+        "label": "mwrank first quartic-search limit",
+        "default": 20,
+        "min": 1,
+        "max": 200
+      },
+      {
+        "key": "covering_second_limit",
+        "type": "int",
+        "label": "mwrank second quartic-search log limit",
+        "default": 10,
+        "min": 1,
+        "max": 30
+      },
+      {
+        "key": "covering_lim1",
+        "type": "int",
+        "label": "Simon trivial-quartic limit",
+        "default": 5,
+        "min": 1,
+        "max": 100
+      },
+      {
+        "key": "covering_lim3",
+        "type": "int",
+        "label": "Simon ELS-quartic point limit",
+        "default": 80,
+        "min": 1,
+        "max": 5000
+      },
+      {
+        "key": "exact_candidates",
+        "type": "int",
+        "label": "Exact extra-point candidates",
+        "default": 16,
+        "min": 0,
+        "max": 512
+      },
+      {
+        "key": "certificate_timeout",
+        "type": "int",
+        "label": "Extra-point certificate timeout",
+        "default": 120,
+        "min": 10,
+        "max": 14400
+      }
+    ],
+    "target": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "Direct ratpoints height stages",
+        "default": "1000,10000,100000"
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per direct ratpoints stage",
+        "default": 30,
+        "min": 1,
+        "max": 3600
+      },
+      {
+        "key": "baseline_certificate",
+        "type": "bool",
+        "label": "Certify specialized 17-section baseline",
+        "default": true
+      },
+      {
+        "key": "baseline_timeout",
+        "type": "int",
+        "label": "Baseline certificate timeout",
+        "default": 180,
+        "min": 10,
+        "max": 7200
+      },
+      {
+        "key": "covering_search",
+        "type": "bool",
+        "label": "Classical 2-covering point search",
+        "default": true
+      },
+      {
+        "key": "selmer_gate",
+        "type": "bool",
+        "label": "Rigorous 2-Selmer gate before coverings",
+        "default": true
+      },
+      {
+        "key": "covering_engine",
+        "type": "choice",
+        "label": "2-covering engine",
+        "default": "simon_known",
+        "choices": [
+          "simon_known",
+          "mwrank_coverings"
+        ]
+      },
+      {
+        "key": "selmer_timeout",
+        "type": "int",
+        "label": "2-Selmer gate timeout",
+        "default": 300,
+        "min": 10,
+        "max": 14400
+      },
+      {
+        "key": "covering_timeout",
+        "type": "int",
+        "label": "2-covering search timeout",
+        "default": 1200,
+        "min": 10,
+        "max": 28800
+      },
+      {
+        "key": "covering_n_aux",
+        "type": "int",
+        "label": "mwrank auxiliary sieve primes",
+        "default": 33,
+        "min": 8,
+        "max": 64
+      },
+      {
+        "key": "covering_first_limit",
+        "type": "int",
+        "label": "mwrank first quartic-search limit",
+        "default": 20,
+        "min": 1,
+        "max": 200
+      },
+      {
+        "key": "covering_second_limit",
+        "type": "int",
+        "label": "mwrank second quartic-search log limit",
+        "default": 12,
+        "min": 1,
+        "max": 30
+      },
+      {
+        "key": "covering_lim1",
+        "type": "int",
+        "label": "Simon trivial-quartic limit",
+        "default": 5,
+        "min": 1,
+        "max": 100
+      },
+      {
+        "key": "covering_lim3",
+        "type": "int",
+        "label": "Simon ELS-quartic point limit",
+        "default": 200,
+        "min": 1,
+        "max": 5000
+      },
+      {
+        "key": "exact_candidates",
+        "type": "int",
+        "label": "Exact extra-point candidates",
+        "default": 64,
+        "min": 0,
+        "max": 512
+      },
+      {
+        "key": "certificate_timeout",
+        "type": "int",
+        "label": "Extra-point certificate timeout",
+        "default": 300,
+        "min": 10,
+        "max": 14400
+      }
+    ]
+  },
+  "minimum_rank_hunter_version": "0.9.2"
+}

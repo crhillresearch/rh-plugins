@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "elkies_rank18_2026",
+  "name": "Elkies Rank-18 First Cover",
+  "version": "0.1.1",
+  "generic_rank": 18,
+  "verified_generic_rank_lower": 18,
+  "generic_rank_claim_state": "generic_lower_bound_verified",
+  "curve_family_name": "Elkies 2026 first rank-18 quadratic cover over Q(r)",
+  "description": "Elkies's first quadratic base change u^2=4225*t^2+38636*t+289444, rationally parameterized over Q(r), with P01..P17 pulled back from the published rank-17 K3 and an independently exact-verified anti-invariant P18.",
+  "enabled_by_default": false,
+  "family": {
+    "kind": "module",
+    "spec": "elkies_rank18_2026.rank18_family",
+    "file": "rank18_family.py"
+  },
+  "search_adapter": "search_adapter.py",
+  "capabilities": [
+    "candidate_generation",
+    "family_search",
+    "target_search",
+    "known_subgroup",
+    "free_search"
+  ],
+  "validation_parameter": "0",
+  "candidate_defaults": {
+    "a_min": -3000,
+    "a_max": 3000,
+    "b_min": 1,
+    "b_max": 400,
+    "engine": "sieve",
+    "stage_bounds": "200,500,1000",
+    "stage_keeps": "12000,2500,500",
+    "top": 500
+  },
+  "provenance": {
+    "author": "Noam D. Elkies",
+    "paper": "An elliptic K3 surface X/Q(t) with Mordell-Weil rank 17 I: Formulas for X and base changes of ranks 18 and 19",
+    "arxiv": "2608.25406v1",
+    "date": "2026-08-26",
+    "published_cover": "u^2=4225*t^2+38636*t+289444",
+    "parameterization": "t=(289444-r^2)/(130*r-38636), u=65*t+r",
+    "rank18_status": "verified generic lower bound 18: equation (11) is the published quadratic base change; P01..P17 pull back from the released rank-17 family and recovered P18 is exact on Q(t,u), non-Galois-invariant, and has an exact verified trace relation to the published basis",
+    "p18_recovery": "recovered coordinates are not printed in Elkies's paper; Rank Hunter independently verifies the exact quadratic-cover Weierstrass identity, non-invariance under u -> -u, trace relation to P01..P17, and rational parameterization",
+    "source_url": "https://arxiv.org/abs/2608.25406",
+    "doi": "10.48550/arXiv.2608.25406",
+    "theorem_reference": "Theorem 3(a), §3, equation (11), and Proposition 8",
+    "published_claim": "Elkies proves that the fibration has quadratic base changes of rank at least 18 and gives equation (11) as one of the simplest such rational quadratic base changes.",
+    "release_audit_branch": "feature/elkies-rank18-first-cover",
+    "rank17_dependency": "Requires the released Elkies Rank-17 K3 package for the exact published base surface and P01..P17 formulas."
+  },
+  "minimum_rank_hunter_version": "0.9.2"
+}

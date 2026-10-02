@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "kloosterman_rank15",
+  "name": "Kloosterman Rank-15 K3",
+  "version": "1.1.0",
+  "historical_generic_rank_lower": 15,
+  "generic_rank_claim_state": "historical_record",
+  "curve_family_name": "Kloosterman explicit elliptic K3, rank 15 over Q(t)",
+  "description": "Kloosterman's explicit elliptic K3 surface from Theorem 1.2, proved to have Mordell-Weil rank exactly 15 over Q(t). Rank Hunter preserves that theorem as literature provenance only because this package does not bundle an explicit 15-section basis or a plugin-local exact generic certificate.",
+  "enabled_by_default": false,
+  "family": {
+    "kind": "json",
+    "file": "family.json"
+  },
+  "search_adapter": "search_adapter.py",
+  "capabilities": [
+    "candidate_generation",
+    "family_search",
+    "target_search",
+    "free_search"
+  ],
+  "validation_parameter": "2",
+  "candidate_defaults": {
+    "a_min": 1,
+    "a_max": 5000,
+    "b_min": 1,
+    "b_max": 200,
+    "engine": "sieve",
+    "stage_bounds": "200,500,1000",
+    "stage_keeps": "8000,1500,300",
+    "top": 300
+  },
+  "provenance": {
+    "author": "Remke Kloosterman",
+    "paper": "Elliptic K3 Surfaces with Geometric Mordell-Weil Rank 15",
+    "journal": "Canadian Mathematical Bulletin 50(2) (2007), 215-226",
+    "doi": "10.4153/CMB-2007-023-2",
+    "arxiv": "math/0502439",
+    "arxiv_submitted": "2005-02-21",
+    "source_url": "https://arxiv.org/abs/math/0502439",
+    "theorem_reference": "Theorem 1.2",
+    "theorem_surface": "y^2 = x^3 + 2*(t^8 + 2*t^4 + 1)*x - 4*t^2*(t^8 - 6*t^4 + 1)",
+    "published_claim": "Theorem 1.2 proves that this explicit elliptic K3 surface over Q has Mordell-Weil rank exactly 15 over Q(t).",
+    "abstract_surface_distinction": "The paper abstract highlights a different explicit surface with geometric Mordell-Weil rank 15; this plugin implements the Q-rational Theorem 1.2 surface.",
+    "proof_boundary": "Kloosterman proves exact rank 15 by combining a rank-at-least-15 construction with an upper bound on the Picard number using reductions at two good primes and the Artin-Tate discriminant comparison.",
+    "release_claim_boundary": "Rank Hunter records only historical_generic_rank_lower=15 and historical_record operational state because the plugin does not bundle the 15 generic sections or a current-core generic-rank certificate. No specialization lower bound is inherited from the theorem."
+  },
+  "search_presets": [
+    {
+      "id": "casual",
+      "label": "Casual",
+      "description": "Small, fast sanity-check run.",
+      "candidate": {
+        "a_min": 1,
+        "a_max": 1250,
+        "b_min": 1,
+        "b_max": 50,
+        "engine": "sieve",
+        "stage_bounds": "200,500",
+        "stage_keeps": "2000,375",
+        "top": 100
+      },
+      "family": {
+        "limit": 20,
+        "primary_strategy": "pari",
+        "quick_timeout": 30
+      }
+    },
+    {
+      "id": "scan",
+      "label": "Scan",
+      "description": "Balanced screening profile for routine hunting.",
+      "candidate": {
+        "a_min": 1,
+        "a_max": 5000,
+        "b_min": 1,
+        "b_max": 200,
+        "engine": "sieve",
+        "stage_bounds": "200,500,1000",
+        "stage_keeps": "8000,1500,300",
+        "top": 300
+      },
+      "family": {
+        "limit": 100,
+        "primary_strategy": "pari",
+        "quick_timeout": 60
+      }
+    },
+    {
+      "id": "widen",
+      "label": "Widen",
+      "description": "Explore a substantially larger rational parameter box.",
+      "candidate": {
+        "a_min": 1,
+        "a_max": 15000,
+        "b_min": 1,
+        "b_max": 600,
+        "engine": "sieve",
+        "stage_bounds": "200,500,1000",
+        "stage_keeps": "16000,3000,600",
+        "top": 1000
+      },
+      "family": {
+        "limit": 100,
+        "primary_strategy": "pari",
+        "quick_timeout": 120
+      }
+    },
+    {
+      "id": "deep",
+      "label": "Deep",
+      "description": "Keep the family region focused and spend much more arithmetic effort per survivor.",
+      "candidate": {
+        "a_min": 1,
+        "a_max": 5000,
+        "b_min": 1,
+        "b_max": 200,
+        "engine": "sieve",
+        "stage_bounds": "200,500,1000,5000",
+        "stage_keeps": "8000,1500,300",
+        "top": 300
+      },
+      "family": {
+        "limit": 30,
+        "primary_strategy": "mwrank",
+        "quick_timeout": 300
+      }
+    }
+  ],
+  "search_options": {
+    "family": [
+      {
+        "key": "primary_strategy",
+        "type": "choice",
+        "label": "Quick bound engine",
+        "default": "pari",
+        "choices": [
+          "pari",
+          "mwrank"
+        ]
+      },
+      {
+        "key": "quick_timeout",
+        "type": "int",
+        "label": "Quick bound timeout",
+        "default": 120,
+        "min": 5,
+        "max": 7200
+      }
+    ],
+    "target": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "ratpoints height stages",
+        "default": "1000,10000,100000"
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 20,
+        "min": 1,
+        "max": 3600
+      },
+      {
+        "key": "exact_candidates",
+        "type": "int",
+        "label": "Exact candidates",
+        "default": 8,
+        "min": 0,
+        "max": 256
+      },
+      {
+        "key": "certificate_timeout",
+        "type": "int",
+        "label": "Exact certificate timeout",
+        "default": 120,
+        "min": 1,
+        "max": 7200
+      }
+    ]
+  },
+  "minimum_rank_hunter_version": "0.9.2"
+}

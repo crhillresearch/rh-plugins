@@ -1,0 +1,9 @@
+{
+  "charts": [
+    {"id":"identity","matrix":["1","0","0","1"]},
+    {"id":"minus-reciprocal","matrix":["0","-1","1","0"]},
+    {"id":"t-plus","matrix":["1","1","1","-1"]},
+    {"id":"t-minus","matrix":["-1","1","1","1"]},
+    {"id":"other","matrix":["2","1","1","1"]}
+  ]
+}

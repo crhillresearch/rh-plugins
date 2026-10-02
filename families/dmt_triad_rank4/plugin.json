@@ -1,0 +1,305 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "dmt_triad_rank4",
+  "name": "DMT Triad Family",
+  "version": "0.1.3",
+  "description": "REA CURVE2 / Triad Family from DMT-001: six regularity-selected Piezas-sextuple triads, each with full rational 2-torsion and four explicit independent generic sections.",
+  "enabled_by_default": false,
+  "default_variant": "cef",
+  "minimum_rank_hunter_version": "0.9.2",
+  "capabilities": [
+    "candidate_generation",
+    "family_search",
+    "target_search",
+    "known_subgroup",
+    "free_search"
+  ],
+  "search_adapter": "search_adapter.py",
+  "variants": [
+    {
+      "id": "ace",
+      "name": "Triad ACE",
+      "generic_rank": 4,
+      "curve_family_name": "DMT Triad Family - ACE",
+      "validation_parameter": "12/5",
+      "candidate_defaults": {
+        "a_min": -1000,
+        "a_max": 1000,
+        "b_min": 1,
+        "b_max": 150,
+        "stage_bounds": "500,2000,5000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "family": {
+        "kind": "module",
+        "spec": "dmt_triad_ace",
+        "file": "ace_family.py",
+        "aliases": [
+          "rea-curve2-ace",
+          "dmt-triad-ace"
+        ]
+      },
+      "historical_generic_rank_lower": 4,
+      "verified_generic_rank_lower": 4,
+      "generic_rank_claim_state": "generic_lower_bound_verified"
+    },
+    {
+      "id": "acf",
+      "name": "Triad ACF",
+      "generic_rank": 4,
+      "curve_family_name": "DMT Triad Family - ACF",
+      "validation_parameter": "12/5",
+      "candidate_defaults": {
+        "a_min": -1000,
+        "a_max": 1000,
+        "b_min": 1,
+        "b_max": 150,
+        "stage_bounds": "500,2000,5000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "family": {
+        "kind": "module",
+        "spec": "dmt_triad_acf",
+        "file": "acf_family.py",
+        "aliases": [
+          "rea-curve2-acf",
+          "dmt-triad-acf"
+        ]
+      },
+      "historical_generic_rank_lower": 4,
+      "verified_generic_rank_lower": 4,
+      "generic_rank_claim_state": "generic_lower_bound_verified"
+    },
+    {
+      "id": "bde",
+      "name": "Triad BDE",
+      "generic_rank": 4,
+      "curve_family_name": "DMT Triad Family - BDE",
+      "validation_parameter": "12/5",
+      "candidate_defaults": {
+        "a_min": -1000,
+        "a_max": 1000,
+        "b_min": 1,
+        "b_max": 150,
+        "stage_bounds": "500,2000,5000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "family": {
+        "kind": "module",
+        "spec": "dmt_triad_bde",
+        "file": "bde_family.py",
+        "aliases": [
+          "rea-curve2-bde",
+          "dmt-triad-bde"
+        ]
+      },
+      "historical_generic_rank_lower": 4,
+      "verified_generic_rank_lower": 4,
+      "generic_rank_claim_state": "generic_lower_bound_verified"
+    },
+    {
+      "id": "bdf",
+      "name": "Triad BDF",
+      "generic_rank": 4,
+      "curve_family_name": "DMT Triad Family - BDF",
+      "validation_parameter": "12/5",
+      "candidate_defaults": {
+        "a_min": -1000,
+        "a_max": 1000,
+        "b_min": 1,
+        "b_max": 150,
+        "stage_bounds": "500,2000,5000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "family": {
+        "kind": "module",
+        "spec": "dmt_triad_bdf",
+        "file": "bdf_family.py",
+        "aliases": [
+          "rea-curve2-bdf",
+          "dmt-triad-bdf"
+        ]
+      },
+      "historical_generic_rank_lower": 4,
+      "verified_generic_rank_lower": 4,
+      "generic_rank_claim_state": "generic_lower_bound_verified"
+    },
+    {
+      "id": "bef",
+      "name": "Triad BEF",
+      "generic_rank": 4,
+      "curve_family_name": "DMT Triad Family - BEF",
+      "validation_parameter": "12/5",
+      "candidate_defaults": {
+        "a_min": -1000,
+        "a_max": 1000,
+        "b_min": 1,
+        "b_max": 150,
+        "stage_bounds": "500,2000,5000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "family": {
+        "kind": "module",
+        "spec": "dmt_triad_bef",
+        "file": "bef_family.py",
+        "aliases": [
+          "rea-curve2-bef",
+          "dmt-triad-bef"
+        ]
+      },
+      "historical_generic_rank_lower": 4,
+      "verified_generic_rank_lower": 4,
+      "generic_rank_claim_state": "generic_lower_bound_verified"
+    },
+    {
+      "id": "cef",
+      "name": "Triad CEF",
+      "generic_rank": 4,
+      "curve_family_name": "DMT Triad Family - CEF",
+      "validation_parameter": "12/5",
+      "candidate_defaults": {
+        "a_min": -1000,
+        "a_max": 1000,
+        "b_min": 1,
+        "b_max": 150,
+        "stage_bounds": "500,2000,5000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "family": {
+        "kind": "module",
+        "spec": "dmt_triad_cef",
+        "file": "cef_family.py",
+        "aliases": [
+          "rea-curve2-cef",
+          "dmt-triad-cef",
+          "triad-family"
+        ]
+      },
+      "historical_generic_rank_lower": 4,
+      "verified_generic_rank_lower": 4,
+      "generic_rank_claim_state": "generic_lower_bound_verified"
+    }
+  ],
+  "provenance": {
+    "author": "C. R. Hill",
+    "paper": "Regularity-Selected Generic Rank at Least Four in the Piezas Diophantine Sextuple",
+    "paper_id": "DMT-001",
+    "url": "https://hillaxiom.com/papers/dmt-001.pdf",
+    "source_repository": "crhillresearch/dmt-rank-jumps",
+    "source_files": [
+      "dmt_rank_jumps/family.py",
+      "dmt_rank_jumps/points.py"
+    ],
+    "aliases": [
+      "REA CURVE2",
+      "Triad Family"
+    ],
+    "claim_boundary": "DMT-001 supplies four explicit generic sections on each of the six regularity-selected triads. Rank Hunter operationally verifies generic lower bound >=4 by exact independence of those four sections at the good specialization t=12/5; specialized rank is certified separately. Frozen CEF high-rank point bundles are candidate evidence and require independent Rank Hunter certification before promoting rigorous lower bounds.",
+    "publication_status": "preprint",
+    "publication_date": "2026-09-12",
+    "source_commit": "3f53baaedcbdb852e2e999578bf0f75850ad3e5f",
+    "plugin_release_baseline_commit": "36d37730ded550a04ceb383434c466afd81e54c9"
+  },
+  "corpora": [
+    {
+      "id": "curves2",
+      "name": "DMT Rank-Jumps Corpus (optional)",
+      "description": "Optional read-only research corpus built from the private crhillresearch/dmt-rank-jumps GitHub Actions artifact history. Family generation/search/target/validation do not require this corpus. Installation validates a populated curves2 SQLite artifact before replacing the local cache; building/downloading it requires authenticated access to the private source repository.",
+      "cache_file": "curves2.db",
+      "builder": "build_curves2.py",
+      "variant_family_keys": {
+        "ace": "ace",
+        "acf": "acf",
+        "bde": "bde",
+        "bdf": "bdf",
+        "bef": "bef",
+        "cef": "cef"
+      }
+    }
+  ],
+  "search_options": {
+    "family": [
+      {
+        "key": "quick_timeout",
+        "type": "int",
+        "label": "PARI quick timeout",
+        "default": 120,
+        "min": 1
+      },
+      {
+        "key": "strong_timeout",
+        "type": "int",
+        "label": "Strong mwrank timeout",
+        "default": 600,
+        "min": 1
+      },
+      {
+        "key": "quick_only",
+        "type": "bool",
+        "label": "PARI screen only",
+        "default": true
+      },
+      {
+        "key": "fast_screen",
+        "type": "bool",
+        "label": "Defer expensive metadata",
+        "default": true
+      },
+      {
+        "key": "generic_certificate_timeout",
+        "type": "int",
+        "label": "Section certificate timeout",
+        "default": 120,
+        "min": 1
+      }
+    ],
+    "target": [
+      {
+        "key": "quick_timeout",
+        "type": "int",
+        "label": "PARI quick timeout",
+        "default": 120,
+        "min": 1
+      },
+      {
+        "key": "strong_timeout",
+        "type": "int",
+        "label": "Strong mwrank timeout",
+        "default": 600,
+        "min": 1
+      },
+      {
+        "key": "quick_only",
+        "type": "bool",
+        "label": "PARI screen only",
+        "default": true
+      },
+      {
+        "key": "fast_screen",
+        "type": "bool",
+        "label": "Defer expensive metadata",
+        "default": true
+      },
+      {
+        "key": "generic_certificate_timeout",
+        "type": "int",
+        "label": "Section certificate timeout",
+        "default": 120,
+        "min": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "id": "campbell1999_rank13",
+  "name": "Campbell C1-C6",
+  "version": "3.0.3",
+  "plugin_type": "family",
+  "historical_generic_rank_lower": 13,
+  "generic_rank_claim_state": "historical_record",
+  "description": "Campbell 1999 six published one-parameter rank-13 branches exposed as one Rank Hunter plugin with six exact family variants.",
+  "enabled_by_default": false,
+  "default_variant": "c1",
+  "variants": [
+    {
+      "id": "c1",
+      "name": "C1",
+      "curve_family_name": "Campbell 1999 C1, generic rank >=13",
+      "family": {
+        "kind": "json",
+        "file": "families/c1.json"
+      },
+      "validation_parameter": "1",
+      "candidate_defaults": {
+        "a_min": 1,
+        "a_max": 6000,
+        "b_min": 1,
+        "b_max": 250,
+        "engine": "sieve",
+        "stage_bounds": "200,500,1000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500
+      },
+      "provenance": {
+        "author": "Garikai Campbell",
+        "year": 1999,
+        "construction": "six explicit rank-13 quartic families from sextuples A and square completion",
+        "branch": "C1",
+        "sextuple": [
+          0,
+          87,
+          164,
+          264,
+          375,
+          452
+        ],
+        "extra_x": "(7/31)*u+(10848/31)",
+        "claim_boundary": "generic rank 13 is provenance metadata; each stored specialization lower bound is promoted only by exact Rank Hunter certification"
+      }
+    },
+    {
+      "id": "c2",
+      "name": "C2",
+      "curve_family_name": "Campbell 1999 C2, generic rank >=13",
+      "family": {
+        "kind": "json",
+        "file": "families/c2.json"
+      },
+      "validation_parameter": "1",
+      "candidate_defaults": {
+        "a_min": 1,
+        "a_max": 6000,
+        "b_min": 1,
+        "b_max": 250,
+        "engine": "sieve",
+        "stage_bounds": "200,500,1000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500
+      },
+      "provenance": {
+        "author": "Garikai Campbell",
+        "year": 1999,
+        "construction": "six explicit rank-13 quartic families from sextuples A and square completion",
+        "branch": "C2",
+        "sextuple": [
+          0,
+          55,
+          146,
+          255,
+          260,
+          346
+        ],
+        "extra_x": "(-7/27)*u+(6920/27)",
+        "claim_boundary": "generic rank 13 is provenance metadata; each stored specialization lower bound is promoted only by exact Rank Hunter certification"
+      }
+    },
+    {
+      "id": "c3",
+      "name": "C3",
+      "curve_family_name": "Campbell 1999 C3, generic rank >=13",
+      "family": {
+        "kind": "json",
+        "file": "families/c3.json"
+      },
+      "validation_parameter": "1",
+      "candidate_defaults": {
+        "a_min": 1,
+        "a_max": 6000,
+        "b_min": 1,
+        "b_max": 250,
+        "engine": "sieve",
+        "stage_bounds": "200,500,1000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500
+      },
+      "provenance": {
+        "author": "Garikai Campbell",
+        "year": 1999,
+        "construction": "six explicit rank-13 quartic families from sextuples A and square completion",
+        "branch": "C3",
+        "sextuple": [
+          0,
+          355,
+          602,
+          910,
+          1580,
+          1827
+        ],
+        "extra_x": "(19/89)*u+(127890/89)",
+        "claim_boundary": "generic rank 13 is provenance metadata; each stored specialization lower bound is promoted only by exact Rank Hunter certification"
+      }
+    },
+    {
+      "id": "c4",
+      "name": "C4",
+      "curve_family_name": "Campbell 1999 C4, generic rank >=13",
+      "family": {
+        "kind": "json",
+        "file": "families/c4.json"
+      },
+      "validation_parameter": "1",
+      "candidate_defaults": {
+        "a_min": 1,
+        "a_max": 6000,
+        "b_min": 1,
+        "b_max": 250,
+        "engine": "sieve",
+        "stage_bounds": "200,500,1000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500
+      },
+      "provenance": {
+        "author": "Garikai Campbell",
+        "year": 1999,
+        "construction": "six explicit rank-13 quartic families from sextuples A and square completion",
+        "branch": "C4",
+        "sextuple": [
+          0,
+          97,
+          104,
+          129,
+          500,
+          532
+        ],
+        "extra_x": "(1/23)*u+(9804/23)",
+        "claim_boundary": "generic rank 13 is provenance metadata; each stored specialization lower bound is promoted only by exact Rank Hunter certification"
+      }
+    },
+    {
+      "id": "c5",
+      "name": "C5",
+      "curve_family_name": "Campbell 1999 C5, generic rank >=13",
+      "family": {
+        "kind": "json",
+        "file": "families/c5.json"
+      },
+      "validation_parameter": "1",
+      "candidate_defaults": {
+        "a_min": 1,
+        "a_max": 6000,
+        "b_min": 1,
+        "b_max": 250,
+        "engine": "sieve",
+        "stage_bounds": "200,500,1000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500
+      },
+      "provenance": {
+        "author": "Garikai Campbell",
+        "year": 1999,
+        "construction": "six explicit rank-13 quartic families from sextuples A and square completion",
+        "branch": "C5",
+        "sextuple": [
+          0,
+          42,
+          47,
+          82,
+          152,
+          175
+        ],
+        "extra_x": "(1/21)*u+(410/3)",
+        "claim_boundary": "generic rank 13 is provenance metadata; each stored specialization lower bound is promoted only by exact Rank Hunter certification"
+      }
+    },
+    {
+      "id": "c6",
+      "name": "C6",
+      "curve_family_name": "Campbell 1999 C6, generic rank >=13",
+      "family": {
+        "kind": "json",
+        "file": "families/c6.json"
+      },
+      "validation_parameter": "1",
+      "candidate_defaults": {
+        "a_min": 1,
+        "a_max": 6000,
+        "b_min": 1,
+        "b_max": 250,
+        "engine": "sieve",
+        "stage_bounds": "200,500,1000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500
+      },
+      "provenance": {
+        "author": "Garikai Campbell",
+        "year": 1999,
+        "construction": "six explicit rank-13 quartic families from sextuples A and square completion",
+        "branch": "C6",
+        "sextuple": [
+          0,
+          37,
+          62,
+          110,
+          180,
+          205
+        ],
+        "extra_x": "(7/23)*u+(1271/23)",
+        "claim_boundary": "generic rank 13 is provenance metadata; each stored specialization lower bound is promoted only by exact Rank Hunter certification"
+      }
+    }
+  ],
+  "search_adapter": "search_adapter.py",
+  "capabilities": [
+    "candidate_generation",
+    "family_search",
+    "target_search",
+    "known_subgroup",
+    "quartic_search",
+    "pgl2_search",
+    "free_search"
+  ],
+  "provenance": {
+    "author": "Garikai Campbell",
+    "year": 1999,
+    "construction": "six explicit rank-13 quartic families from sextuples A and square completion",
+    "claim_boundary": "generic rank 13 is provenance metadata; specialization lower bounds are promoted only by exact Rank Hunter certification",
+    "citation": "Garikai Campbell, Finding Elliptic Curves and Families of Elliptic Curves over Q of Large Rank, PhD dissertation, Rutgers University, 1999, Chapter 3 §3.3.2.",
+    "source_url": "https://ctnt-summer.math.uconn.edu/wp-content/uploads/sites/1632/2020/06/Campbell-Finding-elliptic-curves-and-families-of-elliptic-curves-over-Q-of-large-rank.pdf",
+    "theorem_reference": "Chapter 3 §3.3.2, Examples, PDF pp. 46–47"
+  },
+  "supersedes_plugin_ids": [
+    "campbell1999_rank13_c1",
+    "campbell1999_rank13_c2",
+    "campbell1999_rank13_c3",
+    "campbell1999_rank13_c4",
+    "campbell1999_rank13_c5",
+    "campbell1999_rank13_c6"
+  ]
+}

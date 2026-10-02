@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "plugin_type": "extension",
+  "id": "leaderboard_compare",
+  "name": "Leaderboard Compare",
+  "version": "0.2.1",
+  "description": "Theme-aware leaderboard comparison with rational torsion-group filtering for Rank Hunter and synchronized ICARM high-rank curves.",
+  "enabled_by_default": false,
+  "icon": ":material/monitoring:",
+  "menu": {
+    "id": "leaderboard_compare",
+    "label": "Leaderboard Compare",
+    "section": "Analysis",
+    "icon": ":material/monitoring:"
+  },
+  "entrypoint": "extension.py"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Mazur torsion Trivial direct torsion slice",
+  "generic_rank": null,
+  "parameter": "t",
+  "a_invariants": [
+    "0",
+    "0",
+    "0",
+    "t",
+    "1"
+  ],
+  "sections": [],
+  "notes": "A broad one-parameter direct slice with no forced rational torsion. It is not an exhaustive parametrization of all trivial-torsion Q-isomorphism classes; exact specialization filtering is authoritative."
+}

@@ -1,0 +1,1061 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "mazur_torsion_families",
+  "name": "Mazur Torsion Families",
+  "version": "0.1.5",
+  "icon": ":material/hub:",
+  "description": "Direct prescribed-torsion search families covering all 15 rational torsion groups allowed by Mazur over Q. Kubert-Tate modular families are used where this package carries a one-parameter universal model; low-level 2/3-torsion cases remain explicitly labeled direct slices. Rank Hunter exact-checks specialized torsion before any record-hunt result counts.",
+  "enabled_by_default": true,
+  "default_variant": "c2xc8",
+  "capabilities": [
+    "candidate_generation"
+  ],
+  "variants": [
+    {
+      "id": "trivial",
+      "name": "Trivial direct torsion slice",
+      "curve_family_name": "Mazur torsion Trivial direct torsion slice",
+      "torsion_groups": [
+        "Trivial"
+      ],
+      "torsion_provider_role": "prescribed_subfamily",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 31,
+        "goal_rank": 32,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": false
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 32,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion."
+      },
+      "family": {
+        "kind": "json",
+        "file": "trivial.json",
+        "aliases": [
+          "mazur-trivial",
+          "torsion-trivial"
+        ]
+      }
+    },
+    {
+      "id": "c2",
+      "name": "C2 direct torsion slice",
+      "curve_family_name": "Mazur torsion C2 direct torsion slice",
+      "torsion_groups": [
+        "C2"
+      ],
+      "torsion_provider_role": "prescribed_subfamily",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 20,
+        "goal_rank": 21,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": true
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 21,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion."
+      },
+      "family": {
+        "kind": "json",
+        "file": "c2.json",
+        "aliases": [
+          "mazur-c2",
+          "torsion-c2"
+        ]
+      }
+    },
+    {
+      "id": "c3",
+      "name": "C3 direct torsion slice",
+      "curve_family_name": "Mazur torsion C3 direct torsion slice",
+      "torsion_groups": [
+        "C3"
+      ],
+      "torsion_provider_role": "prescribed_subfamily",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 15,
+        "goal_rank": 16,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": true
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 16,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion."
+      },
+      "family": {
+        "kind": "json",
+        "file": "c3.json",
+        "aliases": [
+          "mazur-c3",
+          "torsion-c3"
+        ]
+      }
+    },
+    {
+      "id": "c4",
+      "name": "C4 universal family",
+      "curve_family_name": "Mazur torsion C4 universal family",
+      "torsion_groups": [
+        "C4"
+      ],
+      "torsion_provider_role": "canonical_universal",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 13,
+        "goal_rank": 14,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": true
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 14,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion."
+      },
+      "family": {
+        "kind": "json",
+        "file": "c4.json",
+        "aliases": [
+          "mazur-c4",
+          "torsion-c4"
+        ]
+      }
+    },
+    {
+      "id": "c5",
+      "name": "C5 universal family",
+      "curve_family_name": "Mazur torsion C5 universal family",
+      "torsion_groups": [
+        "C5"
+      ],
+      "torsion_provider_role": "canonical_universal",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 9,
+        "goal_rank": 10,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": false
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 10,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion."
+      },
+      "family": {
+        "kind": "json",
+        "file": "c5.json",
+        "aliases": [
+          "mazur-c5",
+          "torsion-c5"
+        ]
+      }
+    },
+    {
+      "id": "c6",
+      "name": "C6 universal family",
+      "curve_family_name": "Mazur torsion C6 universal family",
+      "torsion_groups": [
+        "C6"
+      ],
+      "torsion_provider_role": "canonical_universal",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 9,
+        "goal_rank": 10,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": false
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 10,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion."
+      },
+      "family": {
+        "kind": "json",
+        "file": "c6.json",
+        "aliases": [
+          "mazur-c6",
+          "torsion-c6"
+        ]
+      }
+    },
+    {
+      "id": "c7",
+      "name": "C7 universal family",
+      "curve_family_name": "Mazur torsion C7 universal family",
+      "torsion_groups": [
+        "C7"
+      ],
+      "torsion_provider_role": "canonical_universal",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 6,
+        "goal_rank": 7,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": false
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 7,
+        "pool_size": 300,
+        "deep_keep": 80,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion.",
+        "pointed_quartic_enabled": true,
+        "pointed_quartic_min_rank": 1,
+        "pointed_quartic_top_fresh": 12,
+        "pointed_quartic_anchors": 24,
+        "pointed_quartic_pool_size": 256,
+        "pointed_quartic_rounds": 2,
+        "pointed_quartic_deep_keep": 12,
+        "pointed_quartic_timeout": 8,
+        "pointed_quartic_reduce_timeout": 20,
+        "pointed_quartic_heights": [
+          10000,
+          1000000
+        ],
+        "classical_covering_enabled": true,
+        "classical_covering_engine": "simon_known",
+        "classical_covering_min_rank": 1,
+        "classical_covering_top_fresh": 12,
+        "classical_covering_timeout": 300
+      },
+      "family": {
+        "kind": "json",
+        "file": "c7.json",
+        "aliases": [
+          "mazur-c7",
+          "torsion-c7"
+        ]
+      }
+    },
+    {
+      "id": "c8",
+      "name": "C8 universal family",
+      "curve_family_name": "Mazur torsion C8 universal family",
+      "torsion_groups": [
+        "C8"
+      ],
+      "torsion_provider_role": "canonical_universal",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 6,
+        "goal_rank": 7,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": false
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 7,
+        "pool_size": 300,
+        "deep_keep": 80,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion.",
+        "pointed_quartic_enabled": true,
+        "pointed_quartic_min_rank": 1,
+        "pointed_quartic_top_fresh": 12,
+        "pointed_quartic_anchors": 24,
+        "pointed_quartic_pool_size": 256,
+        "pointed_quartic_rounds": 2,
+        "pointed_quartic_deep_keep": 12,
+        "pointed_quartic_timeout": 8,
+        "pointed_quartic_reduce_timeout": 20,
+        "pointed_quartic_heights": [
+          10000,
+          1000000
+        ],
+        "classical_covering_enabled": true,
+        "classical_covering_engine": "simon_known",
+        "classical_covering_min_rank": 1,
+        "classical_covering_top_fresh": 12,
+        "classical_covering_timeout": 300
+      },
+      "family": {
+        "kind": "json",
+        "file": "c8.json",
+        "aliases": [
+          "mazur-c8",
+          "torsion-c8"
+        ]
+      }
+    },
+    {
+      "id": "c9",
+      "name": "C9 universal family",
+      "curve_family_name": "Mazur torsion C9 universal family",
+      "torsion_groups": [
+        "C9"
+      ],
+      "torsion_provider_role": "canonical_universal",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 4,
+        "goal_rank": 5,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": false
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 5,
+        "pool_size": 300,
+        "deep_keep": 80,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion.",
+        "pointed_quartic_enabled": true,
+        "pointed_quartic_min_rank": 1,
+        "pointed_quartic_top_fresh": 12,
+        "pointed_quartic_anchors": 24,
+        "pointed_quartic_pool_size": 256,
+        "pointed_quartic_rounds": 2,
+        "pointed_quartic_deep_keep": 12,
+        "pointed_quartic_timeout": 8,
+        "pointed_quartic_reduce_timeout": 20,
+        "pointed_quartic_heights": [
+          10000,
+          1000000
+        ],
+        "classical_covering_enabled": true,
+        "classical_covering_engine": "simon_known",
+        "classical_covering_min_rank": 1,
+        "classical_covering_top_fresh": 12,
+        "classical_covering_timeout": 300
+      },
+      "family": {
+        "kind": "json",
+        "file": "c9.json",
+        "aliases": [
+          "mazur-c9",
+          "torsion-c9"
+        ]
+      }
+    },
+    {
+      "id": "c10",
+      "name": "C10 universal family",
+      "curve_family_name": "Mazur torsion C10 universal family",
+      "torsion_groups": [
+        "C10"
+      ],
+      "torsion_provider_role": "canonical_universal",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 4,
+        "goal_rank": 5,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": false
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 5,
+        "pool_size": 300,
+        "deep_keep": 80,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion.",
+        "pointed_quartic_enabled": true,
+        "pointed_quartic_min_rank": 1,
+        "pointed_quartic_top_fresh": 12,
+        "pointed_quartic_anchors": 24,
+        "pointed_quartic_pool_size": 256,
+        "pointed_quartic_rounds": 2,
+        "pointed_quartic_deep_keep": 12,
+        "pointed_quartic_timeout": 8,
+        "pointed_quartic_reduce_timeout": 20,
+        "pointed_quartic_heights": [
+          10000,
+          1000000
+        ],
+        "classical_covering_enabled": true,
+        "classical_covering_engine": "simon_known",
+        "classical_covering_min_rank": 1,
+        "classical_covering_top_fresh": 12,
+        "classical_covering_timeout": 300
+      },
+      "family": {
+        "kind": "json",
+        "file": "c10.json",
+        "aliases": [
+          "mazur-c10",
+          "torsion-c10"
+        ]
+      }
+    },
+    {
+      "id": "c12",
+      "name": "C12 universal family",
+      "curve_family_name": "Mazur torsion C12 universal family",
+      "torsion_groups": [
+        "C12"
+      ],
+      "torsion_provider_role": "canonical_universal",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 4,
+        "goal_rank": 5,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": false
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 5,
+        "pool_size": 300,
+        "deep_keep": 80,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion.",
+        "pointed_quartic_enabled": true,
+        "pointed_quartic_min_rank": 1,
+        "pointed_quartic_top_fresh": 12,
+        "pointed_quartic_anchors": 24,
+        "pointed_quartic_pool_size": 256,
+        "pointed_quartic_rounds": 2,
+        "pointed_quartic_deep_keep": 12,
+        "pointed_quartic_timeout": 8,
+        "pointed_quartic_reduce_timeout": 20,
+        "pointed_quartic_heights": [
+          10000,
+          1000000
+        ],
+        "classical_covering_enabled": true,
+        "classical_covering_engine": "simon_known",
+        "classical_covering_min_rank": 1,
+        "classical_covering_top_fresh": 12,
+        "classical_covering_timeout": 300
+      },
+      "family": {
+        "kind": "json",
+        "file": "c12.json",
+        "aliases": [
+          "mazur-c12",
+          "torsion-c12"
+        ]
+      }
+    },
+    {
+      "id": "c2xc2",
+      "name": "C2 × C2 direct torsion slice",
+      "curve_family_name": "Mazur torsion C2 × C2 direct torsion slice",
+      "torsion_groups": [
+        "C2 × C2"
+      ],
+      "torsion_provider_role": "prescribed_subfamily",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 15,
+        "goal_rank": 16,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": true
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 16,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion."
+      },
+      "family": {
+        "kind": "json",
+        "file": "c2xc2.json",
+        "aliases": [
+          "mazur-c2xc2",
+          "torsion-c2xc2"
+        ]
+      }
+    },
+    {
+      "id": "c2xc4",
+      "name": "C2 × C4 universal family",
+      "curve_family_name": "Mazur torsion C2 × C4 universal family",
+      "torsion_groups": [
+        "C2 × C4"
+      ],
+      "torsion_provider_role": "canonical_universal",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 9,
+        "goal_rank": 10,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": false
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 10,
+        "pool_size": 180,
+        "deep_keep": 36,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion."
+      },
+      "family": {
+        "kind": "json",
+        "file": "c2xc4.json",
+        "aliases": [
+          "mazur-c2xc4",
+          "torsion-c2xc4"
+        ]
+      }
+    },
+    {
+      "id": "c2xc6",
+      "name": "C2 × C6 universal family",
+      "curve_family_name": "Mazur torsion C2 × C6 universal family",
+      "torsion_groups": [
+        "C2 × C6"
+      ],
+      "torsion_provider_role": "canonical_universal",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 6,
+        "goal_rank": 7,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": false
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 7,
+        "pool_size": 300,
+        "deep_keep": 80,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion.",
+        "pointed_quartic_enabled": true,
+        "pointed_quartic_min_rank": 1,
+        "pointed_quartic_top_fresh": 12,
+        "pointed_quartic_anchors": 24,
+        "pointed_quartic_pool_size": 256,
+        "pointed_quartic_rounds": 2,
+        "pointed_quartic_deep_keep": 12,
+        "pointed_quartic_timeout": 8,
+        "pointed_quartic_reduce_timeout": 20,
+        "pointed_quartic_heights": [
+          10000,
+          1000000
+        ],
+        "classical_covering_enabled": true,
+        "classical_covering_engine": "simon_known",
+        "classical_covering_min_rank": 1,
+        "classical_covering_top_fresh": 12,
+        "classical_covering_timeout": 300
+      },
+      "family": {
+        "kind": "json",
+        "file": "c2xc6.json",
+        "aliases": [
+          "mazur-c2xc6",
+          "torsion-c2xc6"
+        ]
+      }
+    },
+    {
+      "id": "c2xc8",
+      "name": "C2 × C8 universal family",
+      "curve_family_name": "Mazur torsion C2 × C8 universal family",
+      "torsion_groups": [
+        "C2 × C8"
+      ],
+      "torsion_provider_role": "canonical_universal",
+      "validation_parameter": "2",
+      "torsion_record": {
+        "rank_lower": 3,
+        "goal_rank": 4,
+        "source": {
+          "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+          "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+          "as_of": "2026-10-02"
+        },
+        "secondary_family_search_recommended": false
+      },
+      "candidate_defaults": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1500,2000",
+        "stage_keeps": "10000,1800,400",
+        "top": 400,
+        "engine": "sieve"
+      },
+      "auto_search": {
+        "target_rank": 4,
+        "pool_size": 300,
+        "deep_keep": 80,
+        "upper_timeout": 8,
+        "final_upper_timeout": 30,
+        "exact_candidates": 64,
+        "strategy_note": "Direct prescribed-torsion record hunt: exact torsion match before rank promotion.",
+        "pointed_quartic_enabled": true,
+        "pointed_quartic_min_rank": 1,
+        "pointed_quartic_top_fresh": 12,
+        "pointed_quartic_anchors": 24,
+        "pointed_quartic_pool_size": 256,
+        "pointed_quartic_rounds": 2,
+        "pointed_quartic_deep_keep": 12,
+        "pointed_quartic_timeout": 8,
+        "pointed_quartic_reduce_timeout": 20,
+        "pointed_quartic_heights": [
+          10000,
+          1000000
+        ],
+        "classical_covering_enabled": true,
+        "classical_covering_engine": "simon_known",
+        "classical_covering_min_rank": 1,
+        "classical_covering_top_fresh": 12,
+        "classical_covering_timeout": 300
+      },
+      "family": {
+        "kind": "json",
+        "file": "c2xc8.json",
+        "aliases": [
+          "mazur-c2xc8",
+          "torsion-c2xc8"
+        ]
+      },
+      "search_presets": [
+        {
+          "id": "scan",
+          "label": "Record scan",
+          "description": "C2 x C8 record-hunt scan tuned to spend less time on deep Nagao precomputation and more on exact point discovery.",
+          "candidate": {
+            "a_min": -3000,
+            "a_max": 3000,
+            "b_min": 1,
+            "b_max": 300,
+            "stage_bounds": "500,1500,2000",
+            "stage_keeps": "10000,1800,400",
+            "top": 400,
+            "engine": "sieve"
+          }
+        },
+        {
+          "id": "widen",
+          "label": "Record widen",
+          "description": "Wider C2 x C8 parameter box with a moderate prime budget.",
+          "candidate": {
+            "a_min": -10000,
+            "a_max": 10000,
+            "b_min": 1,
+            "b_max": 1000,
+            "stage_bounds": "500,1500,2000",
+            "stage_keeps": "30000,4000,800",
+            "top": 800,
+            "engine": "sieve"
+          }
+        },
+        {
+          "id": "deep",
+          "label": "Deep",
+          "description": "Deep single-curve C2 x C8 attack: exact torsion gate, stronger prime/point work, generator recovery, and bounded upper-bound rescue.",
+          "candidate": {
+            "a_min": -5000,
+            "a_max": 5000,
+            "b_min": 1,
+            "b_max": 500,
+            "stage_bounds": "1000,1500,2000",
+            "stage_keeps": "16000,3000,600",
+            "top": 600,
+            "engine": "sieve"
+          },
+          "target": {
+            "backend": "Torsion",
+            "pipeline_preset": "aggressive_rank_hunter",
+            "goal_rank": 4,
+            "ratpoints_backend": "GPU"
+          }
+        },
+        {
+          "id": "fiber_expansion",
+          "label": "Fiber Expansion",
+          "description": "Expand the exact target curve through pointed-quartic/affine geometry and repeated exact point discovery. This is a torsion-safe curve pipeline, not a claim of generic family rank.",
+          "target": {
+            "backend": "Torsion",
+            "pipeline_preset": "geometry",
+            "goal_rank": 4,
+            "ratpoints_backend": "GPU"
+          }
+        },
+        {
+          "id": "generator_breaker",
+          "label": "Generator Breaker",
+          "description": "Concentrate compute on extracting hidden or high-height Mordell-Weil generators from an already-promising C2 x C8 specialization.",
+          "target": {
+            "backend": "Torsion",
+            "pipeline_preset": "generator_breaker",
+            "goal_rank": 4,
+            "ratpoints_backend": "GPU"
+          }
+        },
+        {
+          "id": "geometry_grinder",
+          "label": "Geometry Grinder",
+          "description": "Run coverings and self-feeding Mordell-Weil geometry on one exact C2 x C8 target before another independence pass.",
+          "target": {
+            "backend": "Torsion",
+            "pipeline_preset": "geometry_grinder",
+            "goal_rank": 4,
+            "ratpoints_backend": "GPU"
+          }
+        },
+        {
+          "id": "selmer_gate",
+          "label": "Selmer Gate",
+          "description": "Before more point hunting, compute a rigorous 2-Selmer upper bound and the remaining rank headroom. If the upper closes at 2, the stored rank-2 lower bound becomes exact.",
+          "target": {
+            "backend": "Torsion",
+            "pipeline_preset": "selmer_gate",
+            "goal_rank": 4,
+            "ratpoints_backend": "GPU"
+          }
+        },
+        {
+          "id": "covering_forest",
+          "label": "Covering Forest",
+          "description": "Attack the target through independent 2-descent/covering branches and every exact stored covering that can be mapped back to E(Q), then certify any rank growth.",
+          "target": {
+            "backend": "Torsion",
+            "pipeline_preset": "covering_forest",
+            "goal_rank": 4,
+            "ratpoints_backend": "GPU"
+          }
+        },
+        {
+          "id": "isogeny_hunt",
+          "label": "2-Isogeny Hunt",
+          "description": "Exploit the rational 2-torsion by walking only degree-2 isogenies, transferring the known basis, and searching the rank-equivalent neighboring models for smaller generators.",
+          "target": {
+            "backend": "Torsion",
+            "pipeline_preset": "isogeny_hunt",
+            "goal_rank": 4,
+            "ratpoints_backend": "GPU"
+          }
+        },
+        {
+          "id": "arithmetic_siege",
+          "label": "Arithmetic Siege",
+          "description": "Maximum arithmetic escalation: Selmer headroom, covering branches, degree-2 isogeny neighbors, deep denominator bands, saturation, and exact independence certification.",
+          "target": {
+            "backend": "Torsion",
+            "pipeline_preset": "arithmetic_siege",
+            "goal_rank": 4,
+            "ratpoints_backend": "GPU"
+          }
+        }
+      ]
+    }
+  ],
+  "search_presets": [
+    {
+      "id": "scan",
+      "label": "Record scan",
+      "description": "Balanced direct scan in the prescribed-torsion parameter.",
+      "candidate": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      }
+    },
+    {
+      "id": "widen",
+      "label": "Record widen",
+      "description": "Much wider rational-parameter box before exact torsion filtering.",
+      "candidate": {
+        "a_min": -10000,
+        "a_max": 10000,
+        "b_min": 1,
+        "b_max": 1000,
+        "stage_bounds": "500,1000,2000",
+        "stage_keeps": "40000,6000,1000",
+        "top": 1000,
+        "engine": "sieve"
+      }
+    },
+    {
+      "id": "deep",
+      "label": "Record deep",
+      "description": "Focused candidate box with deeper Nagao screening.",
+      "candidate": {
+        "a_min": -5000,
+        "a_max": 5000,
+        "b_min": 1,
+        "b_max": 500,
+        "stage_bounds": "1000,1500,2000",
+        "stage_keeps": "20000,4000,800",
+        "top": 800,
+        "engine": "sieve"
+      }
+    }
+  ],
+  "provenance": {
+    "classification": {
+      "theorem": "Mazur's rational torsion theorem",
+      "groups": "C_n for 1<=n<=10 or n=12; C2 x C_{2m} for 1<=m<=4",
+      "reference": "Barry Mazur, Modular curves and the Eisenstein ideal, Publ. Math. IHES 47 (1977), 33-186.",
+      "doi": "10.1007/BF02684339",
+      "role": "Classifies the 15 possible rational torsion groups over Q; it does not supply the plugin's search parameterizations."
+    },
+    "parameterizations": [
+      {
+        "reference": "Daniel S. Kubert, Universal bounds on the torsion of elliptic curves, Proc. London Math. Soc. (3) 33(2) (1976), 193-237.",
+        "doi": "10.1112/plms/s3-33.2.193",
+        "role": "Kubert-Tate normal-form parameterizations used by the cyclic C4,...,C10,C12 families."
+      },
+      {
+        "reference": "Tate normal form E(b,c): y^2+(1-c)xy-by=x^3-bx^2.",
+        "role": "Base marked-torsion model for the cyclic families and the full-2-torsion lifts."
+      },
+      {
+        "reference": "Legendre family y^2=x(x-1)(x-t).",
+        "role": "Direct full-rational-2-torsion slice used for C2 x C2."
+      }
+    ],
+    "record_table": {
+      "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+      "url": "https://web.math.pmf.unizg.hr/~duje/tors/tors.html",
+      "as_of": "2026-10-02",
+      "status": "Checked during the release audit; all 15 lower bounds in the manifest match the live table."
+    },
+    "claim_boundary": "The torsion_record values are record-hunt routing metadata only. Every candidate must pass Rank Hunter's exact specialized torsion computation, and any rank lower bound must come from exact rational points plus an exact independence certificate."
+  },
+  "pipeline_search": {
+    "certificate_timeout": 120,
+    "exact_candidates": 64,
+    "strategy_note": "Pipeline-native prescribed-torsion record hunt: use torsion_record for the rank goal and exact torsion gate, then let the selected Pipeline recipe own compute strategy."
+  },
+  "minimum_rank_hunter_version": "0.9.2"
+}

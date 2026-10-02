@@ -1,0 +1,14 @@
+{
+  "name": "Mazur torsion C8 universal family",
+  "generic_rank": null,
+  "parameter": "t",
+  "a_invariants": [
+    "1-(((2*t-1)*(t-1))/t)",
+    "-((2*t-1)*(t-1))",
+    "-((2*t-1)*(t-1))",
+    "0",
+    "0"
+  ],
+  "sections": [],
+  "notes": "Kubert–Tate normal form with (0,0) of order 8."
+}

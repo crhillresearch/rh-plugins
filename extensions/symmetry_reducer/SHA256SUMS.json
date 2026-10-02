@@ -1,0 +1,15 @@
+{
+  "CHANGELOG.md": "44754f5e6b0c89f2d662c21b9af1b207c8151a92a7d5aa3ebeb5d1e812b68227",
+  "README.md": "80dafb7c960afc1b292d89d668239ed4c514c0fa4d6a1953752a4c1960129e51",
+  "data/example_charts.json": "30c6739d2bd20d26876ad22d9aeb1a0f9de507f02f9a1f1913ecc076b3839b9a",
+  "data/example_curve.json": "fe0c20528fd2437c2807092cf01493a6a11344e70f7246a7a62742c914043cd5",
+  "data/example_samples.json": "6f8065a01263b7a7a02ccb3ac2b4a092e6f841cbe68f4a229e1285e57549c4bc",
+  "engine.py": "08596b8b32560960d1d085225aee82aff4a5bab504233d82597ea427213ed672",
+  "extension.py": "bc5ac0f3fd390c69ee1f400d680c9a33fcfceb7fa5e05b9af0fb74d943167a69",
+  "feature.py": "a4ecddeb36a7fa4461b0c9bbdcb3acb42950d48d4859c8123655dc205ef4659e",
+  "plugin.json": "fb9015d485b48bcde299bae4a0d3ab519f9925a2a1244ed1f5c6cc0924247670",
+  "search_wrapper.py": "6dccf7fbff032aa7f791de8fcc66261775a713709bdcabee5fc31af5fb0f144f",
+  "tests/test_engine.py": "bbb740509532f120515b6418166f18777750e76aea72d8fd0dde20b6de4622ef",
+  "tests/test_feature_runtime.py": "00c10962aef3617d906042ab0e802e783af6ade45c82cfeb54ea8102c69f5126",
+  "torsion_symmetry_cli.py": "d0cdbfbc603c65aac9ef99df80c4939180b4f9971b89779f85e31da1fa3d0d1e"
+}

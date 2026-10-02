@@ -1,0 +1,70 @@
+{
+  "source": {
+    "title": "New Rank Records For Elliptic Curves Having Rational Torsion",
+    "authors": [
+      "Noam D. Elkies",
+      "Zev Klagsbrun"
+    ],
+    "year": 2020,
+    "arxiv": "2003.00077",
+    "doi": "10.2140/obs.2020.4.233"
+  },
+  "rank20": {
+    "variant": "u11_5",
+    "native_parameter": "-721141/2026305",
+    "published_exact_rank": 20,
+    "published_chart_parameter_printed": "-68559/32629",
+    "derived_chart_parameter_consistent_with_native_map": "-68559/326291",
+    "native_map": "(2-t)/(t-6)",
+    "minimal_model_a_invariants": [
+      "1",
+      "-1",
+      "1",
+      "-244537673336319601463803487168961769270757573821859853707",
+      "961710182053183034546222979258806817743270682028964434238957830989898438151121499931"
+    ],
+    "minimal_model_torsion_x": "-69288588686111702678625616725/4",
+    "generator_x_coordinates": [
+      "-5976635286513806621064126789",
+      "595416388787490259443766591",
+      "2434562872293108275107029075",
+      "3513074027344435171140978981",
+      "399682145249051758133327419",
+      "-10714754038296881855524018251",
+      "-16034220456847626275437501599",
+      "1185828672355214392425799131",
+      "-11190697582885409770718510409",
+      "2634316446310680332042122261",
+      "64222149978369055569434725591",
+      "23945425437351916471937562579",
+      "13094114400583295432756346651",
+      "2689776334541089917424552236511",
+      "-2627014038979941829331861469",
+      "113605800622499112413124359631",
+      "-7364938748841807757773625709",
+      "-14298222927159284914180072349",
+      "785686589410787916270883192839",
+      "-2250170491079839258934900709"
+    ]
+  },
+  "rank19_u11_5": {
+    "native_parameter": "-26876/131019",
+    "published_chart_parameter": "100782/104143",
+    "published_rank": 19,
+    "native_map": "(2-t)/(t-6)"
+  },
+  "rank19_u2_5": {
+    "native_parameter": "11860/97527",
+    "published_rank": 19
+  },
+  "negative_contrast": [
+    {
+      "variant": "u2_13",
+      "reported_search_result": "no specialization above rank 18 in searched region"
+    },
+    {
+      "variant": "u22_13",
+      "reported_search_result": "no specialization above rank 18 in searched region"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "plugin_type": "feature",
+  "id": "torsion_symmetry_reducer",
+  "name": "Symmetry Reducer",
+  "version": "2.1.1",
+  "description": "Exact search-space symmetry Feature for Campbell, Kihara and Mestre/Fermigier PGL2 searches. Supports validation-safe deduplication and optional refill-distinct coverage without modifying family plugins.",
+  "enabled_by_default": false,
+  "icon": ":material/compress:",
+  "menu": {
+    "id": "torsion_symmetry_reducer",
+    "label": "Symmetry Reducer",
+    "section": "Analysis"
+  },
+  "entrypoint": "extension.py",
+  "hooks": [
+    {
+      "name": "search_command",
+      "entrypoint": "feature.py",
+      "function": "on_search_command",
+      "priority": 100
+    }
+  ],
+  "provenance": {
+    "method_status": "exact search-space symmetry reduction",
+    "source_idea": "Faugere, Huot, Joux, Renault, Vitse, Symmetrized Summation Polynomials: Using Small Order Torsion Points to Speed up Elliptic Curve Index Calculus, EUROCRYPT 2014; Rank Hunter source-height PGL2 orbit experiments",
+    "claim_boundary": "Only proven coordinate/search-space equivalences are removed. No point novelty, independence, or rank claim is inferred from symmetry reduction.",
+    "runtime_scope_v2": "Campbell, Kihara and Mestre/Fermigier PGL2 workers can be wrapped. v2.1.1 recognizes both legacy plugin module paths and v0.8.7 rank42.* chart-worker aliases. Dedup mode is the conservative default.",
+    "core_requirement": "Rank Hunter v0.8.6.4 functional Feature hook or Rank Hunter v0.8.7.1 search-command compatibility bridge",
+    "validation_status": "Campbell A/B validated. Mestre and Kihara runtime support added from exact shared chart/inverse-map semantics; run family A/B controls before treating refill-distinct mode as production-validated."
+  }
+}

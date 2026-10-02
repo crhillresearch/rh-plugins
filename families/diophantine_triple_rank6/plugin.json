@@ -1,0 +1,377 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "diophantine_triple_rank6",
+  "name": "Dujella–Peral · Diophantine Triple Rank 6",
+  "version": "0.1.0",
+  "icon": ":material/hub:",
+  "description": "The fully explicit Dujella–Peral C2 × C2 Diophantine-triple family of exact generic rank 6.",
+  "enabled_by_default": true,
+  "generic_rank": 6,
+  "generic_rank_status": "Dujella–Peral prove exact generic rank 6 and six independent sections at v=5. Rank Hunter exact-certifies those six directions at the same control.",
+  "historical_generic_rank_lower": 6,
+  "verified_generic_rank_lower": 6,
+  "generic_rank_claim_state": "generic_lower_bound_verified",
+  "validation_parameter": "5",
+  "minimum_rank_hunter_version": "0.9.2",
+  "family": {
+    "kind": "module",
+    "spec": "diophantine_triple_rank6",
+    "file": "family.py",
+    "aliases": [
+      "dpt-r6",
+      "c2xc2-diophantine-r6"
+    ]
+  },
+  "search_adapter": "search_adapter.py",
+  "capabilities": [
+    "candidate_generation",
+    "family_search",
+    "target_search",
+    "known_subgroup",
+    "free_search"
+  ],
+  "torsion_groups": [
+    "C2 × C2"
+  ],
+  "torsion_provider_role": "prescribed_subfamily",
+  "torsion_record": {
+    "rank_lower": 15,
+    "goal_rank": 16,
+    "source": {
+      "name": "Andrej Dujella, High rank elliptic curves with prescribed torsion",
+      "url": "https://dujella.github.io/tors/tors.html",
+      "as_of": "2026-10-02"
+    },
+    "secondary_family_search_recommended": true
+  },
+  "candidate_defaults": {
+    "a_min": -3000,
+    "a_max": 3000,
+    "b_min": 1,
+    "b_max": 300,
+    "stage_bounds": "500,2000,10000",
+    "stage_keeps": "12000,2500,500",
+    "top": 500,
+    "engine": "sieve"
+  },
+  "auto_search": {
+    "target_rank": 16,
+    "pool_size": 180,
+    "deep_keep": 36,
+    "upper_timeout": 8,
+    "final_upper_timeout": 30,
+    "exact_candidates": 64,
+    "strategy_note": "Prescribed-C2xC2 record hunt: exact C2 × C2 torsion gate, exact published rank-6 baseline, then search for independent extras."
+  },
+  "known_controls": [
+    {
+      "parameter": "5",
+      "role": "paper Gusic-Tadic injective / exact-rank control",
+      "published_exact_generic_rank": 6
+    }
+  ],
+  "search_options": {
+    "family": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "ratpoints height stages",
+        "default": "1000,10000,100000",
+        "help": "Ascending exact point-search heights after reconstructing the six published rank-6 sections.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the published generic rank-6 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 20,
+        "min": 1,
+        "max": 3600,
+        "help": "Hard runtime budget per ratpoints stage.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the published generic rank-6 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "max_points",
+        "type": "int",
+        "label": "Maximum new exact points",
+        "default": 32,
+        "min": 0,
+        "max": 2000,
+        "help": "Maximum extras returned by one plugin run.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the published generic rank-6 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "model_prep_timeout",
+        "type": "int",
+        "label": "Minimal-model prep timeout",
+        "default": 10,
+        "min": 0,
+        "max": 600,
+        "help": "Bounded exact minimal-model preparation before completed-square ratpoints.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the published generic rank-6 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "include_generic",
+        "type": "bool",
+        "label": "Include published rank-6 basis",
+        "default": true,
+        "help": "Reconstruct and map the six published independent sections exactly.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence certification and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "exact_candidates",
+        "type": "int",
+        "label": "Exact candidates",
+        "default": 32,
+        "min": 1,
+        "max": 256,
+        "help": "Maximum returned candidates core may exact-certify.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence certification and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "certificate_timeout",
+        "type": "int",
+        "label": "Exact certificate timeout",
+        "default": 300,
+        "min": 1,
+        "max": 7200,
+        "help": "Budget for core-owned exact independence certification.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence certification and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      }
+    ],
+    "target": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "ratpoints height stages",
+        "default": "1000,10000,100000,1000000",
+        "help": "Ascending exact point-search heights after reconstructing the six published rank-6 sections.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the published generic rank-6 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 30,
+        "min": 1,
+        "max": 3600,
+        "help": "Hard runtime budget per ratpoints stage.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the published generic rank-6 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "max_points",
+        "type": "int",
+        "label": "Maximum new exact points",
+        "default": 64,
+        "min": 0,
+        "max": 2000,
+        "help": "Maximum extras returned by one plugin run.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the published generic rank-6 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "model_prep_timeout",
+        "type": "int",
+        "label": "Minimal-model prep timeout",
+        "default": 15,
+        "min": 0,
+        "max": 600,
+        "help": "Bounded exact minimal-model preparation before completed-square ratpoints.",
+        "group": "Point search",
+        "group_help": "Search for exact points beyond the published generic rank-6 basis.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "include_generic",
+        "type": "bool",
+        "label": "Include published rank-6 basis",
+        "default": true,
+        "help": "Reconstruct and map the six published independent sections exactly.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence certification and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "exact_candidates",
+        "type": "int",
+        "label": "Exact candidates",
+        "default": 64,
+        "min": 1,
+        "max": 256,
+        "help": "Maximum returned candidates core may exact-certify.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence certification and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      },
+      {
+        "key": "certificate_timeout",
+        "type": "int",
+        "label": "Exact certificate timeout",
+        "default": 360,
+        "min": 1,
+        "max": 7200,
+        "help": "Budget for core-owned exact independence certification.",
+        "group": "Exact verification",
+        "group_help": "Core owns exact independence certification and rank promotion.",
+        "group_columns": 2,
+        "group_expanded": true
+      }
+    ]
+  },
+  "search_presets": [
+    {
+      "id": "scan",
+      "label": "Scan",
+      "description": "Balanced C2 × C2 rank-6 family scan.",
+      "candidate": {
+        "a_min": -3000,
+        "a_max": 3000,
+        "b_min": 1,
+        "b_max": 300,
+        "stage_bounds": "500,2000,10000",
+        "stage_keeps": "12000,2500,500",
+        "top": 500,
+        "engine": "sieve"
+      },
+      "family": {
+        "stages": "1000,10000",
+        "timeout": 15,
+        "max_points": 24,
+        "model_prep_timeout": 10,
+        "include_generic": true,
+        "exact_candidates": 24,
+        "certificate_timeout": 240
+      },
+      "target": {
+        "stages": "1000,10000,100000",
+        "timeout": 20,
+        "max_points": 48,
+        "model_prep_timeout": 10,
+        "include_generic": true,
+        "exact_candidates": 48,
+        "certificate_timeout": 300
+      }
+    },
+    {
+      "id": "widen",
+      "label": "Widen",
+      "description": "Broader rational-v scan.",
+      "candidate": {
+        "a_min": -10000,
+        "a_max": 10000,
+        "b_min": 1,
+        "b_max": 1000,
+        "stage_bounds": "500,2000,10000",
+        "stage_keeps": "40000,6000,1000",
+        "top": 1000,
+        "engine": "sieve"
+      },
+      "family": {
+        "stages": "1000,10000,100000",
+        "timeout": 20,
+        "max_points": 32,
+        "model_prep_timeout": 10,
+        "include_generic": true,
+        "exact_candidates": 32,
+        "certificate_timeout": 300
+      },
+      "target": {
+        "stages": "1000,10000,100000,1000000",
+        "timeout": 30,
+        "max_points": 64,
+        "model_prep_timeout": 15,
+        "include_generic": true,
+        "exact_candidates": 64,
+        "certificate_timeout": 360
+      }
+    },
+    {
+      "id": "deep",
+      "label": "Deep",
+      "description": "Focused record attack with deeper exact point search.",
+      "candidate": {
+        "a_min": -5000,
+        "a_max": 5000,
+        "b_min": 1,
+        "b_max": 500,
+        "stage_bounds": "1000,5000,20000",
+        "stage_keeps": "20000,4000,800",
+        "top": 800,
+        "engine": "sieve"
+      },
+      "family": {
+        "stages": "1000,10000,100000,1000000",
+        "timeout": 45,
+        "max_points": 96,
+        "model_prep_timeout": 20,
+        "include_generic": true,
+        "exact_candidates": 96,
+        "certificate_timeout": 480
+      },
+      "target": {
+        "stages": "1000,10000,100000,1000000,5000000",
+        "timeout": 60,
+        "max_points": 160,
+        "model_prep_timeout": 30,
+        "include_generic": true,
+        "exact_candidates": 128,
+        "certificate_timeout": 720
+      }
+    }
+  ],
+  "provenance": {
+    "authors": "Andrej Dujella and Juan Carlos Peral",
+    "paper": "Elliptic curves induced by Diophantine triples",
+    "journal": "RACSAM 113 (2019), 791–806",
+    "arxiv": "1712.02082v2",
+    "doi": "10.1007/s13398-018-0513-0",
+    "section": "§2.5",
+    "published_claim": "At v=5 the six displayed sections are independent; the Gusić–Tadić criterion proves exact generic rank 6 and torsion C2 × C2.",
+    "sign_audit": "Original paper equation (8) has x6 with coefficient +9. A later survey reprint shows -9; exact curve membership at v=5 confirms +9.",
+    "omitted_rank6_base_changes": [
+      "-64(831744-40128v+4288v^2-44v^3+v^4)/(9(-1520+88v+v^2)(-2736-264v+5v^2))",
+      "-(10732176-628992v+19192v^2-576v^3+9v^4)/(36(-27+v)v(-364+9v))",
+      "-5(-10+6v+v^2)(-18-18v+5v^2)/(9(12-2v+v^2)(3-v+v^2))"
+    ],
+    "omitted_variant_reason": "§2.6 states that these three base changes also produce rank-6 curves but intentionally omits the two additional section formulas; they are retained as research leads, not release variants.",
+    "release_claim_boundary": "Rank Hunter operationally certifies the generic lower bound 6 at v=5; the paper's exact generic-rank theorem remains provenance metadata."
+  },
+  "pipeline_search": {
+    "certificate_timeout": 300,
+    "exact_candidates": 64,
+    "strategy_note": "Exact rank-6 baseline plus plugin-local ratpoints; core owns independence and promotion."
+  }
+}

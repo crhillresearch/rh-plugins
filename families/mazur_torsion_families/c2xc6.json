@@ -1,0 +1,14 @@
+{
+  "name": "Mazur torsion C2 × C6 universal family",
+  "generic_rank": null,
+  "parameter": "t",
+  "a_invariants": [
+    "1-(2*(5-t)/(t^2-9))",
+    "-((2*(5-t)/(t^2-9))+(2*(5-t)/(t^2-9))^2)",
+    "-((2*(5-t)/(t^2-9))+(2*(5-t)/(t^2-9))^2)",
+    "0",
+    "0"
+  ],
+  "sections": [],
+  "notes": "C6 Tate family with alpha=2(5-t)/(t^2-9); the remaining 2-division discriminant becomes a square."
+}

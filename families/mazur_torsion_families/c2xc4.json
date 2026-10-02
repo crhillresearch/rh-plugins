@@ -1,0 +1,8 @@
+{
+  "name": "Mazur torsion C2 × C4 universal family",
+  "generic_rank": null,
+  "parameter": "t",
+  "a_invariants": ["1", "-((t^2-1)/16)", "-((t^2-1)/16)", "0", "0"],
+  "sections": [],
+  "notes": "C4 Tate family with 1+16 alpha=t^2, forcing the remaining 2-division quadratic to split."
+}

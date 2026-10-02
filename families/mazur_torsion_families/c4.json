@@ -1,0 +1,8 @@
+{
+  "name": "Mazur torsion C4 universal family",
+  "generic_rank": null,
+  "parameter": "t",
+  "a_invariants": ["1", "-t", "-t", "0", "0"],
+  "sections": [],
+  "notes": "Kubert–Tate normal form with (0,0) of order 4."
+}

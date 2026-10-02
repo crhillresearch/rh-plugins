@@ -1,0 +1,386 @@
+{
+  "schema_version": 1,
+  "id": "fermigier_rank12_exact",
+  "name": "Fermigier–Mestre K3",
+  "version": "1.1.0",
+  "description": "Fermigier–Mestre one-parameter K3 reconstruction with 12 exact generic sections, an operationally verified generic lower bound 12, native quartic/PGL2 search, and the published Fermigier rank-22 control.",
+  "enabled_by_default": false,
+  "curve_family_name": "Fermigier–Mestre K3 · generic rank >=12",
+  "generic_rank": 12,
+  "generic_rank_status": "Rank Hunter verifies generic lower bound 12 by exact specialized independence of the 12 explicit sections. A frozen reconstruction theorem artifact separately reports arithmetic generic rank exactly 12 over Q(u); that upper-bound theorem is provenance, not re-proved by the release validator.",
+  "family": {
+    "kind": "module",
+    "spec": "plugins.fermigier_rank12_exact.family",
+    "file": "family.py"
+  },
+  "capabilities": [
+    "candidate_generation",
+    "family_search",
+    "target_search",
+    "known_subgroup",
+    "quartic_search",
+    "pgl2_search",
+    "free_search"
+  ],
+  "search_adapter": "search_adapter.py",
+  "validation_parameter": "1",
+  "candidate_defaults": {
+    "engine": "sieve",
+    "a_min": 1,
+    "a_max": 10000,
+    "b_min": 1,
+    "b_max": 500,
+    "stage_bounds": "200,500,1000",
+    "stage_keeps": "20000,4000,750",
+    "top": 750
+  },
+  "search_presets": [
+    {
+      "id": "casual",
+      "label": "Casual",
+      "description": "Small, fast sanity-check run.",
+      "candidate": {
+        "engine": "sieve",
+        "a_min": 1,
+        "a_max": 2500,
+        "b_min": 1,
+        "b_max": 125,
+        "stage_bounds": "200,500",
+        "stage_keeps": "5000,1000",
+        "top": 100
+      },
+      "family": {
+        "limit": 10,
+        "adapter": "native",
+        "mode": "integer",
+        "charts": 6,
+        "stages": "1000,10000",
+        "timeout": 8,
+        "subgroup_scan": 64,
+        "exact_candidates": 4,
+        "certificate_timeout": 45
+      }
+    },
+    {
+      "id": "scan",
+      "label": "Scan",
+      "description": "Balanced screening profile for routine hunting.",
+      "candidate": {
+        "engine": "sieve",
+        "a_min": 1,
+        "a_max": 10000,
+        "b_min": 1,
+        "b_max": 500,
+        "stage_bounds": "200,500,1000",
+        "stage_keeps": "20000,4000,750",
+        "top": 750
+      },
+      "family": {
+        "limit": 50,
+        "adapter": "pgl2",
+        "mode": "integer",
+        "charts": 12,
+        "stages": "1000,10000",
+        "timeout": 12,
+        "subgroup_scan": 128,
+        "exact_candidates": 8,
+        "certificate_timeout": 60
+      }
+    },
+    {
+      "id": "widen",
+      "label": "Widen",
+      "description": "Explore a substantially larger rational parameter box.",
+      "candidate": {
+        "engine": "sieve",
+        "a_min": 1,
+        "a_max": 30000,
+        "b_min": 1,
+        "b_max": 1500,
+        "stage_bounds": "200,500,1000",
+        "stage_keeps": "40000,8000,1500",
+        "top": 1000
+      },
+      "family": {
+        "limit": 80,
+        "adapter": "pgl2",
+        "mode": "both",
+        "charts": 18,
+        "stages": "1000,10000,100000",
+        "timeout": 15,
+        "subgroup_scan": 256,
+        "exact_candidates": 8,
+        "certificate_timeout": 90
+      }
+    },
+    {
+      "id": "deep",
+      "label": "Deep",
+      "description": "Keep the family region focused and spend much more arithmetic effort per survivor.",
+      "candidate": {
+        "engine": "sieve",
+        "a_min": 1,
+        "a_max": 10000,
+        "b_min": 1,
+        "b_max": 500,
+        "stage_bounds": "200,500,1000,5000",
+        "stage_keeps": "20000,4000,750",
+        "top": 750
+      },
+      "family": {
+        "limit": 20,
+        "adapter": "pgl2",
+        "mode": "both",
+        "charts": 32,
+        "stages": "1000,10000,100000,1000000",
+        "timeout": 30,
+        "subgroup_scan": 512,
+        "exact_candidates": 16,
+        "certificate_timeout": 180
+      }
+    }
+  ],
+  "search_options": {
+    "family": [
+      {
+        "key": "adapter",
+        "type": "choice",
+        "label": "Search adapter",
+        "default": "pgl2",
+        "choices": [
+          "native",
+          "pgl2"
+        ]
+      },
+      {
+        "key": "mode",
+        "type": "choice",
+        "label": "ratpoints x mode",
+        "default": "integer",
+        "choices": [
+          "integer",
+          "both",
+          "rational"
+        ]
+      },
+      {
+        "key": "charts",
+        "type": "int",
+        "label": "PGL2 charts",
+        "default": 12,
+        "min": 1,
+        "max": 256
+      },
+      {
+        "key": "chart_strategy",
+        "type": "choice",
+        "label": "Chart strategy",
+        "default": "hybrid",
+        "choices": [
+          "base",
+          "subgroup",
+          "free",
+          "hybrid"
+        ]
+      },
+      {
+        "key": "anchor_pool",
+        "type": "int",
+        "label": "Base anchor pool",
+        "default": 12,
+        "min": 3,
+        "max": 64
+      },
+      {
+        "key": "discovered_anchor_pool",
+        "type": "int",
+        "label": "Discovered anchor pool",
+        "default": 16,
+        "min": 0,
+        "max": 128
+      },
+      {
+        "key": "free_bound",
+        "type": "int",
+        "label": "Free PGL2 entry bound",
+        "default": 3,
+        "min": 1,
+        "max": 20
+      },
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "ratpoints height stages",
+        "default": "1000,10000,100000"
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 15,
+        "min": 1,
+        "max": 3600
+      },
+      {
+        "key": "construction_timeout",
+        "type": "int",
+        "label": "Exact construction timeout",
+        "default": 120,
+        "min": 10,
+        "max": 7200
+      },
+      {
+        "key": "subgroup_scan",
+        "type": "int",
+        "label": "Subgroup novelty scan",
+        "default": 128,
+        "min": 0,
+        "max": 10000
+      },
+      {
+        "key": "exact_candidates",
+        "type": "int",
+        "label": "Exact candidates",
+        "default": 8,
+        "min": 0,
+        "max": 256
+      },
+      {
+        "key": "certificate_timeout",
+        "type": "int",
+        "label": "Exact certificate timeout",
+        "default": 60,
+        "min": 1,
+        "max": 7200
+      }
+    ],
+    "target": [
+      {
+        "key": "adapter",
+        "type": "choice",
+        "label": "Search adapter",
+        "default": "pgl2",
+        "choices": [
+          "native",
+          "pgl2"
+        ]
+      },
+      {
+        "key": "mode",
+        "type": "choice",
+        "label": "ratpoints x mode",
+        "default": "both",
+        "choices": [
+          "integer",
+          "both",
+          "rational"
+        ]
+      },
+      {
+        "key": "charts",
+        "type": "int",
+        "label": "PGL2 charts",
+        "default": 24,
+        "min": 1,
+        "max": 256
+      },
+      {
+        "key": "chart_strategy",
+        "type": "choice",
+        "label": "Chart strategy",
+        "default": "hybrid",
+        "choices": [
+          "base",
+          "subgroup",
+          "free",
+          "hybrid"
+        ]
+      },
+      {
+        "key": "anchor_pool",
+        "type": "int",
+        "label": "Base anchor pool",
+        "default": 12,
+        "min": 3,
+        "max": 64
+      },
+      {
+        "key": "discovered_anchor_pool",
+        "type": "int",
+        "label": "Discovered anchor pool",
+        "default": 16,
+        "min": 0,
+        "max": 128
+      },
+      {
+        "key": "free_bound",
+        "type": "int",
+        "label": "Free PGL2 entry bound",
+        "default": 3,
+        "min": 1,
+        "max": 20
+      },
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "ratpoints height stages",
+        "default": "1000,10000,100000"
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 20,
+        "min": 1,
+        "max": 3600
+      },
+      {
+        "key": "construction_timeout",
+        "type": "int",
+        "label": "Exact construction timeout",
+        "default": 120,
+        "min": 10,
+        "max": 7200
+      },
+      {
+        "key": "subgroup_scan",
+        "type": "int",
+        "label": "Subgroup novelty scan",
+        "default": 512,
+        "min": 0,
+        "max": 10000
+      },
+      {
+        "key": "exact_candidates",
+        "type": "int",
+        "label": "Exact candidates",
+        "default": 12,
+        "min": 0,
+        "max": 256
+      },
+      {
+        "key": "certificate_timeout",
+        "type": "int",
+        "label": "Exact certificate timeout",
+        "default": 120,
+        "min": 1,
+        "max": 7200
+      }
+    ]
+  },
+  "plugin_type": "family",
+  "minimum_rank_hunter_version": "0.9.2",
+  "historical_generic_rank_lower": 12,
+  "verified_generic_rank_lower": 12,
+  "generic_rank_claim_state": "generic_lower_bound_verified",
+  "provenance": {
+    "mestre_source": "Jean-François Mestre, Courbes elliptiques de rang >= 12 sur Q(t), C. R. Acad. Sci. Paris Ser. I Math. 313(4) (1991), 171–174.",
+    "fermigier_source": "Stéfane Fermigier, Une courbe elliptique définie sur Q de rang >= 22, Acta Arithmetica 82(4) (1997), 359–363.",
+    "fermigier_doi": "10.4064/aa-82-4-359-363",
+    "fermigier_source_url": "https://www.impan.pl/en/publishing-house/journals-and-series/acta-arithmetica/all/82/4/109628/une-courbe-elliptique-definie-sur-de-rang-22",
+    "published_specialization": "literal Fermigier shift s=39508/39; Rank Hunter canonical parameter u=s/2=19754/39",
+    "reconstruction_status": "The bundled fixed-root normalized quartic and 13 rational quartic points are an exact reconstruction. The release validator proves the 12 non-origin sections generically independent via exact independence after specialization.",
+    "external_exact_rank12_provenance": "Frozen reconstruction artifact elliptic_fermigier_generic_rank_exact.json reports arithmetic rank exactly 12 over Q(u), geometric rank in [12,13], unconditionally and without assuming Tate. The release package preserves its hashes in PROVENANCE.md but does not present that upper-bound artifact as a fresh core certificate.",
+    "specialization_policy": "Generic information never assigns rank to a specialization. Rank Hunter promotes specialized lower bounds only through exact independence certification."
+  }
+}
