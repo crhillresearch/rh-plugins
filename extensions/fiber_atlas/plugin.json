@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "plugin_type": "extension",
+  "id": "fiber_atlas",
+  "name": "Fiber Atlas",
+  "version": "0.4.1",
+  "description": "Read-only family atlas with authoritative family-baseline rank-jump/excess semantics, responsive large-family fastpaths, lazy yield/prime history, and explicit hashed handoffs.",
+  "enabled_by_default": false,
+  "icon": ":material/map:",
+  "menu": {
+    "id": "fiber_atlas",
+    "label": "Fiber Atlas",
+    "section": "Analysis",
+    "icon": ":material/map:"
+  },
+  "entrypoint": "extension.py"
+}

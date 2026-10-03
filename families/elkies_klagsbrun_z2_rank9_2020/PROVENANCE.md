@@ -72,5 +72,5 @@ The plugin owns:
 ## Release hygiene
 
 The development package contained an absolute local symlink named
-`elkies_klagsbrun_z2_rank9_2020` pointing into `/home/chris/...`.
+`elkies_klagsbrun_z2_rank9_2020` pointing to a developer-local path.
 It is not scientific content and is removed from the curated RELEASE package.
