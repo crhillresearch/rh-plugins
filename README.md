@@ -51,6 +51,7 @@ Each Family README/provenance file states its exact scientific claim boundary. A
 | [Curve Explorer](extensions/curve_explorer/) | Workspace | 0.5.0 | Interactive real-locus Graph plus complex affine 3D projection with exact P/Q -> R -> -R playback for stored curves. |
 | [Fiber Atlas](extensions/fiber_atlas/) | Workspace | 0.4.1 | Read-only family atlas with authoritative family-baseline rank-jump/excess semantics, research views, large-family fastpaths, and explicit hashed handoffs to Target Search and Pipelines. |
 | [Leaderboard Compare](extensions/leaderboard_compare/) | Workspace | 0.2.1 | Compare Rank Hunter curves with synchronized high-rank leaderboard data and torsion filters. |
+| [Twist & Isogeny Lab](extensions/twist_isogeny_lab/) | Workspace | 0.5.2 | Exact rational isogeny classes, bounded quadratic twists, large-curve exact probes, and deterministic research handoffs with explicit proof boundaries. |
 
 ## Validation and provenance
 

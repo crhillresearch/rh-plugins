@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "plugin_type": "extension",
+  "id": "twist_isogeny_lab",
+  "name": "Twist & Isogeny Lab",
+  "version": "0.5.2",
+  "description": "Researcher-facing arithmetic-neighborhood workspace for exact rational isogenies and bounded quadratic twists, with source briefs, large-curve probes, deterministic handoffs, and read-only proof-boundary semantics.",
+  "enabled_by_default": false,
+  "icon": ":material/hub:",
+  "menu": {
+    "id": "twist_isogeny_lab",
+    "label": "Twist & Isogeny Lab",
+    "section": "Analysis",
+    "icon": ":material/hub:"
+  },
+  "entrypoint": "extension.py"
+}
