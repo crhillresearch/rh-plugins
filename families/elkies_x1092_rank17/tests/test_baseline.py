@@ -55,7 +55,7 @@ def test_published_mw17_specialization_replays_all_labeled_sections():
 
 def test_manifest_declares_verified_published_mw17_and_sampled_record_scan():
     manifest = json.loads((ROOT / "plugin.json").read_text(encoding="utf-8"))
-    assert manifest["version"] == "1.2.0"
+    assert manifest["version"] == "1.3.0"
     assert manifest["minimum_rank_hunter_version"] == "0.9.2"
     assert manifest["generic_rank"] == 17
     assert manifest["verified_generic_rank_lower"] == 17
@@ -63,8 +63,14 @@ def test_manifest_declares_verified_published_mw17_and_sampled_record_scan():
     assert manifest["family"]["kind"] == "module"
     assert manifest["provenance"]["published_height_gram_determinant"] == 948
     assert manifest["provenance"]["generic_basis_status"] == "published_exact_sections_bundled_and_height_gram_reverified"
-    assert manifest["capabilities"] == ["candidate_generation", "free_search"]
-    assert "search_adapter" not in manifest
+    assert manifest["capabilities"] == [
+        "candidate_generation",
+        "family_search",
+        "target_search",
+        "known_subgroup",
+        "free_search",
+    ]
+    assert manifest["search_adapter"] == "search_adapter.py"
     assert "variants" not in manifest
     defaults = manifest["candidate_defaults"]
     assert defaults["engine"] == "sampled"

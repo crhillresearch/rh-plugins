@@ -1,4 +1,4 @@
-# Elkies X1092 · Published MW17 · v1.2.0
+# Elkies X1092 · Published MW17 · v1.3.0
 
 Rank Hunter Family plugin for the published Mordell-Weil rank-17 elliptic K3 fibration in Noam D. Elkies, *An elliptic K3 surface X/Q(t) with Mordell-Weil rank 17, I: Formulas for X and base changes of ranks 18 and 19*.
 
@@ -64,7 +64,7 @@ Exact rational transport between elliptic fibrations would be required before se
 
 ## RELEASE scope
 
-This RELEASE package is deliberately **MW17-only**.
+This RELEASE package is deliberately **MW17-only** mathematically. It now includes direct subgroup-aware **Family Search** and **Target Search** over the published fibration, but still excludes the experimental quadratic rank-jump/base-change reconstruction tooling.
 
 Earlier development copies also contained:
 
@@ -89,6 +89,22 @@ final candidates = 5,000
 The `deep` preset increases the sample count to one million and adds the intermediate prime stage `2000`.
 
 The Family module's vectorized `nagao_score_table(p)` is checked against exact Sage point counts at small primes in the release regression suite.
+
+## Family Search and Target Search
+
+v1.3.0 adds the missing operational search adapters without changing the published family or its proof boundary.
+
+**Family Search** consumes the candidate file produced by Rank Hunter, specializes `S1..S17` exactly, optionally certifies that 17-point subgroup, runs staged ratpoints searches, stores exact rational hits, and promotes a larger rigorous lower bound only after an exact independence certificate succeeds.
+
+**Target Search** runs the same subgroup-aware logic against one stored X1092 specialization. Its defaults search deeper ratpoints stages and allow more exact extra-point attempts than the ordinary Family Search profile.
+
+Both paths:
+
+- use the existing `elkies_x1092_rank17_family` source of truth;
+- preserve the published `S1..S17` basis metadata;
+- run against Rank Hunter's temporary plugin-search database path;
+- treat ratpoints hits as candidate extras until exact independence is certified;
+- do **not** restore the excluded quadratic rank-jump/base-change reconstruction tools.
 
 ## MW provenance contract
 
@@ -118,10 +134,15 @@ The gate covers:
 - exact published height-lattice verification;
 - specialization metadata;
 - vectorized Nagao scorer agreement with exact curve counts;
-- current-core plugin validation;
+- current-core plugin and search-adapter validation;
+- Family/Target command construction;
 - RELEASE isolation from the quadratic rank-jump development tooling.
 
 ## Version history
+
+### v1.3.0
+
+Adds complete Family Search and Target Search support for the published MW17 fibration: exact S1..S17 specialization replay, optional baseline certification, staged ratpoints search, exact extra-point certification, package-local adapter commands, and focused release regressions. The excluded quadratic rank-jump tooling remains excluded.
 
 ### v1.2.0
 

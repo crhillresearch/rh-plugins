@@ -22,7 +22,7 @@ Every installable plugin is its own directory with a `plugin.json` manifest. Ran
 | [DMT Triad Family](families/dmt_triad_rank4/) | 0.1.3 | Six Piezas-sextuple triads with full rational 2-torsion and four generic sections. |
 | [Elkies Rank-17 K3](families/elkies_rank17_2026/) | 1.3.1 | Published rank-17 K3 record-hunt family with all 17 generic sections. |
 | [Elkies Rank-18 First Cover](families/elkies_rank18_2026/) | 0.1.1 | First quadratic base change of the Elkies rank-17 K3 with an exact 18th section. |
-| [Elkies X1092 - Published MW17](families/elkies_x1092_rank17/) | 1.2.0 | X1092 K3 fibration with 17 exact generic sections and fast Nagao screening. |
+| [Elkies X1092 - Published MW17](families/elkies_x1092_rank17/) | 1.3.0 | X1092 K3 fibration with 17 exact generic sections, fast Nagao screening, and subgroup-aware Family/Target search. |
 | [Elkies-Klagsbrun Z/2 K3](families/elkies_klagsbrun_z2_rank9_2020/) | 1.2.4 | Z/2-torsion K3 family of generic rank 9 with a proven rank-20 specialization. |
 | [Fermigier-Mestre K3](families/fermigier_rank12_exact/) | 1.1.0 | One-parameter K3 reconstruction with 12 exact generic sections. |
 | [Fibonacci Triples](families/fibonacci_triples/) | 0.1.3 | Odd/even elliptic families induced by Fibonacci Diophantine triples. |
