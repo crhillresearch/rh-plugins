@@ -45,7 +45,7 @@ Each Family README/provenance file states its exact scientific claim boundary. A
 
 | Plugin | Type | Version | Purpose |
 | --- | --- | ---: | --- |
-| [Curve Explorer](extensions/curve_explorer/) | Workspace | 0.4.8 | Interactive real-locus explorer with exact P/Q -> R -> -R playback for stored curves. |
+| [Curve Explorer](extensions/curve_explorer/) | Workspace | 0.5.0 | Interactive real-locus Graph plus complex affine 3D projection with exact P/Q -> R -> -R playback for stored curves. |
 | [Leaderboard Compare](extensions/leaderboard_compare/) | Workspace | 0.2.1 | Compare Rank Hunter curves with synchronized high-rank leaderboard data and torsion filters. |
 | [Symmetry Reducer](extensions/symmetry_reducer/) | Feature | 2.1.1 | Exact search-space symmetry reduction for supported Campbell, Kihara, and Mestre/Fermigier searches. |
 

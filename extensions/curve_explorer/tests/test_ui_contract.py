@@ -76,9 +76,51 @@ def test_uncached_selected_pairs_get_exact_client_side_playback():
     assert "uncached pairs computed exactly on selection" in SOURCE
 
 
-def test_curve_explorer_manifest_bumps_for_uncached_exact_playback():
+def test_curve_explorer_manifest_bumps_for_graph_and_3d_views():
     import json
 
     manifest = json.loads((ROOT / "plugin.json").read_text(encoding="utf-8"))
-    assert manifest["version"] == "0.4.8"
+    assert manifest["version"] == "0.5.0"
+    assert "complex affine 3D projection" in manifest["description"]
     assert "exact cached or on-selection" in manifest["description"]
+
+
+def test_curve_explorer_has_lazy_graph_and_3d_page_views():
+    assert 'options = ["Graph", "3D"]' in SOURCE
+    assert 'variant="page"' in SOURCE
+    assert 'if view == "3D":' in SOURCE
+    assert "_render_3d_view(context, model, points)" in SOURCE
+    assert "_render_graph_view(context, row, model, points)" in SOURCE
+    assert "st.tabs(" not in SOURCE
+
+
+def test_complex_3d_view_is_interactive_and_theme_aware():
+    assert "HTML_3D_TEMPLATE" in SOURCE
+    assert "Complex affine curve · R³ projection" in SOURCE
+    assert "(Re x, Im x, Re y)" in SOURCE
+    assert "(Re x, Im x, Im y)" in SOURCE
+    assert 'data-proj="re"' in SOURCE
+    assert 'data-proj="im"' in SOURCE
+    assert "Auto rotate" in SOURCE
+    assert "Reset view" in SOURCE
+    assert "canvas.addEventListener('pointermove'" in SOURCE
+    assert "canvas.addEventListener('wheel'" in SOURCE
+    assert "--surface-a:var(--rh-primary)" in SOURCE
+    assert "--real:var(--rh-danger)" in SOURCE
+    assert "--stored:var(--rh-success)" in SOURCE
+
+
+def test_3d_view_states_visualization_boundary():
+    assert "Complex affine visualization only — not rank evidence." in SOURCE
+    assert "point at infinity is omitted" in SOURCE
+    assert "projection artifacts" in SOURCE
+
+
+def test_graph_legend_is_outside_plotting_surface():
+    legend = '<div class="graph-legend">'
+    canvas = '<div class="canvas-wrap">'
+    svg = '<svg id="plot"'
+    assert legend in SOURCE
+    assert SOURCE.index(legend) < SOURCE.index(canvas) < SOURCE.index(svg)
+    assert ".graph-legend{display:flex" in SOURCE
+    assert ".graph-legend{position:absolute" not in SOURCE

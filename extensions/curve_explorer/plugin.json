@@ -3,8 +3,8 @@
   "plugin_type": "extension",
   "id": "curve_explorer",
   "name": "Curve Explorer",
-  "version": "0.4.8",
-  "description": "Interactive real-locus explorer with theme-aware plotting, reliable P/Q selection, exact cached or on-selection P,Q->R->-R playback, subgroup filters, and robust framing for stored Rank Hunter curves.",
+  "version": "0.5.0",
+  "description": "Interactive real-locus explorer with theme-aware plotting, Graph and a complex affine 3D projection, reliable P/Q selection, and exact cached or on-selection P,Q->R->-R playback for stored Rank Hunter curves.",
   "enabled_by_default": false,
   "icon": ":material/insights:",
   "menu": {

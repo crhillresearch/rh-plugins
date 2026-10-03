@@ -129,3 +129,32 @@ def test_qstr_formats_coordinates_beyond_python_int_string_limit():
     assert len(denominator) > 4300
     if digit_limit is not None:
         assert sys.get_int_max_str_digits() == digit_limit
+
+
+def test_complex_y_branches_satisfy_generalized_equation_numerically():
+    E=B.WeierstrassModel.from_json('["1","2","3","4","5"]')
+    x=complex(0.75,-0.4)
+    for y in B.complex_y_branches(E,x):
+        a1,a2,a3,a4,a6=[float(v) for v in (E.a1,E.a2,E.a3,E.a4,E.a6)]
+        lhs=y*y+a1*x*y+a3*y
+        rhs=x**3+a2*x**2+a4*x+a6
+        assert abs(lhs-rhs) < 1e-9
+
+
+def test_complex_projection_payload_has_two_sheets_real_locus_and_stored_points():
+    E=B.WeierstrassModel.from_json('["0","0","0","-1","0"]')
+    pts=[
+        B.PointRecord("1",Fraction(-1),Fraction(0),role="generator",rigorous_independent=True),
+        B.PointRecord("2",Fraction(0),Fraction(0),role="candidate"),
+    ]
+    payload=B.complex_projection_payload(E,pts,bounds=(-2,2),grid=17,real_samples=200)
+    assert payload["grid"]==17
+    assert len(payload["vertices"])==2*17*17
+    assert len(payload["faces"])==2*16*16
+    assert {v[4] for v in payload["vertices"]}=={1,-1}
+    assert payload["projection_re"]==["Re(x)","Im(x)","Re(y)"]
+    assert payload["projection_im"]==["Re(x)","Im(x)","Im(y)"]
+    assert payload["real_locus"]
+    assert {p["id"] for p in payload["stored_points"]}=={"1","2"}
+    for vertex in payload["vertices"]:
+        assert all(abs(float(value)) < 1e12 for value in vertex[:4])

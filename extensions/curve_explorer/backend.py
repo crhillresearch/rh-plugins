@@ -1,4 +1,4 @@
-"""Exact arithmetic and visualization data for Rank Hunter Curve Explorer v0.4.4.
+"""Exact arithmetic and visualization data for Rank Hunter Curve Explorer v0.5.0.
 
 Scientific boundary
 -------------------
@@ -11,6 +11,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from fractions import Fraction
+import cmath
 import json
 import math
 from typing import Iterable
@@ -421,6 +422,172 @@ def exact_pair_constructions(model: WeierstrassModel, points: list[PointRecord],
                 }
             out[key] = item
     return out, cap
+
+
+
+def complex_y_branches(model: WeierstrassModel, x: complex) -> tuple[complex, complex]:
+    """Return the two complex affine y-values above one complex x.
+
+    This is visualization arithmetic only. It solves the generalized
+    Weierstrass equation as a quadratic in y:
+        y^2 + (a1*x+a3)y = x^3+a2*x^2+a4*x+a6.
+    """
+    a1, a2, a3, a4, a6 = (
+        safe_float(value)
+        for value in (model.a1, model.a2, model.a3, model.a4, model.a6)
+    )
+    x = complex(x)
+    linear = a1*x + a3
+    rhs = x**3 + a2*x**2 + a4*x + a6
+    root = cmath.sqrt(linear*linear + 4.0*rhs)
+    return ((-linear + root)/2.0, (-linear - root)/2.0)
+
+
+def _visual_scale(values, fallback=1.0):
+    finite = sorted(
+        abs(float(value))
+        for value in values
+        if math.isfinite(float(value))
+    )
+    if not finite:
+        return float(fallback)
+    # Ignore the most extreme projection spikes so one branch-cut sample does
+    # not flatten the whole surface. This affects visualization only.
+    scale = _quantile(finite, .92)
+    return max(float(fallback), float(scale), 1e-12)
+
+
+def complex_projection_payload(
+    model: WeierstrassModel,
+    points: list[PointRecord],
+    *,
+    bounds=(-5.0, 5.0),
+    grid=33,
+    real_samples=640,
+):
+    """Sample the complex affine curve as a two-sheeted R^3 projection.
+
+    The surface uses x=u+iv as the two real parameters. Each x has two complex
+    y-values from the generalized Weierstrass equation. The browser can view
+    either (Re x, Im x, Re y) or (Re x, Im x, Im y).
+
+    This mirrors the projection idea used in classical complex-elliptic-curve
+    visualizations without claiming a literal embedding in R^3. The point at
+    infinity is omitted and apparent self-intersections can be projection
+    artifacts.
+    """
+    grid = max(17, min(49, int(grid)))
+    real_samples = max(160, min(1600, int(real_samples)))
+    xmin, xmax = (float(bounds[0]), float(bounds[1]))
+    if not (math.isfinite(xmin) and math.isfinite(xmax)) or not xmax > xmin:
+        xmin, xmax = coefficient_shape_bounds(model)
+    center = (xmin + xmax)/2.0
+    xscale = max((xmax - xmin)/2.0, 1e-9)
+    imag_scale = xscale
+
+    raw = []
+    for sheet in (1, -1):
+        for j in range(grid):
+            v = -imag_scale + (2.0*imag_scale*j)/(grid - 1)
+            for i in range(grid):
+                u = xmin + ((xmax - xmin)*i)/(grid - 1)
+                y_plus, y_minus = complex_y_branches(model, complex(u, v))
+                y = y_plus if sheet == 1 else y_minus
+                raw.append((u, v, float(y.real), float(y.imag), sheet))
+
+    re_scale = _visual_scale((rec[2] for rec in raw), fallback=xscale)
+    im_scale = _visual_scale((rec[3] for rec in raw), fallback=xscale)
+
+    vertices = [
+        [
+            (u-center)/xscale,
+            v/imag_scale,
+            yre/re_scale,
+            yim/im_scale,
+            sheet,
+        ]
+        for u, v, yre, yim, sheet in raw
+    ]
+
+    faces = []
+    sheet_size = grid*grid
+    for sheet_index, sheet in enumerate((1, -1)):
+        base = sheet_index*sheet_size
+        for j in range(grid - 1):
+            for i in range(grid - 1):
+                a = base + j*grid + i
+                b = a + 1
+                cidx = a + grid + 1
+                d = a + grid
+                faces.append([a, b, cidx, d, sheet])
+
+    # Real-locus overlays are stored as contiguous segments so the renderer
+    # never bridges a gap where the real quadratic in y has no real solution.
+    segments = []
+    plus_segment = []
+    minus_segment = []
+    a1, a2, a3, a4, a6 = [
+        safe_float(value)
+        for value in (model.a1, model.a2, model.a3, model.a4, model.a6)
+    ]
+    for index in range(real_samples):
+        x = xmin + ((xmax-xmin)*index)/(real_samples - 1)
+        linear = a1*x + a3
+        rhs = x**3 + a2*x*x + a4*x + a6
+        disc = linear*linear + 4.0*rhs
+        if disc >= 0.0 and math.isfinite(disc):
+            root = math.sqrt(disc)
+            y_plus = (-linear + root)/2.0
+            y_minus = (-linear - root)/2.0
+            plus_segment.append([(x-center)/xscale, y_plus/re_scale])
+            minus_segment.append([(x-center)/xscale, y_minus/re_scale])
+        else:
+            if len(plus_segment) >= 2:
+                segments.append(plus_segment)
+            if len(minus_segment) >= 2:
+                segments.append(minus_segment)
+            plus_segment, minus_segment = [], []
+    if len(plus_segment) >= 2:
+        segments.append(plus_segment)
+    if len(minus_segment) >= 2:
+        segments.append(minus_segment)
+
+    stored = []
+    for point in points[:512]:
+        x = safe_float(point.x)
+        y = safe_float(point.y)
+        xn = (x-center)/xscale
+        if not (math.isfinite(xn) and math.isfinite(y)):
+            continue
+        # Keep the default view useful; extreme exact points remain available
+        # on the 2D Graph tab rather than blowing out this projection.
+        if abs(xn) > 4.0:
+            continue
+        stored.append({
+            "id": str(point.id),
+            "label": point.label,
+            "x": xn,
+            "z_re": y/re_scale,
+            "z_im": 0.0,
+            "is_generator": bool(point.is_generator),
+            "rigorous_independent": bool(point.rigorous_independent),
+        })
+
+    return {
+        "equation": model.equation_text(),
+        "grid": grid,
+        "vertices": vertices,
+        "faces": faces,
+        "real_locus": segments,
+        "stored_points": stored,
+        "x_center": center,
+        "x_scale": xscale,
+        "imag_scale": imag_scale,
+        "re_y_scale": re_scale,
+        "im_y_scale": im_scale,
+        "projection_re": ["Re(x)", "Im(x)", "Re(y)"],
+        "projection_im": ["Re(x)", "Im(x)", "Im(y)"],
+    }
 
 
 def plot_payload(model: WeierstrassModel, points: list[PointRecord], *, bounds=(-5.0, 5.0),

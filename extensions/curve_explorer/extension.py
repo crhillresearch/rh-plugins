@@ -7,6 +7,11 @@ from pathlib import Path
 
 import streamlit as st
 
+try:
+    from rank42.ui_components import tabs as _rh_tabs
+except Exception:
+    _rh_tabs = None
+
 
 def _load_backend():
     path = Path(__file__).with_name("backend.py")
@@ -158,7 +163,7 @@ button.icon{width:33px;padding:0;font-size:15px}button:hover{background:var(--rh
 .toolrow{display:flex;justify-content:space-between;gap:12px;padding:8px 16px;border-bottom:1px solid var(--border);background:var(--rh-card);align-items:center;min-height:48px}
 .filterbar button{border-radius:999px;height:28px}.selectionbar{justify-content:flex-end;color:var(--muted);font-size:11px}.pick{padding:5px 9px;border-radius:999px;background:var(--rh-card-2);border:1px solid var(--border);white-space:nowrap}.pick strong{color:var(--rh-text)}.pick.p strong{color:var(--p)}.pick.q strong{color:var(--q)}
 .canvas-wrap{position:relative;background:var(--paper)}svg{display:block;width:100%;height:680px;background:var(--paper);cursor:grab;touch-action:none}svg.dragging{cursor:grabbing}
-.legend{position:absolute;left:17px;top:14px;display:flex;gap:6px;flex-wrap:wrap;max-width:70%;pointer-events:none}.chip{display:flex;align-items:center;gap:5px;padding:4px 7px;border:1px solid color-mix(in srgb,var(--rh-border) 78%,transparent);border-radius:999px;background:color-mix(in srgb,var(--rh-card) 88%,transparent);backdrop-filter:blur(7px);color:var(--rh-text-secondary);font-size:10px;box-shadow:0 3px 10px color-mix(in srgb,var(--rh-text) 12%,transparent)}.swatch{width:8px;height:8px;border-radius:50%;display:inline-block}
+.graph-legend{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:8px 17px;border-bottom:1px solid var(--border);background:var(--rh-card);min-height:42px}.chip{display:flex;align-items:center;gap:5px;padding:4px 7px;border:1px solid color-mix(in srgb,var(--rh-border) 78%,transparent);border-radius:999px;background:color-mix(in srgb,var(--rh-card) 88%,transparent);backdrop-filter:blur(7px);color:var(--rh-text-secondary);font-size:10px;box-shadow:0 3px 10px color-mix(in srgb,var(--rh-text) 12%,transparent)}.swatch{width:8px;height:8px;border-radius:50%;display:inline-block}
 .readout{position:absolute;right:15px;bottom:15px;min-width:235px;max-width:48%;background:color-mix(in srgb,var(--rh-card) 96%,transparent);border:1px solid var(--border-strong);border-radius:12px;padding:9px 11px;box-shadow:0 8px 24px color-mix(in srgb,var(--rh-text) 18%,transparent);font-size:11px;line-height:1.45;display:none;color:var(--rh-text-secondary)}.readout .name{font-weight:760;color:var(--rh-text)}.readout .coords{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;color:var(--rh-text-secondary);word-break:break-all}.readout .math{margin-top:4px;color:var(--rh-text-secondary)}
 .foot{display:flex;justify-content:space-between;gap:15px;padding:9px 16px 10px 18px;border-top:1px solid var(--border);color:var(--muted);font-size:10px;background:var(--rh-card)}.tooltip{position:fixed;display:none;pointer-events:none;z-index:50;background:var(--rh-card-2);color:var(--rh-text);border:1px solid var(--rh-border-strong);border-radius:8px;padding:7px 9px;font-size:10px;box-shadow:0 9px 26px color-mix(in srgb,var(--rh-text) 20%,transparent);white-space:nowrap}
 @media(max-width:760px){.head{align-items:flex-start;flex-direction:column}.toolrow{align-items:flex-start;flex-direction:column}.selectionbar{justify-content:flex-start}.eq{font-size:17px}svg{height:610px}.readout{max-width:70%}}
@@ -180,9 +185,9 @@ button.icon{width:33px;padding:0;font-size:15px}button:hover{background:var(--rh
       <button id="tangent" disabled>Tangent at P</button><button id="play" disabled>▶ Construct</button><button id="fitConstruction" disabled>Fit construction</button><button id="clear" disabled>Clear</button>
     </div>
   </div>
+  <div class="graph-legend"><span class="chip"><i class="swatch" style="background:var(--curve)"></i>curve</span><span class="chip"><i class="swatch" style="background:var(--stored)"></i>stored ℚ-points</span><span class="chip"><i class="swatch" style="background:var(--p)"></i>P</span><span class="chip"><i class="swatch" style="background:var(--q)"></i>Q</span><span class="chip"><i class="swatch" style="background:var(--third)"></i>R</span><span class="chip"><i class="swatch" style="background:var(--sum)"></i>−R = P+Q</span></div>
   <div class="canvas-wrap">
     <svg id="plot" viewBox="0 0 1000 680" role="img" aria-label="Elliptic curve real locus with exact rational points"></svg>
-    <div class="legend"><span class="chip"><i class="swatch" style="background:var(--curve)"></i>curve</span><span class="chip"><i class="swatch" style="background:var(--stored)"></i>stored ℚ-points</span><span class="chip"><i class="swatch" style="background:var(--p)"></i>P</span><span class="chip"><i class="swatch" style="background:var(--q)"></i>Q</span><span class="chip"><i class="swatch" style="background:var(--third)"></i>R</span><span class="chip"><i class="swatch" style="background:var(--sum)"></i>−R = P+Q</span></div>
     <div class="readout" id="readout"><div class="name" id="rname"></div><div class="coords" id="rcoords"></div><div class="math" id="rmath"></div><div id="rmeta"></div></div>
   </div>
   <div class="foot"><span id="hint">click a point for P · click another for Q · click P twice for a tangent · hover for exact coordinates</span><span id="cache"></span></div>
@@ -295,6 +300,214 @@ def _plot_html(payload, context):
     )
 
 
+HTML_3D_TEMPLATE = r'''<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+__THEME_CSS__
+:root{
+  --paper:var(--rh-card);--raised:var(--rh-card-2);--ink:var(--rh-text);--muted:var(--rh-muted);
+  --border:var(--rh-border);--border-strong:var(--rh-border-strong);
+  --surface-a:var(--rh-primary);--surface-b:var(--rh-warning);
+  --real:var(--rh-danger);--stored:var(--rh-success);--axis:var(--rh-text-secondary);
+  --shadow:0 18px 42px color-mix(in srgb,var(--rh-text) 18%,transparent);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:transparent;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.shell{background:var(--paper);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 16px 11px 18px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,var(--raised),var(--paper))}
+.eyebrow{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:750;margin-bottom:3px}
+.eq{font-family:Cambria,"Times New Roman",serif;font-size:19px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:760px}
+.controls{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+button{height:31px;padding:0 10px;border:1px solid var(--rh-control-border);background:var(--raised);color:var(--rh-text-secondary);border-radius:9px;font-size:11px;font-weight:750;cursor:pointer}
+button:hover{background:var(--rh-surface-hover);color:var(--rh-text)}
+button.active{background:var(--rh-surface-active);border-color:var(--rh-primary);color:var(--rh-primary)}
+.note{padding:8px 16px;border-bottom:1px solid var(--border);font-size:11px;color:var(--muted);line-height:1.45}
+.canvas-wrap{position:relative;height:690px;background:radial-gradient(circle at 50% 42%,color-mix(in srgb,var(--rh-primary) 7%,var(--paper)),var(--paper) 62%)}
+canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
+canvas.dragging{cursor:grabbing}
+.legend{position:absolute;left:16px;top:14px;display:flex;gap:6px;flex-wrap:wrap;pointer-events:none}
+.chip{display:flex;align-items:center;gap:6px;padding:5px 8px;border:1px solid color-mix(in srgb,var(--border) 80%,transparent);border-radius:999px;background:color-mix(in srgb,var(--paper) 90%,transparent);font-size:10px;color:var(--rh-text-secondary);backdrop-filter:blur(7px)}
+.swatch{width:8px;height:8px;border-radius:50%}.a{background:var(--surface-a)}.b{background:var(--surface-b)}.r{background:var(--real)}.s{background:var(--stored)}
+.hud{position:absolute;right:16px;bottom:14px;padding:7px 9px;border:1px solid var(--border);border-radius:10px;background:color-mix(in srgb,var(--paper) 90%,transparent);font-size:10px;color:var(--muted);backdrop-filter:blur(7px);pointer-events:none}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="head">
+    <div>
+      <div class="eyebrow">Complex affine curve · R³ projection</div>
+      <div class="eq" id="eq"></div>
+    </div>
+    <div class="controls">
+      <button data-proj="re" class="active">Re(y)</button>
+      <button data-proj="im">Im(y)</button>
+      <button id="auto">Auto rotate</button>
+      <button id="reset">Reset view</button>
+    </div>
+  </div>
+  <div class="note">
+    Drag to orbit · wheel to zoom. The complex curve is two real dimensional; this view projects
+    (Re x, Im x, Re y) or (Re x, Im x, Im y) into R³. Apparent crossings can be projection artifacts.
+  </div>
+  <div class="canvas-wrap">
+    <canvas id="scene"></canvas>
+    <div class="legend">
+      <span class="chip"><span class="swatch a"></span>sheet +</span>
+      <span class="chip"><span class="swatch b"></span>sheet −</span>
+      <span class="chip"><span class="swatch r"></span>real locus</span>
+      <span class="chip"><span class="swatch s"></span>stored rational points</span>
+    </div>
+    <div class="hud" id="hud"></div>
+  </div>
+</div>
+<script>
+const DATA=__DATA__;
+const canvas=document.getElementById('scene'),ctx=canvas.getContext('2d'),eq=document.getElementById('eq'),hud=document.getElementById('hud');
+eq.textContent=DATA.equation;
+const style=getComputedStyle(document.documentElement);
+const color=name=>style.getPropertyValue(name).trim();
+const COLORS={
+  a:color('--rh-primary')||'#58c7ff',
+  b:color('--rh-warning')||'#ffbd66',
+  real:color('--rh-danger')||'#ff775c',
+  stored:color('--rh-success')||'#55dfa6',
+  axis:color('--rh-text-secondary')||'#8d99a8',
+  text:color('--rh-text')||'#edf2f7',
+  muted:color('--rh-muted')||'#8d99a8',
+  border:color('--rh-border')||'#273142'
+};
+let yaw=-0.82,pitch=0.48,zoom=1.0,projection='re',drag=null,auto=false,last=0;
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+function resize(){
+  const r=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);
+  const w=Math.max(1,Math.round(r.width*dpr)),h=Math.max(1,Math.round(r.height*dpr));
+  if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h}
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  return {w:r.width,h:r.height};
+}
+function xyz(v){return [v[0],v[1],projection==='re'?v[2]:v[3]]}
+function rotate3(p){
+  const cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+  const x1=p[0]*cy-p[1]*sy,y1=p[0]*sy+p[1]*cy,z1=p[2];
+  const y2=y1*cp-z1*sp,z2=y1*sp+z1*cp;
+  return [x1,y2,z2];
+}
+function projected(p,w,h){
+  const q=rotate3(p),camera=4.2,persp=camera/(camera-q[1]),scale=Math.min(w,h)*0.34*zoom;
+  return {x:w/2+q[0]*scale*persp,y:h/2-q[2]*scale*persp,depth:q[1],z:p[2]};
+}
+function path(points,close=false){
+  if(!points.length)return;
+  ctx.beginPath();ctx.moveTo(points[0].x,points[0].y);
+  for(let i=1;i<points.length;i++)ctx.lineTo(points[i].x,points[i].y);
+  if(close)ctx.closePath();
+}
+function drawAxes(w,h){
+  const axes=[
+    [[0,0,0],[1.18,0,0],'Re x'],
+    [[0,0,0],[0,1.18,0],'Im x'],
+    [[0,0,0],[0,0,1.18],projection==='re'?'Re y':'Im y']
+  ];
+  ctx.lineWidth=1;ctx.strokeStyle=COLORS.axis;ctx.fillStyle=COLORS.muted;ctx.font='11px system-ui';
+  for(const [a,b,label] of axes){
+    const pa=projected(a,w,h),pb=projected(b,w,h);path([pa,pb]);ctx.stroke();
+    ctx.fillText(label,pb.x+5,pb.y-4);
+  }
+}
+function draw(){
+  const {w,h}=resize();
+  ctx.clearRect(0,0,w,h);
+  const transformed=DATA.vertices.map(v=>projected(xyz(v),w,h));
+  const faces=DATA.faces.map(f=>{
+    const pts=[transformed[f[0]],transformed[f[1]],transformed[f[2]],transformed[f[3]]];
+    return {pts,depth:pts.reduce((s,p)=>s+p.depth,0)/4,sheet:f[4]};
+  }).sort((a,b)=>a.depth-b.depth);
+  for(const face of faces){
+    const zs=face.pts.map(p=>p.z),spread=Math.max(...zs)-Math.min(...zs);
+    if(spread>1.9)continue;
+    path(face.pts,true);
+    ctx.globalAlpha=.17;ctx.fillStyle=face.sheet>0?COLORS.a:COLORS.b;ctx.fill();
+    ctx.globalAlpha=.20;ctx.lineWidth=.55;ctx.strokeStyle=face.sheet>0?COLORS.a:COLORS.b;ctx.stroke();
+  }
+  ctx.globalAlpha=1;
+  drawAxes(w,h);
+
+  ctx.strokeStyle=COLORS.real;ctx.lineWidth=2.2;ctx.globalAlpha=.95;
+  for(const segment of DATA.real_locus){
+    const pts=segment.map(p=>projected([p[0],0,projection==='re'?p[1]:0],w,h));
+    path(pts);ctx.stroke();
+  }
+  ctx.globalAlpha=1;
+
+  for(const p of DATA.stored_points){
+    const q=projected([p.x,0,projection==='re'?p.z_re:p.z_im],w,h);
+    ctx.beginPath();ctx.arc(q.x,q.y,p.rigorous_independent?4.3:3.3,0,Math.PI*2);
+    ctx.fillStyle=COLORS.stored;ctx.fill();
+    ctx.lineWidth=1.25;ctx.strokeStyle=COLORS.text;ctx.stroke();
+  }
+  hud.textContent=(projection==='re'?'(Re x, Im x, Re y)':'(Re x, Im x, Im y)')+
+    ' · grid '+DATA.grid+'×'+DATA.grid+' × 2 sheets';
+}
+function reset(){yaw=-0.82;pitch=.48;zoom=1;draw()}
+for(const b of document.querySelectorAll('[data-proj]'))b.onclick=()=>{
+  projection=b.dataset.proj;
+  document.querySelectorAll('[data-proj]').forEach(x=>x.classList.toggle('active',x===b));
+  draw();
+};
+document.getElementById('reset').onclick=reset;
+document.getElementById('auto').onclick=e=>{auto=!auto;e.currentTarget.classList.toggle('active',auto)};
+canvas.addEventListener('pointerdown',e=>{canvas.setPointerCapture(e.pointerId);drag={x:e.clientX,y:e.clientY,yaw,pitch};canvas.classList.add('dragging')});
+canvas.addEventListener('pointermove',e=>{if(!drag)return;yaw=drag.yaw+(e.clientX-drag.x)*.008;pitch=clamp(drag.pitch+(e.clientY-drag.y)*.008,-1.45,1.45);draw()});
+canvas.addEventListener('pointerup',()=>{drag=null;canvas.classList.remove('dragging')});
+canvas.addEventListener('pointercancel',()=>{drag=null;canvas.classList.remove('dragging')});
+canvas.addEventListener('wheel',e=>{e.preventDefault();zoom=clamp(zoom*(e.deltaY>0?.90:1.11),.35,3.2);draw()},{passive:false});
+window.addEventListener('resize',draw);
+function tick(t){if(auto&&!drag){const dt=Math.min(40,t-last||16);yaw+=dt*.00035;draw()}last=t;requestAnimationFrame(tick)}
+draw();requestAnimationFrame(tick);
+</script>
+</body>
+</html>'''
+
+
+def _plot_3d_html(payload, context):
+    data = json.dumps(payload, separators=(",", ":")).replace("</", "<\\/")
+    return (
+        HTML_3D_TEMPLATE
+        .replace("__THEME_CSS__", _runtime_theme_css(context))
+        .replace("__DATA__", data)
+    )
+
+
+def _page_view():
+    options = ["Graph", "3D"]
+    if _rh_tabs is not None:
+        return _rh_tabs(
+            options,
+            value="Graph",
+            key="rh-ext-curve-explorer-view",
+            variant="page",
+            width="stretch",
+        )
+    if hasattr(st, "segmented_control"):
+        return st.segmented_control(
+            "Curve Explorer view",
+            options,
+            default="Graph",
+            key="rh-ext-curve-explorer-view",
+            label_visibility="collapsed",
+            width="stretch",
+        )
+    return st.radio(
+        "Curve Explorer view",
+        options,
+        horizontal=True,
+        key="rh-ext-curve-explorer-view",
+        label_visibility="collapsed",
+    )
+
+
 def _status_line(row, lower, npoints):
     exact = row.get("exact_rank")
     score = row.get("score")
@@ -307,9 +520,132 @@ def _status_line(row, lower, npoints):
     return "  ·  ".join(bits)
 
 
-def render(context):
-    #st.caption("Click rational points directly on the curve to build exact secant/tangent constructions over Q.")
+def _render_graph_view(context, row, model, points):
+    xmin, xmax = B.choose_bounds(model, points, mode="Smart")
+    payload = B.plot_payload(
+        model,
+        points,
+        bounds=(xmin, xmax),
+        samples=2800,
+        pair_cache_points=96,
+    )
+    st.iframe(_plot_html(payload, context), width="stretch", height=815)
 
+    if not points:
+        st.info(
+            "The real locus is available, but this curve has no exact stored "
+            "rational points to overlay yet."
+        )
+        return
+
+    with st.expander("Server exact tools", expanded=False):
+        st.caption(
+            "The graph's clickable constructions are precomputed here in Python "
+            "over Q. These controls are for explicit arithmetic and multiples "
+            "outside the bounded click cache."
+        )
+        ids = [str(p.id) for p in points]
+        by_id = {str(p.id): p for p in points}
+        opts = [None] + ids
+        c1, c2 = st.columns(2)
+        p_id = c1.selectbox(
+            "Point P",
+            opts,
+            format_func=lambda x: (
+                "Select P" if x is None else _point_label(by_id[x])
+            ),
+            key="rh-ext-curve-explorer-server-p",
+        )
+        q_id = c2.selectbox(
+            "Point Q",
+            opts,
+            format_func=lambda x: (
+                "Select Q" if x is None else _point_label(by_id[x])
+            ),
+            key="rh-ext-curve-explorer-server-q",
+        )
+        if p_id is not None and q_id is not None:
+            try:
+                P, Qp = by_id[p_id], by_id[q_id]
+                result = model.add(P.point, Qp.point)
+                third = B.INF if result is B.INF else model.negate(result)
+                if result is B.INF:
+                    st.code(f"{P.label} + {Qp.label} = O", language="text")
+                else:
+                    st.code(
+                        f"R = ({B.qstr(third[0])}, {B.qstr(third[1])})\n"
+                        f"-R = {P.label} + {Qp.label} = "
+                        f"({B.qstr(result[0])}, {B.qstr(result[1])})",
+                        language="text",
+                    )
+            except Exception as exc:
+                st.warning(f"Exact addition could not be computed: {exc}")
+
+        if p_id is not None:
+            nmax = st.slider(
+                "Compute through nP",
+                1,
+                20,
+                8,
+                key="rh-ext-curve-explorer-multiples",
+            )
+            rows_out = []
+            for n in range(1, nmax + 1):
+                try:
+                    result = model.mul(n, by_id[p_id].point)
+                    rows_out.append({
+                        "n": n,
+                        "nP": (
+                            "O"
+                            if result is B.INF
+                            else f"({B.qstr(result[0])}, {B.qstr(result[1])})"
+                        ),
+                    })
+                except Exception as exc:
+                    rows_out.append({"n": n, "nP": f"error: {exc}"})
+                    break
+            st.dataframe(rows_out, width="stretch", hide_index=True)
+
+    with st.expander("Point ledger", expanded=False):
+        st.dataframe(
+            [
+                {
+                    "point": p.label,
+                    "x": B.qstr(p.x),
+                    "y": B.qstr(p.y),
+                    "role": p.role,
+                    "generator": p.is_generator,
+                    "selected subgroup": p.in_selected_subgroup,
+                    "exact verified": p.exact_verified,
+                    "rigorous independent": p.rigorous_independent,
+                    "independence": p.independence_status,
+                    "source": p.source,
+                }
+                for p in points
+            ],
+            width="stretch",
+            hide_index=True,
+        )
+
+
+def _render_3d_view(context, model, points):
+    xmin, xmax = B.choose_bounds(model, points, mode="Smart")
+    payload = B.complex_projection_payload(
+        model,
+        points,
+        bounds=(xmin, xmax),
+        grid=33,
+        real_samples=720,
+    )
+    st.caption(
+        "Complex affine visualization only — not rank evidence. The point at infinity is omitted; "
+        "apparent self-intersections can be projection artifacts when the complex curve is shown "
+        "in three real dimensions."
+    )
+    st.iframe(_plot_3d_html(payload, context), width="stretch", height=805)
+
+
+def render(context):
     rows = [dict(r) for r in context.db.execute(
         """SELECT * FROM curves WHERE a_invariants_json IS NOT NULL AND TRIM(a_invariants_json)<>''
            ORDER BY COALESCE(exact_rank,descent_lower,generic_lower,-1) DESC,
@@ -319,9 +655,25 @@ def render(context):
         st.info("No stored curves with a-invariants are available yet.")
         return
 
-    preferred = st.session_state.get("curves_selected_id") or st.session_state.get("analysis_curve_id") or st.session_state.get("target_curve_id")
-    index = next((i for i, r in enumerate(rows) if preferred and int(r["id"]) == int(preferred)), 0)
-    row = st.selectbox("Curve", rows, index=index, format_func=_curve_label, key="rh-ext-curve-explorer-curve")
+    preferred = (
+        st.session_state.get("curves_selected_id")
+        or st.session_state.get("analysis_curve_id")
+        or st.session_state.get("target_curve_id")
+    )
+    index = next(
+        (
+            i for i, r in enumerate(rows)
+            if preferred and int(r["id"]) == int(preferred)
+        ),
+        0,
+    )
+    row = st.selectbox(
+        "Curve",
+        rows,
+        index=index,
+        format_func=_curve_label,
+        key="rh-ext-curve-explorer-curve",
+    )
     st.session_state["curve_explorer_curve_id"] = int(row["id"])
 
     try:
@@ -334,63 +686,9 @@ def render(context):
     lower = B.rigorous_lower(row)
     st.caption(_status_line(row, lower, len(points)))
 
-    xmin, xmax = B.choose_bounds(model, points, mode="Smart")
-    payload = B.plot_payload(model, points, bounds=(xmin, xmax), samples=2800, pair_cache_points=96)
-    st.iframe(_plot_html(payload, context), width="stretch", height=815)
-
-    if not points:
-        st.info("The real locus is available, but this curve has no exact stored rational points to overlay yet.")
-        return
-
-    with st.expander("Server exact tools", expanded=False):
-        st.caption("The graph's clickable constructions are precomputed here in Python over Q. These controls are for explicit arithmetic and multiples outside the bounded click cache.")
-        ids = [str(p.id) for p in points]
-        by_id = {str(p.id): p for p in points}
-        opts = [None] + ids
-        c1, c2 = st.columns(2)
-        p_id = c1.selectbox("Point P", opts, format_func=lambda x: "Select P" if x is None else _point_label(by_id[x]), key="rh-ext-curve-explorer-server-p")
-        q_id = c2.selectbox("Point Q", opts, format_func=lambda x: "Select Q" if x is None else _point_label(by_id[x]), key="rh-ext-curve-explorer-server-q")
-        if p_id is not None and q_id is not None:
-            try:
-                P, Qp = by_id[p_id], by_id[q_id]
-                result = model.add(P.point, Qp.point)
-                third = B.INF if result is B.INF else model.negate(result)
-                if result is B.INF:
-                    st.code(f"{P.label} + {Qp.label} = O", language="text")
-                else:
-                    st.code(
-                        f"R = ({B.qstr(third[0])}, {B.qstr(third[1])})\n"
-                        f"-R = {P.label} + {Qp.label} = ({B.qstr(result[0])}, {B.qstr(result[1])})",
-                        language="text",
-                    )
-            except Exception as exc:
-                st.warning(f"Exact addition could not be computed: {exc}")
-
-        if p_id is not None:
-            nmax = st.slider("Compute through nP", 1, 20, 8, key="rh-ext-curve-explorer-multiples")
-            rows_out = []
-            for n in range(1, nmax + 1):
-                try:
-                    result = model.mul(n, by_id[p_id].point)
-                    rows_out.append({"n": n, "nP": "O" if result is B.INF else f"({B.qstr(result[0])}, {B.qstr(result[1])})"})
-                except Exception as exc:
-                    rows_out.append({"n": n, "nP": f"error: {exc}"})
-                    break
-            st.dataframe(rows_out, width="stretch", hide_index=True)
-
-    with st.expander("Point ledger", expanded=False):
-        st.dataframe([
-            {
-                "point": p.label,
-                "x": B.qstr(p.x),
-                "y": B.qstr(p.y),
-                "role": p.role,
-                "generator": p.is_generator,
-                "selected subgroup": p.in_selected_subgroup,
-                "exact verified": p.exact_verified,
-                "rigorous independent": p.rigorous_independent,
-                "independence": p.independence_status,
-                "source": p.source,
-            }
-            for p in points
-        ], width="stretch", hide_index=True)
+    view = _page_view()
+    st.html("<div style='height:.35rem' aria-hidden='true'></div>")
+    if view == "3D":
+        _render_3d_view(context, model, points)
+    else:
+        _render_graph_view(context, row, model, points)

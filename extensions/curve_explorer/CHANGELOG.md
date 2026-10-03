@@ -6,6 +6,23 @@ Curve Explorer is a Rank Hunter extension for interactively exploring elliptic c
 
 ---
 
+## 0.5.0
+
+### Added
+
+- Added page-level **Graph** and **3D** views while preserving the existing Graph workspace.
+- Added an interactive complex affine projection rendered without an external plotting dependency.
+- The 3D view can switch between `(Re x, Im x, Re y)` and `(Re x, Im x, Im y)`, orbit by dragging, zoom with the wheel, reset the camera, and auto-rotate.
+- Added real-locus highlighting and stored rational-point overlays in the complex projection.
+- Added a bounded backend sampler for the two complex y-branches of a generalized Weierstrass model.
+- Added explicit visualization/proof-boundary text: the 3D projection omits the point at infinity and apparent crossings may be projection artifacts.
+
+### Inspiration
+
+- The complex-to-`R^3` presentation is inspired by Arapura's Purdue elliptic-curve visualization page; Curve Explorer samples Rank Hunter's generalized affine Weierstrass equation directly rather than requiring a period-lattice / Weierstrass-℘ computation.
+
+---
+
 ## 0.4.8
 
 ### Fixed
