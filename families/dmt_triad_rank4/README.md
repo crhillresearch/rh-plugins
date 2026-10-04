@@ -2,7 +2,7 @@
 
 Rank Hunter Family plugin for REA CURVE2 / Triad Family from C. R. Hill, *Regularity-Selected Generic Rank at Least Four in the Piezas Diophantine Sextuple* (DMT-001, preprint, 2026-09-12).
 
-Paper: https://hillaxiom.com/papers/dmt-001.pdf
+Paper: https://hillaxiom.com/papers/dmt-001.html
 
 Release-audited for Rank Hunter **0.9.2**. The Family mathematics and search paths are standalone; no checkout of the private research repository is required for normal Family use.
 
