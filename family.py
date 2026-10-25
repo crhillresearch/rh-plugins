@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from fractions import Fraction
 from math import gcd
 from pathlib import Path
 
@@ -27,6 +28,10 @@ _A6 = _R(_DATA["parent_jacobian_model"]["a6_low_to_high"])
 
 generic_rank = 19
 parameter_base_genus = 1
+# The map from the auxiliary elliptic curve to the K3 parameter is invariant
+# under Q -> P-Q.  On integer multiples this is n -> 1-n, so keep n >= 1 as
+# the unique representative of each rational fiber.
+parameter_symmetry = "canonical"
 
 
 def name():
@@ -36,6 +41,14 @@ def name():
 def candidate_seed_parameters():
     """Include the reproducible n=1 construction fiber in each hunt."""
     return (1,)
+
+
+def canonical_parameter(value):
+    """Return the canonical integer multiple for the fiber indexed by value."""
+    q = Fraction(value)
+    if q.denominator == 1 and q.numerator < 1:
+        q = 1 - q
+    return q.numerator, q.denominator
 
 
 def parent_parameter(index):

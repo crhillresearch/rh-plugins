@@ -14,6 +14,11 @@ second cover, then Rank Hunter checks the points and certifies independence on
 each individual fiber. The target adapter also supports exact point searches
 on a selected elliptic curve.
 
+The map to the K3 parameter is invariant under the auxiliary involution
+`Q -> P-Q`. Thus integer inputs `n` and `1-n` give the same fiber; candidate
+generation keeps the representative `n >= 1` and later AI rounds exclude
+fibers already searched.
+
 Every generated pool reserves a slot for `n=1`, a reproducible fiber of the
 rank-19 construction. Rank Hunter certified rank at least 19 for this fiber
 in its first AI Hunt. The separate parent-family curve at `t=15122/33609`

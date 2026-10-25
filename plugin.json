@@ -3,7 +3,7 @@
   "plugin_type": "family",
   "id": "hill_rank19_k3",
   "name": "Hill Rank-19 K3",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "icon": ":material/account_tree:",
   "description": "C. R. Hill's generic rank ≥19 family from two quadratic covers of an elliptic K3 surface. Integer search inputs index points on the positive-rank genus-one parameter curve; each fiber needs its own rank certificate. Paper: https://hillaxiom.com/papers/k3-19-sections.html",
   "author": "C. R. Hill",
