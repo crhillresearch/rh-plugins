@@ -1,7 +1,7 @@
 # Hill Rank-19 K3
 
 This plugin implements C. R. Hill's paper, [*Nineteen Independent Sections
-from Two Quadratic Covers of an Elliptic K3 Surface*](https://hillaxiom.github.io/papers/k3-19-sections.html).
+from Two Quadratic Covers of an Elliptic K3 Surface*](https://hillaxiom.com/papers/k3-19-sections.html).
 The base elliptic K3 fibration has 17 independent sections. The two
 quadratic covers, indexed 4339 and 36773 in the proof data, add one section
 each. On their genus-one compositum the 19 sections are independent.
@@ -24,5 +24,5 @@ genus-one parameter curve. Individual fibers are promoted only after their
 own exact evidence is checked. The construction and section coordinates are
 documented in the paper and proof packet:
 
-- Paper: `https://hillaxiom.github.io/papers/k3-19-sections.html`
+- Paper: `https://hillaxiom.com/papers/k3-19-sections.html`
 - Proof data and verifier: `https://github.com/crhillresearch/rank-ledger/tree/main/rank-19-genus-one-base-change`

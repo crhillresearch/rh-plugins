@@ -5,11 +5,11 @@
   "name": "Hill Rank-19 K3",
   "version": "0.3.0",
   "icon": ":material/account_tree:",
-  "description": "C. R. Hill's generic rank ≥19 family from two quadratic covers of an elliptic K3 surface. Integer search inputs index points on the positive-rank genus-one parameter curve; each fiber needs its own rank certificate. Paper: https://hillaxiom.github.io/papers/k3-19-sections.html",
+  "description": "C. R. Hill's generic rank ≥19 family from two quadratic covers of an elliptic K3 surface. Integer search inputs index points on the positive-rank genus-one parameter curve; each fiber needs its own rank certificate. Paper: https://hillaxiom.com/papers/k3-19-sections.html",
   "author": "C. R. Hill",
   "paper": {
     "title": "Nineteen Independent Sections from Two Quadratic Covers of an Elliptic K3 Surface",
-    "url": "https://hillaxiom.github.io/papers/k3-19-sections.html"
+    "url": "https://hillaxiom.com/papers/k3-19-sections.html"
   },
   "enabled_by_default": true,
   "curve_family_name": "Hill Rank-19 K3",
