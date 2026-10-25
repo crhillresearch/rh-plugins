@@ -26,7 +26,8 @@ from rank42.ratpoints import (
 from rank42.search_models import completed_square_polynomial, recover_weierstrass_y
 
 
-ENGINE_VERSION = "0.3.0"
+ENGINE_VERSION = "0.4.1"
+MAX_SEARCH_MODEL_DIGITS = 500_000
 
 
 def _stages(value):
@@ -135,6 +136,33 @@ def _search_model(E, timeout):
 
 def build_result(args):
     curve_id, parameter, E = _subject(args)
+    model_digits = max(len(str(a)) for a in E.a_invariants())
+    if model_digits > MAX_SEARCH_MODEL_DIGITS:
+        reason = (
+            f"largest model coefficient has {model_digits} digits; "
+            f"section evaluation is limited to {MAX_SEARCH_MODEL_DIGITS} digits"
+        )
+        return {
+            "schema": SCHEMA,
+            "status": "inconclusive",
+            "reason": reason,
+            "engine": "hill_rank19_k3_specialization_search",
+            "engine_version": ENGINE_VERSION,
+            "algorithm": "paired_cover_section_specialization_plus_ratpoints",
+            "points": [],
+            "artifacts": [],
+            "metadata": {
+                "result_source": "typed_artifact",
+                "plugin_id": "hill_rank19_k3",
+                "mode": args.mode,
+                "curve_id": curve_id,
+                "auxiliary_multiple": str(parameter) if args.mode == "family" else None,
+                "model_coefficient_digits": model_digits,
+                "search_model": "skipped_size_limit",
+                "paper_sections_returned": 0,
+                "ratpoints_extras_returned": 0,
+            },
+        }
     points, seen = [], set()
     section_error = None
     if args.mode == "family":
@@ -236,6 +264,7 @@ def main(argv=None):
         "status": result["status"], "points": len(result["points"]),
         "curve_id": result["metadata"]["curve_id"],
         "paper_sections": result["metadata"]["paper_sections_returned"],
+        "reason": result.get("reason"),
     }, sort_keys=True), flush=True)
 
 

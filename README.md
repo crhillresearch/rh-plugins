@@ -19,6 +19,11 @@ The map to the K3 parameter is invariant under the auxiliary involution
 generation keeps the representative `n >= 1` and later AI rounds exclude
 fibers already searched.
 
+The search adapter skips a fiber when a Weierstrass coefficient exceeds
+500,000 digits. At that size even evaluating the known sections can take
+many minutes. The skipped fiber remains mathematically valid; this is a
+search budget limit.
+
 Every generated pool reserves a slot for `n=1`, a reproducible fiber of the
 rank-19 construction. Rank Hunter certified rank at least 19 for this fiber
 in its first AI Hunt. The separate parent-family curve at `t=15122/33609`
