@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "hill_rank19_k3",
+  "name": "Hill Rank-19 K3",
+  "version": "0.3.0",
+  "icon": ":material/account_tree:",
+  "description": "C. R. Hill's generic rank ≥19 family from two quadratic covers of an elliptic K3 surface. Integer search inputs index points on the positive-rank genus-one parameter curve; each fiber needs its own rank certificate. Paper: https://hillaxiom.github.io/papers/k3-19-sections.html",
+  "author": "C. R. Hill",
+  "paper": {
+    "title": "Nineteen Independent Sections from Two Quadratic Covers of an Elliptic K3 Surface",
+    "url": "https://hillaxiom.github.io/papers/k3-19-sections.html"
+  },
+  "enabled_by_default": true,
+  "curve_family_name": "Hill Rank-19 K3",
+  "generic_rank": 19,
+  "verified_generic_rank_lower": 19,
+  "generic_rank_claim_state": "generic_lower_bound_verified",
+  "family": {
+    "kind": "module",
+    "spec": "hill_rank19_k3_family",
+    "file": "family.py"
+  },
+  "capabilities": ["candidate_generation", "family_search", "target_search"],
+  "search_adapter": "search_adapter.py",
+  "search_options": {
+    "family": [
+      {"key": "stages", "type": "str", "label": "Ratpoints stages", "default": "1000,10000,100000,1000000", "help": "Height stages for searching beyond the 19 specialized construction points."},
+      {"key": "timeout", "type": "int", "label": "Seconds per stage", "default": 30, "min": 1, "max": 3600},
+      {"key": "max_points", "type": "int", "label": "Additional points", "default": 64, "min": 0, "max": 512},
+      {"key": "model_prep_timeout", "type": "int", "label": "Minimal model timeout", "default": 15, "min": 0, "max": 300}
+    ],
+    "target": [
+      {"key": "stages", "type": "str", "label": "Ratpoints stages", "default": "1000,10000,100000,1000000,10000000", "help": "Height stages for the selected elliptic curve."},
+      {"key": "timeout", "type": "int", "label": "Seconds per stage", "default": 45, "min": 1, "max": 3600},
+      {"key": "max_points", "type": "int", "label": "Additional points", "default": 96, "min": 0, "max": 512},
+      {"key": "model_prep_timeout", "type": "int", "label": "Minimal model timeout", "default": 20, "min": 0, "max": 300}
+    ]
+  },
+  "validation_parameter": "1",
+  "candidate_defaults": {
+    "a_min": 1,
+    "a_max": 3,
+    "b_min": 1,
+    "b_max": 1,
+    "engine": "sieve",
+    "stage_bounds": "53,211",
+    "stage_keeps": "3,3",
+    "top": 3
+  },
+  "construction_record": "construction.json",
+  "provenance": {
+    "construction": "Two exact conic lifts of ICARM #3900 neighbor 028, cover indices 4339 and 36773; positive-rank auxiliary genus-one base",
+    "claim_boundary": "Generic lower bound is over Q(E_aux). It is not a rank-19 claim over the unrestricted parent Q(t), and no specialized fiber rank follows without an exact certificate.",
+    "seed_curve_id": 8763,
+    "seed_parameter": "15122/33609",
+    "base_field": "Q(E_aux)",
+    "parameter_base_genus": 1
+  }
+}
