@@ -1,5 +1,7 @@
 # Hill Rank-19 K3
 
+Plugin version: **0.4.1**
+
 This plugin implements C. R. Hill's paper, [*Nineteen Independent Sections
 from Two Quadratic Covers of an Elliptic K3 Surface*](https://hillaxiom.com/papers/k3-19-sections.html).
 The base elliptic K3 fibration has 17 independent sections. The two
