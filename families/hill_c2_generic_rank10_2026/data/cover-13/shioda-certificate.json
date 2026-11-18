@@ -1,0 +1,313 @@
+{
+  "status": "certified_exact_rank10_on_quadratic_cover",
+  "source_model": "/home/chris/rank-hunter5/research/z2/ek-u11_5-k3-cover-parent.json",
+  "source_portfolio": "/home/chris/rank-hunter5/research/z2/ek-u11_5-quadratic-sections-support6.json",
+  "source_portfolio_sha256": "47ae03642e68c8346cb91755fa7eadddd1cc5764318c1acb72e93fc29e70d24a",
+  "cover_index": 13,
+  "seed_parameter": "-13/30",
+  "conic_map_identity_verified": true,
+  "euler_characteristic": 4,
+  "discriminant_degree": 48,
+  "discriminant_factor_profile": [
+    {
+      "factor": "U - 7",
+      "degree": 1,
+      "multiplicity": 1
+    },
+    {
+      "factor": "U - 5/19",
+      "degree": 1,
+      "multiplicity": 1
+    },
+    {
+      "factor": "U + 1/433",
+      "degree": 1,
+      "multiplicity": 1
+    },
+    {
+      "factor": "U + 63/3215",
+      "degree": 1,
+      "multiplicity": 1
+    },
+    {
+      "factor": "U^2 - 254242/31635*U - 113/6327",
+      "degree": 2,
+      "multiplicity": 1
+    },
+    {
+      "factor": "U^2 + 159730/21717*U + 157/21717",
+      "degree": 2,
+      "multiplicity": 1
+    },
+    {
+      "factor": "U^2 - 4751/684*U - 11/684",
+      "degree": 2,
+      "multiplicity": 2
+    },
+    {
+      "factor": "U^2 - 3635/646*U - 9/646",
+      "degree": 2,
+      "multiplicity": 2
+    },
+    {
+      "factor": "U^2 - 150158/29583*U - 2699/207081",
+      "degree": 2,
+      "multiplicity": 2
+    },
+    {
+      "factor": "U^2 - 128294/37791*U - 389/37791",
+      "degree": 2,
+      "multiplicity": 2
+    },
+    {
+      "factor": "U^2 - 23006/9139*U - 81/9139",
+      "degree": 2,
+      "multiplicity": 2
+    },
+    {
+      "factor": "U^2 - 20255/14193*U - 704/99351",
+      "degree": 2,
+      "multiplicity": 2
+    },
+    {
+      "factor": "U^2 - 808/2223*U - 583/108927",
+      "degree": 2,
+      "multiplicity": 2
+    },
+    {
+      "factor": "U^2 - 11306/46341*U - 239/46341",
+      "degree": 2,
+      "multiplicity": 2
+    },
+    {
+      "factor": "U^4 - 382896092/66368007*U^3 + 2806051466/331840035*U^2 - 47339132/331840035*U - 19061/331840035",
+      "degree": 4,
+      "multiplicity": 1
+    },
+    {
+      "factor": "U^4 + 1973612/480681*U^3 + 244557262/246589353*U^2 + 1565180/246589353*U + 2545/246589353",
+      "degree": 4,
+      "multiplicity": 1
+    }
+  ],
+  "fiber_types": {
+    "I1_geometric_count": 16,
+    "I2_geometric_count": 16
+  },
+  "height_method": "exact Shioda heights; I2 correction 1/2 for each geometric node met, checked in the irreducible residue field",
+  "i2_component_receipts": [
+    {
+      "label": "P1",
+      "i2_factors_met_at_node": [
+        "U^2 - 3635/646*U - 9/646",
+        "U^2 - 150158/29583*U - 2699/207081",
+        "U^2 - 20255/14193*U - 704/99351",
+        "U^2 - 11306/46341*U - 239/46341"
+      ]
+    },
+    {
+      "label": "P2",
+      "i2_factors_met_at_node": [
+        "U^2 - 4751/684*U - 11/684",
+        "U^2 - 3635/646*U - 9/646",
+        "U^2 - 23006/9139*U - 81/9139",
+        "U^2 - 20255/14193*U - 704/99351"
+      ]
+    },
+    {
+      "label": "P3",
+      "i2_factors_met_at_node": [
+        "U^2 - 4751/684*U - 11/684",
+        "U^2 - 3635/646*U - 9/646",
+        "U^2 - 150158/29583*U - 2699/207081",
+        "U^2 - 20255/14193*U - 704/99351"
+      ]
+    },
+    {
+      "label": "P4",
+      "i2_factors_met_at_node": [
+        "U^2 - 3635/646*U - 9/646",
+        "U^2 - 150158/29583*U - 2699/207081",
+        "U^2 - 23006/9139*U - 81/9139",
+        "U^2 - 11306/46341*U - 239/46341"
+      ]
+    },
+    {
+      "label": "P5",
+      "i2_factors_met_at_node": [
+        "U^2 - 3635/646*U - 9/646",
+        "U^2 - 23006/9139*U - 81/9139",
+        "U^2 - 808/2223*U - 583/108927",
+        "U^2 - 11306/46341*U - 239/46341"
+      ]
+    },
+    {
+      "label": "P6",
+      "i2_factors_met_at_node": [
+        "U^2 - 3635/646*U - 9/646",
+        "U^2 - 128294/37791*U - 389/37791",
+        "U^2 - 23006/9139*U - 81/9139",
+        "U^2 - 11306/46341*U - 239/46341"
+      ]
+    },
+    {
+      "label": "P7",
+      "i2_factors_met_at_node": [
+        "U^2 - 4751/684*U - 11/684",
+        "U^2 - 3635/646*U - 9/646",
+        "U^2 - 150158/29583*U - 2699/207081",
+        "U^2 - 11306/46341*U - 239/46341"
+      ]
+    },
+    {
+      "label": "P8",
+      "i2_factors_met_at_node": [
+        "U^2 - 4751/684*U - 11/684",
+        "U^2 - 3635/646*U - 9/646",
+        "U^2 - 150158/29583*U - 2699/207081",
+        "U^2 - 808/2223*U - 583/108927"
+      ]
+    },
+    {
+      "label": "P9",
+      "i2_factors_met_at_node": [
+        "U^2 - 3635/646*U - 9/646",
+        "U^2 - 128294/37791*U - 389/37791",
+        "U^2 - 20255/14193*U - 704/99351",
+        "U^2 - 11306/46341*U - 239/46341"
+      ]
+    },
+    {
+      "label": "forced-cover-13",
+      "i2_factors_met_at_node": []
+    }
+  ],
+  "gram": [
+    [
+      "4",
+      "0",
+      "1",
+      "1",
+      "0",
+      "-2",
+      "-1",
+      "0",
+      "-1",
+      "-1"
+    ],
+    [
+      "0",
+      "4",
+      "-1",
+      "2",
+      "0",
+      "-2",
+      "-2",
+      "0",
+      "0",
+      "2"
+    ],
+    [
+      "1",
+      "-1",
+      "4",
+      "0",
+      "-1",
+      "-1",
+      "-1",
+      "1",
+      "-2",
+      "-2"
+    ],
+    [
+      "1",
+      "2",
+      "0",
+      "4",
+      "1",
+      "-1",
+      "-1",
+      "0",
+      "0",
+      "2"
+    ],
+    [
+      "0",
+      "0",
+      "-1",
+      "1",
+      "4",
+      "-1",
+      "0",
+      "-2",
+      "0",
+      "-1"
+    ],
+    [
+      "-2",
+      "-2",
+      "-1",
+      "-1",
+      "-1",
+      "4",
+      "2",
+      "1",
+      "1",
+      "1"
+    ],
+    [
+      "-1",
+      "-2",
+      "-1",
+      "-1",
+      "0",
+      "2",
+      "4",
+      "1",
+      "0",
+      "-1"
+    ],
+    [
+      "0",
+      "0",
+      "1",
+      "0",
+      "-2",
+      "1",
+      "1",
+      "4",
+      "-1",
+      "-1"
+    ],
+    [
+      "-1",
+      "0",
+      "-2",
+      "0",
+      "0",
+      "1",
+      "0",
+      "-1",
+      "4",
+      "3"
+    ],
+    [
+      "-1",
+      "2",
+      "-2",
+      "2",
+      "-1",
+      "1",
+      "-1",
+      "-1",
+      "3",
+      "8"
+    ]
+  ],
+  "determinant": "11040",
+  "positive_definite": true,
+  "parent_block_is_twice_source_gram": true,
+  "trace_cross_pairings_verified": true,
+  "new_section_orthogonal_residual_height": "3",
+  "runtime_seconds": 0.064979285991285
+}

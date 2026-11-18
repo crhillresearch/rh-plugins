@@ -1,0 +1,48 @@
+{
+  "construction": "C4 S3 cubic-cover genus-one rank >=6",
+  "parent": "Elkies-Klagsbrun 2020 discr-163 elliptic K3; 4 independent sections (external theorem)",
+  "parent_torsion": "C4",
+  "parameter": "t",
+  "model": "y^2=x^3+(a(t)^2-8*b(t))*x^2+16*b(t)^2*x",
+  "a": "(8*t-1)*(32*t+7)",
+  "b": "8*(t+1)*(15*t-8)*(31*t-7)",
+  "cubic_N": "14907321*u^3-392116761*u^2+3433897552*u-9026551296",
+  "cubic_D": "24*(31965219*u^2-66155603*u-1665613632)",
+  "neighbor_v_numerator": "u*(u-9)*(888912877588164*u^5-10646406622659951*u^4-960018782069421396*u^3+12164159827914309855*u^2-9247249925793225856*u-202923579084549844992)",
+  "neighbor_v_denominator": "9*(31965219*u^2-66155603*u-1665613632)^2",
+  "galois_quartic_low_to_high": [
+    "1136913313078118744985600",
+    "-596318731133167069975680",
+    "101870134810871311417329",
+    "-7358395974814467407682",
+    "211744205635877094609"
+  ],
+  "quartic_seed_u": "7288/837",
+  "quartic_seed_w": "-4303028078006840/25947",
+  "seed_jacobian_point_XY": [
+    "-35818210150996569947911185120/829921",
+    "-414949679159040119391810475552836641085600/756058031"
+  ],
+  "smooth_fiber_t": "130519437860157186821597294459066332383618071691490258658519095434629198880463674413145236626613/4301276332085122997006195014178083644951481670132363892520027987669029420687377301897137198019584",
+  "independent_parent_sections": 4,
+  "new_standard_representation_directions": 2,
+  "certified_generic_rank_lower_bound": 6,
+  "good_prime_C4_fiber_orders": {
+    "43": 56,
+    "59": 72,
+    "73": 76
+  },
+  "good_prime_Jacobian_torsion_orders": {
+    "31": 27,
+    "37": 48
+  },
+  "good_prime_Jacobian_progression_orders": {
+    "43": 45,
+    "59": 72,
+    "73": 72
+  },
+  "torsion_preserving_progression_M": 360,
+  "status": "certificate_replayed_relative_to_Elkies_Klagsbrun_parent_rank4_theorem",
+  "exact_generic_rank_claimed": false,
+  "publication_novelty_claimed": false
+}

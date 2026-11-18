@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "hill_rank18_rational_covers",
+  "name": "Hill Rational Rank-18 Covers",
+  "version": "0.1.0",
+  "description": "Two rational quadratic base changes of Hill’s rank-17 K3, each with 18 independent generic sections and trivial torsion.",
+  "author": "C. R. Hill",
+  "enabled_by_default": true,
+  "capabilities": [
+    "candidate_generation",
+    "known_subgroup"
+  ],
+  "base_field": "Q(U)",
+  "parameter_base_genus": 0,
+  "torsion_groups": [
+    "Trivial"
+  ],
+  "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+  "torsion_claim_machine_verified": true,
+  "verified_generic_rank_lower": 18,
+  "generic_rank_claim_state": "generic_lower_bound_verified",
+  "default_variant": "cover_4339",
+  "variants": [
+    {
+      "id": "cover_4339",
+      "name": "Hill rational cover 4339",
+      "curve_family_name": "Hill rank ≥18 rational cover 4339",
+      "family": {
+        "kind": "module",
+        "spec": "hill_rank18_rational_covers.cover_4339",
+        "file": "cover_4339.py"
+      },
+      "validation_parameter": "0"
+    },
+    {
+      "id": "cover_36773",
+      "name": "Hill rational cover 36773",
+      "curve_family_name": "Hill rank ≥18 rational cover 36773",
+      "family": {
+        "kind": "module",
+        "spec": "hill_rank18_rational_covers.cover_36773",
+        "file": "cover_36773.py"
+      },
+      "validation_parameter": "0"
+    }
+  ],
+  "validation_parameter": "0",
+  "candidate_defaults": {
+    "a_min": -10,
+    "a_max": 10,
+    "b_min": 1,
+    "b_max": 10,
+    "engine": "sieve",
+    "stage_bounds": "53,211",
+    "stage_keeps": "100,100",
+    "top": 100
+  },
+  "provenance": {
+    "source_url": "https://github.com/crhillresearch/rank-ledger/tree/main/generic-rank18-trivial-torsion",
+    "claim_boundary": "Generic rank at least 18 over Q(U), not proven exact rank 18. Each rational cover is certified separately."
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "status": "certified_generic_rank_lower_bound_over_genus_one_base",
+  "rank_lower_bound": 11,
+  "torsion_subgroup": "C2",
+  "base_field": "Q(C), the compositum Q(t)(sqrt(q10),sqrt(q13))",
+  "parameter_base_genus": 1,
+  "nonisotrivial": true,
+  "infinitely_many_rank11_specializations": true,
+  "independent_square_classes": true,
+  "auxiliary_positive_rank_proved": true,
+  "auxiliary_torsion_order_multiple": 2,
+  "auxiliary_point_multiple_nonzero": [
+    "15060895141858466478437006144748445372340545/175214288570259436063376469156",
+    "56034191354775497422104225736981347016154722622620041753773655967/73342258487301062774019776747598304319657304"
+  ],
+  "common_smooth_specialization": {
+    "parameter": "-13/30",
+    "torsion_invariants": [
+      2
+    ]
+  },
+  "cover_receipts": [
+    {
+      "cover_index": 10,
+      "corrected_gram": [
+        [
+          "4",
+          "0",
+          "1",
+          "1",
+          "0",
+          "-2",
+          "-1",
+          "0",
+          "-1",
+          "-2"
+        ],
+        [
+          "0",
+          "4",
+          "-1",
+          "2",
+          "0",
+          "-2",
+          "-2",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "-1",
+          "4",
+          "0",
+          "-1",
+          "-1",
+          "-1",
+          "1",
+          "-2",
+          "-2"
+        ],
+        [
+          "1",
+          "2",
+          "0",
+          "4",
+          "1",
+          "-1",
+          "-1",
+          "0",
+          "0",
+          "-2"
+        ],
+        [
+          "0",
+          "0",
+          "-1",
+          "1",
+          "4",
+          "-1",
+          "0",
+          "-2",
+          "0",
+          "-2"
+        ],
+        [
+          "-2",
+          "-2",
+          "-1",
+          "-1",
+          "-1",
+          "4",
+          "2",
+          "1",
+          "1",
+          "2"
+        ],
+        [
+          "-1",
+          "-2",
+          "-1",
+          "-1",
+          "0",
+          "2",
+          "4",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "-2",
+          "1",
+          "1",
+          "4",
+          "-1",
+          "-1"
+        ],
+        [
+          "-1",
+          "0",
+          "-2",
+          "0",
+          "0",
+          "1",
+          "0",
+          "-1",
+          "4",
+          "3"
+        ],
+        [
+          "-2",
+          "0",
+          "-2",
+          "-2",
+          "-2",
+          "2",
+          "0",
+          "-1",
+          "3",
+          "8"
+        ]
+      ],
+      "determinant": "11040",
+      "new_section_residual_height": "3",
+      "anti_invariant_height": "12",
+      "parent_sections_deck_invariant": true,
+      "new_section_not_deck_invariant": true,
+      "model_sha256": "0408fedb3bd1830029014f6ce59ee3d74bda2d76c4b23d63c2b15dde9c192040"
+    },
+    {
+      "cover_index": 13,
+      "corrected_gram": [
+        [
+          "4",
+          "0",
+          "1",
+          "1",
+          "0",
+          "-2",
+          "-1",
+          "0",
+          "-1",
+          "-1"
+        ],
+        [
+          "0",
+          "4",
+          "-1",
+          "2",
+          "0",
+          "-2",
+          "-2",
+          "0",
+          "0",
+          "2"
+        ],
+        [
+          "1",
+          "-1",
+          "4",
+          "0",
+          "-1",
+          "-1",
+          "-1",
+          "1",
+          "-2",
+          "-2"
+        ],
+        [
+          "1",
+          "2",
+          "0",
+          "4",
+          "1",
+          "-1",
+          "-1",
+          "0",
+          "0",
+          "2"
+        ],
+        [
+          "0",
+          "0",
+          "-1",
+          "1",
+          "4",
+          "-1",
+          "0",
+          "-2",
+          "0",
+          "-1"
+        ],
+        [
+          "-2",
+          "-2",
+          "-1",
+          "-1",
+          "-1",
+          "4",
+          "2",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "-2",
+          "-1",
+          "-1",
+          "0",
+          "2",
+          "4",
+          "1",
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "-2",
+          "1",
+          "1",
+          "4",
+          "-1",
+          "-1"
+        ],
+        [
+          "-1",
+          "0",
+          "-2",
+          "0",
+          "0",
+          "1",
+          "0",
+          "-1",
+          "4",
+          "3"
+        ],
+        [
+          "-1",
+          "2",
+          "-2",
+          "2",
+          "-1",
+          "1",
+          "-1",
+          "-1",
+          "3",
+          "8"
+        ]
+      ],
+      "determinant": "11040",
+      "new_section_residual_height": "3",
+      "anti_invariant_height": "12",
+      "parent_sections_deck_invariant": true,
+      "new_section_not_deck_invariant": true,
+      "model_sha256": "eae45f4979c167a71c61d65d357efbf094a8621b2f4824cda262c53609890ee2"
+    }
+  ],
+  "proof": [
+    "The two coprime squarefree quadratic branch polynomials define independent square classes; their compositum is a genus-one curve.",
+    "Each cover has a correction-aware exact positive-definite rank-10 Shioda Gram. The nine source sections are deck-invariant and the new section has a nonzero anti-invariant of positive exact height.",
+    "The two cover involutions independently isolate the two new section coefficients in any relation; the remaining nine source sections are independent.",
+    "The auxiliary genus-one base has a rational nontorsion point, hence infinitely many rational points.",
+    "The elliptic curve has nonconstant j-invariant. Silverman specialization is injective for all but finitely many rational points of a curve base, so infinitely many of those rational base points specialize the rank-11 subgroup injectively.",
+    "Smooth specialization at the common rational split parameter has exact rational torsion C2; specialization injectivity proves the generic rational torsion is exactly C2."
+  ],
+  "specialized_curve_rank_claim": null,
+  "specialization_reference": "Silverman, Arithmetic of Elliptic Curves, Theorem C.20.3",
+  "reference": "https://arxiv.org/html/2608.25406v1"
+}

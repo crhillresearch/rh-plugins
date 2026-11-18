@@ -1,0 +1,13 @@
+81701207e3e436f312895cc7c4da456f28f7700de34ea7c8dd66ef3f47150b6b  ./PROOF.md
+88c8431368e82d5ebf8c5a1144138f24777a76e900db6a86940b7451eb3256b6  ./README.md
+0408fedb3bd1830029014f6ce59ee3d74bda2d76c4b23d63c2b15dde9c192040  ./data/cover-10/model.json
+86efd1b2775044d1cf9d704bf2028b679c176595d3ccaaaeb2ccf54f2fe49bf9  ./data/cover-10/shioda-certificate.json
+eae45f4979c167a71c61d65d357efbf094a8621b2f4824cda262c53609890ee2  ./data/cover-13/model.json
+cb5281f6e0e47052abb5954f00d90c7dce7edac02c0d395be20a31d52452782c  ./data/cover-13/shioda-certificate.json
+0f2b5466c62c3350902b16d8c191275a2b1d52b1ada738874764a334f0fb15d5  ./data/paired-cover-base.json
+36d99d5dd3133e5c3c60458e888c8eb7f203a651d37437df3157fc3fd2ea6aa3  ./data/paired-cover-sections.json
+a789e729a385efe4a375ece3a4c9cac7964917ccfdf8da0cee01dc3b69704a96  ./data/parent-rank9.json
+47ae03642e68c8346cb91755fa7eadddd1cc5764318c1acb72e93fc29e70d24a  ./data/quadratic-cover-portfolio.json
+3fecff8ae7ebe4cd85d5dcae5a5145d3ac4b8ae0708d84e797836412b0ed0c85  ./data/rank11-family-certificate.json
+560a080b1701e13fc99fe1b6548d2f5815b18a1129465964cb9eb3be5fa39e40  ./data/source-family-u11_5.json
+18d00b25e4360664c3841d4633e342d8c0277070d245de036a89ac7b099967de  ./verify.py

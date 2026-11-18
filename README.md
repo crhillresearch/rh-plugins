@@ -6,7 +6,7 @@ Official installable Families, Features, and Workspaces for [Rank Hunter](https:
 
 ## Plugin types
 
-| Type | Location | Purpose |
+| Type | Location | Description |
 | --- | --- | --- |
 | **Family** | [`families/`](families/) | Elliptic-curve mathematics, specialization logic, candidate generation, known sections/subgroups, and supported search adapters. |
 | **Feature** | [`extensions/`](extensions/) | A focused hook into an existing Rank Hunter workflow without its own page. |
@@ -16,8 +16,13 @@ Every installable plugin is its own directory with a `plugin.json` manifest. Ran
 
 ## Published Families
 
-| Family | Version | Purpose |
+| Family | Version | Description |
 | --- | ---: | --- |
+| [Hill Rank-19 K3](families/hill_rank19_k3/) | 0.4.2 | Verified generic rank at least 19 over a positive-rank genus-one base formed from two quadratic K3 covers; individual fibers require exact rank evidence. |
+| [Hill Rational Rank-18 Covers](families/hill_rank18_rational_covers/) | 0.1.0 | Two separate rational quadratic covers, each with verified generic rank at least 18 over Q(U) and trivial torsion. |
+| [Hill C2 Rank ≥11 Genus-One-Base Family](families/ek_z2_rank11_paired_genus1_2026/) | 0.1.0 | Paired C2 covers with a verified rank-at-least-11 lower bound over a positive-rank genus-one base. |
+| [Hill C₂ Generic Rank-10 Covers](families/hill_c2_generic_rank10_2026/) | 0.1.0 | Two separate rational C2 covers, each with ten independent generic sections over Q(U). |
+| [Hill · C4 Rank ≥6 · S3 Genus-One Base](families/hill_c4_s3_genus1_rank6/) | 0.1.0 | Infinite C4 family with a verified rank-at-least-6 lower bound over a positive-rank genus-one base. |
 | [Campbell C1-C6](families/campbell1999_rank13/) | 3.0.3 | Six Campbell rank-13 branches with exact variants and deep search support. |
 | [DMT Triad Family](families/dmt_triad_rank4/) | 0.1.3 | Six Piezas-sextuple triads with full rational 2-torsion and four generic sections. |
 | [Elkies Rank-17 K3](families/elkies_rank17_2026/) | 1.3.1 | Published rank-17 K3 record-hunt family with all 17 generic sections. |
@@ -43,7 +48,7 @@ Each Family README/provenance file states its exact scientific claim boundary. A
 
 ## Published Features and Workspaces
 
-| Plugin | Type | Version | Purpose |
+| Plugin | Type | Version | Description |
 | --- | --- | ---: | --- |
 | Features |
 | [Symmetry Reducer](extensions/symmetry_reducer/) | Feature | 2.1.1 | Exact search-space symmetry reduction for supported Campbell, Kihara, and Mestre/Fermigier searches. |

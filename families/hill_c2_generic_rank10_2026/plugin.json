@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "hill_c2_generic_rank10_2026",
+  "name": "Hill C₂ Generic Rank-10 Covers",
+  "version": "0.1.0",
+  "description": "Two independently certified rational Q(U) covers of the Elkies–Klagsbrun C₂ family, each with ten independent generic sections.",
+  "author": "C. R. Hill",
+  "enabled_by_default": true,
+  "capabilities": ["candidate_generation", "known_subgroup"],
+  "base_field": "Q(U)",
+  "parameter_base_genus": 0,
+  "torsion_groups": ["C2"],
+  "torsion_provider_role": "prescribed_subfamily",
+  "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+  "torsion_claim_machine_verified": true,
+  "verified_generic_rank_lower": 10,
+  "generic_rank_claim_state": "generic_lower_bound_verified",
+  "default_variant": "cover10",
+  "validation_parameter": "0",
+  "variants": [
+    {
+      "id": "cover10",
+      "name": "Cover 10",
+      "curve_family_name": "Hill C₂ — Generic Rank ≥10 · Cover 10",
+      "family": {"kind": "module", "spec": "hill_c2_generic_rank10_2026.cover10", "file": "cover10.py"},
+      "validation_parameter": "0",
+      "verified_generic_rank_lower": 10,
+      "generic_rank_claim_state": "generic_lower_bound_verified",
+      "torsion_groups": ["C2"],
+      "torsion_provider_role": "prescribed_subfamily"
+    },
+    {
+      "id": "cover13",
+      "name": "Cover 13",
+      "curve_family_name": "Hill C₂ — Generic Rank ≥10 · Cover 13",
+      "family": {"kind": "module", "spec": "hill_c2_generic_rank10_2026.cover13", "file": "cover13.py"},
+      "validation_parameter": "0",
+      "verified_generic_rank_lower": 10,
+      "generic_rank_claim_state": "generic_lower_bound_verified",
+      "torsion_groups": ["C2"],
+      "torsion_provider_role": "prescribed_subfamily"
+    }
+  ],
+  "provenance": {
+    "parent_plugin": "elkies_klagsbrun_z2_rank9_2020",
+    "source_repository": "https://github.com/crhillresearch/rank-ledger",
+    "source_path": "c2-rank-11-genus-one-family/",
+    "source_commit": "1c63174ed3b85002b229c8b5a08b53466077886a",
+    "source_author": "C. R. Hill (2026)",
+    "parent_at": "u = 11/5",
+    "claim_boundary": "Each variant has generic rank at least 10 over Q(U) and rational torsion C2. Exact generic rank is undetermined. The combined rank-11 construction has a genus-one parameter base and is not imported as a Q(U) family."
+  }
+}
