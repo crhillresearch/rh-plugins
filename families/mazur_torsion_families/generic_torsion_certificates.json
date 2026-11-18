@@ -1,0 +1,425 @@
+{
+  "trivial": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "e146948dcdd7bfde28ece222f8d82cd9b63a530c47f17f50f1eeef82e33f7186",
+    "group": "Trivial",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "method": "trivial_group"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [],
+      "torsion_order": 1,
+      "discriminant_nonzero": true,
+      "discriminant": "-944",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  },
+  "c2": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "507d6ac16449945f31f774670b9a401605c46578f9fdfe5224951f8ec29bb8ee",
+    "group": "C2",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "group": "C2",
+      "generator": "P, marked point of order 2",
+      "generator_order": 2,
+      "method": "exact_order_cyclic_generator"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [
+        2
+      ],
+      "torsion_order": 2,
+      "discriminant_nonzero": true,
+      "discriminant": "-256",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  },
+  "c3": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "95de20883f982b16aac4b8cc5a6515168da038d6b07730368757e270d98712b0",
+    "group": "C3",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "group": "C3",
+      "generator": "P, marked point of order 3",
+      "generator_order": 3,
+      "method": "exact_order_cyclic_generator"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [
+        3
+      ],
+      "torsion_order": 3,
+      "discriminant_nonzero": true,
+      "discriminant": "-19",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  },
+  "c4": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "a2d73271ce3db9879b5cf45107856205af871cec066a59269c903dde30ac8cc1",
+    "group": "C4",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "group": "C4",
+      "generator": "P, marked point of order 4",
+      "generator_order": 4,
+      "method": "exact_order_cyclic_generator"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [
+        4
+      ],
+      "torsion_order": 4,
+      "discriminant_nonzero": true,
+      "discriminant": "528",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  },
+  "c5": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "93ca52c1e88bca3d939724e9d7a46ada724a55546e038170ea105fda79e17928",
+    "group": "C5",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "group": "C5",
+      "generator": "P, marked point of order 5",
+      "generator_order": 5,
+      "method": "exact_order_cyclic_generator"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [
+        5
+      ],
+      "torsion_order": 5,
+      "discriminant_nonzero": true,
+      "discriminant": "-608",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  },
+  "c6": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "f27b2983f8d22cc961f6f7f87f6cf20979677b39dadf301c386d2857a7f3110d",
+    "group": "C6",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "group": "C6",
+      "generator": "P, marked point of order 6",
+      "generator_order": 6,
+      "method": "exact_order_cyclic_generator"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [
+        6
+      ],
+      "torsion_order": 6,
+      "discriminant_nonzero": true,
+      "discriminant": "32832",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  },
+  "c7": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "4e3a6daa8a0dcd7178bca118b6220e1efdbdd3f2ce262a77a8508e8081faceb4",
+    "group": "C7",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "group": "C7",
+      "generator": "P, marked point of order 7",
+      "generator_order": 7,
+      "method": "exact_order_cyclic_generator"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [
+        7
+      ],
+      "torsion_order": 7,
+      "discriminant_nonzero": true,
+      "discriminant": "-1664",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  },
+  "c8": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "5393a5371f0fb4ce052d4adf544115689a6d93b650bcf002e51fa357dd2dc2ea",
+    "group": "C8",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "group": "C8",
+      "generator": "P, marked point of order 8",
+      "generator_order": 8,
+      "method": "exact_order_cyclic_generator"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [
+        8
+      ],
+      "torsion_order": 8,
+      "discriminant_nonzero": true,
+      "discriminant": "1377/16",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  },
+  "c9": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "bd16789f3686be9c34cb06fc9e77976e4f6cd8f48a319e76f7f44bea0b63d528",
+    "group": "C9",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "group": "C9",
+      "generator": "P, marked point of order 9",
+      "generator_order": 9,
+      "method": "exact_order_cyclic_generator"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [
+        9
+      ],
+      "torsion_order": 9,
+      "discriminant_nonzero": true,
+      "discriminant": "-124416",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  },
+  "c10": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "a516883baf48ef6fcaddf1e32dd0fa77b4d653b845a6a6918a4a205682db1e11",
+    "group": "C10",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "group": "C10",
+      "generator": "P, marked point of order 10",
+      "generator_order": 10,
+      "method": "exact_order_cyclic_generator"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [
+        10
+      ],
+      "torsion_order": 10,
+      "discriminant_nonzero": true,
+      "discriminant": "2737152",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  },
+  "c12": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "589cad23375c35087a66cea63768032c21f2f81800209aa4ef794006f96237e2",
+    "group": "C12",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "group": "C12",
+      "generator": "P, marked point of order 12",
+      "generator_order": 12,
+      "method": "exact_order_cyclic_generator"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [
+        12
+      ],
+      "torsion_order": 12,
+      "discriminant_nonzero": true,
+      "discriminant": "11650189824000",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  },
+  "c2xc2": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "d3934508eb19bed610495726c82cbb53378cb80774306ca2eabc71b67a762c20",
+    "group": "C2 × C2",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "group": "C2 × C2",
+      "long_generator": "T0",
+      "long_generator_order": 2,
+      "independent_order_two_section": "T1",
+      "method": "exact_invariant_factor_generators"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [
+        2,
+        2
+      ],
+      "torsion_order": 4,
+      "discriminant_nonzero": true,
+      "discriminant": "64",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  },
+  "c2xc4": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "7d60c8a60d86caebbd0f4b2d26b8defe8803e7487b9c64ea6a1de5d83d7870fc",
+    "group": "C2 × C4",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "group": "C2 × C4",
+      "long_generator": "P, marked point of order 4",
+      "long_generator_order": 4,
+      "independent_order_two_section": "Q, independent point of order 2",
+      "method": "exact_invariant_factor_generators"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [
+        2,
+        4
+      ],
+      "torsion_order": 8,
+      "discriminant_nonzero": true,
+      "discriminant": "81/16384",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  },
+  "c2xc6": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "b076574578f6b54c69dac774e07eb5a263ea65181f28e349c0a7d86939bc211a",
+    "group": "C2 × C6",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "group": "C2 × C6",
+      "long_generator": "P, marked point of order 6",
+      "long_generator_order": 6,
+      "independent_order_two_section": "Q, independent point of order 2",
+      "method": "exact_invariant_factor_generators"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [
+        2,
+        6
+      ],
+      "torsion_order": 12,
+      "discriminant_nonzero": true,
+      "discriminant": "2286144/9765625",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  },
+  "c2xc8": {
+    "schema": "rank42.generic_torsion_exact_certificate.v1",
+    "method": "function_field_subgroup_and_good_fiber_torsion_injection",
+    "family_model_sha256": "85c7d8db2a02e721df8ab526afddbad9cdb14391d3a57ccd37ea629651592e5d",
+    "group": "C2 × C8",
+    "function_field": "Q(t)",
+    "function_field_subgroup": {
+      "group": "C2 × C8",
+      "long_generator": "P, point of order 8",
+      "long_generator_order": 8,
+      "independent_order_two_section": "Q, independent point of order 2",
+      "method": "exact_invariant_factor_generators"
+    },
+    "specialization": {
+      "parameter": "2",
+      "torsion_invariants": [
+        2,
+        8
+      ],
+      "torsion_order": 16,
+      "discriminant_nonzero": true,
+      "discriminant": "210691031040000",
+      "exact_torsion_computed_over": "Q"
+    },
+    "specialization_torsion_injection": {
+      "good_reduction": true,
+      "residue_characteristic": 0,
+      "statement": "The generic marked subgroup has the same order as the full torsion group on this smooth rational fiber. Good reduction injects generic torsion into specialized torsion, so no larger generic torsion subgroup can occur."
+    }
+  }
+}

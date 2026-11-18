@@ -9,6 +9,19 @@
     "t",
     "0"
   ],
-  "sections": [],
+  "sections": [
+    {
+      "label": "T0",
+      "x": "0",
+      "y": "0",
+      "order": 2
+    },
+    {
+      "label": "T1",
+      "x": "1",
+      "y": "0",
+      "order": 2
+    }
+  ],
   "notes": "Legendre-type direct slice y^2=x(x-1)(x-t), forcing full rational 2-torsion. It is a useful prescribed-torsion lane, not advertised as an exhaustive twist parametrization of every C2 × C2 Q-isomorphism class."
 }

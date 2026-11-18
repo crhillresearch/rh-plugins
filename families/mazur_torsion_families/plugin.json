@@ -3,14 +3,107 @@
   "plugin_type": "family",
   "id": "mazur_torsion_families",
   "name": "Mazur Torsion Families",
-  "version": "0.1.5",
+  "version": "0.2.3",
   "icon": ":material/hub:",
   "description": "Direct prescribed-torsion search families covering all 15 rational torsion groups allowed by Mazur over Q. Kubert-Tate modular families are used where this package carries a one-parameter universal model; low-level 2/3-torsion cases remain explicitly labeled direct slices. Rank Hunter exact-checks specialized torsion before any record-hunt result counts.",
   "enabled_by_default": true,
   "default_variant": "c2xc8",
   "capabilities": [
-    "candidate_generation"
+    "candidate_generation",
+    "family_search",
+    "target_search"
   ],
+  "search_adapter": "search_adapter.py",
+  "search_options": {
+    "family": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "ratpoints height stages",
+        "default": "1000,10000,100000",
+        "help": "Ascending exact rational point-search height bounds.",
+        "group": "Point search",
+        "group_expanded": true
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 30,
+        "min": 1,
+        "max": 3600,
+        "help": "Runtime budget for each ratpoints stage.",
+        "group": "Point search",
+        "group_expanded": true
+      },
+      {
+        "key": "max_points",
+        "type": "int",
+        "label": "Maximum points returned",
+        "default": 64,
+        "min": 0,
+        "max": 2000,
+        "help": "Maximum exact points returned for core independence checks.",
+        "group": "Point search",
+        "group_expanded": true
+      },
+      {
+        "key": "model_prep_timeout",
+        "type": "int",
+        "label": "Minimal-model prep timeout",
+        "default": 15,
+        "min": 0,
+        "max": 600,
+        "help": "Bounded minimal-model preparation before point search.",
+        "group": "Point search",
+        "group_expanded": true
+      }
+    ],
+    "target": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "ratpoints height stages",
+        "default": "1000,10000,100000,1000000",
+        "help": "Ascending exact rational point-search height bounds.",
+        "group": "Point search",
+        "group_expanded": true
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 45,
+        "min": 1,
+        "max": 3600,
+        "help": "Runtime budget for each ratpoints stage.",
+        "group": "Point search",
+        "group_expanded": true
+      },
+      {
+        "key": "max_points",
+        "type": "int",
+        "label": "Maximum points returned",
+        "default": 96,
+        "min": 0,
+        "max": 2000,
+        "help": "Maximum exact points returned for core independence checks.",
+        "group": "Point search",
+        "group_expanded": true
+      },
+      {
+        "key": "model_prep_timeout",
+        "type": "int",
+        "label": "Minimal-model prep timeout",
+        "default": 20,
+        "min": 0,
+        "max": 600,
+        "help": "Bounded minimal-model preparation before point search.",
+        "group": "Point search",
+        "group_expanded": true
+      }
+    ]
+  },
   "variants": [
     {
       "id": "trivial",
@@ -57,7 +150,10 @@
           "mazur-trivial",
           "torsion-trivial"
         ]
-      }
+      },
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     },
     {
       "id": "c2",
@@ -104,7 +200,10 @@
           "mazur-c2",
           "torsion-c2"
         ]
-      }
+      },
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     },
     {
       "id": "c3",
@@ -151,7 +250,10 @@
           "mazur-c3",
           "torsion-c3"
         ]
-      }
+      },
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     },
     {
       "id": "c4",
@@ -198,7 +300,10 @@
           "mazur-c4",
           "torsion-c4"
         ]
-      }
+      },
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     },
     {
       "id": "c5",
@@ -245,7 +350,10 @@
           "mazur-c5",
           "torsion-c5"
         ]
-      }
+      },
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     },
     {
       "id": "c6",
@@ -292,7 +400,10 @@
           "mazur-c6",
           "torsion-c6"
         ]
-      }
+      },
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     },
     {
       "id": "c7",
@@ -357,7 +468,10 @@
           "mazur-c7",
           "torsion-c7"
         ]
-      }
+      },
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     },
     {
       "id": "c8",
@@ -422,7 +536,10 @@
           "mazur-c8",
           "torsion-c8"
         ]
-      }
+      },
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     },
     {
       "id": "c9",
@@ -487,7 +604,10 @@
           "mazur-c9",
           "torsion-c9"
         ]
-      }
+      },
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     },
     {
       "id": "c10",
@@ -552,7 +672,10 @@
           "mazur-c10",
           "torsion-c10"
         ]
-      }
+      },
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     },
     {
       "id": "c12",
@@ -617,7 +740,10 @@
           "mazur-c12",
           "torsion-c12"
         ]
-      }
+      },
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     },
     {
       "id": "c2xc2",
@@ -664,7 +790,10 @@
           "mazur-c2xc2",
           "torsion-c2xc2"
         ]
-      }
+      },
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     },
     {
       "id": "c2xc4",
@@ -711,7 +840,10 @@
           "mazur-c2xc4",
           "torsion-c2xc4"
         ]
-      }
+      },
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     },
     {
       "id": "c2xc6",
@@ -776,7 +908,10 @@
           "mazur-c2xc6",
           "torsion-c2xc6"
         ]
-      }
+      },
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     },
     {
       "id": "c2xc8",
@@ -971,7 +1106,10 @@
             "ratpoints_backend": "GPU"
           }
         }
-      ]
+      ],
+      "torsion_claim_machine_verified": true,
+      "torsion_claim_origin": "generic_torsion_verified_by_good_specialization",
+      "torsion_claim_note": "Exact section orders and invariant-factor generators were checked over Q(t). Full rational torsion was computed at the smooth specialization t=2; see generic_torsion_certificates.json."
     }
   ],
   "search_presets": [
@@ -1042,6 +1180,16 @@
       {
         "reference": "Legendre family y^2=x(x-1)(x-t).",
         "role": "Direct full-rational-2-torsion slice used for C2 x C2."
+      },
+      {
+        "reference": "Andrej Dujella and Juan Carlos Peral, Elliptic curves with torsion group Z/8Z or Z/2Z × Z/6Z, arXiv:1306.0027.",
+        "url": "https://arxiv.org/abs/1306.0027",
+        "role": "Provides a standard cyclic C8 model; it is not the source of this package's C2 × C8 model."
+      },
+      {
+        "reference": "Andrej Dujella, Ivica Gusić, and Petra Tadić, Kihara's curve.",
+        "url": "https://dujella.github.io/pdf/DGTKihara.pdf",
+        "role": "Source for the universal C2 × C8 model y^2=x(x+16t^4)(x+(t^2-1)^4) used by this package."
       }
     ],
     "record_table": {
@@ -1057,5 +1205,6 @@
     "exact_candidates": 64,
     "strategy_note": "Pipeline-native prescribed-torsion record hunt: use torsion_record for the rank goal and exact torsion gate, then let the selected Pipeline recipe own compute strategy."
   },
-  "minimum_rank_hunter_version": "0.9.2"
+  "minimum_rank_hunter_version": "0.9.2",
+  "generic_torsion_certificates": "generic_torsion_certificates.json"
 }

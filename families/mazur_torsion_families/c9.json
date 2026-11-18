@@ -9,6 +9,13 @@
     "0",
     "0"
   ],
-  "sections": [],
+  "sections": [
+    {
+      "label": "P, marked point of order 9",
+      "x": "0",
+      "y": "0",
+      "order": 9
+    }
+  ],
   "notes": "Kubert–Tate normal form with (0,0) of order 9."
 }

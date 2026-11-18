@@ -2,7 +2,20 @@
   "name": "Mazur torsion C6 universal family",
   "generic_rank": null,
   "parameter": "t",
-  "a_invariants": ["1-t", "-(t+t^2)", "-(t+t^2)", "0", "0"],
-  "sections": [],
+  "a_invariants": [
+    "1-t",
+    "-(t+t^2)",
+    "-(t+t^2)",
+    "0",
+    "0"
+  ],
+  "sections": [
+    {
+      "label": "P, marked point of order 6",
+      "x": "0",
+      "y": "0",
+      "order": 6
+    }
+  ],
   "notes": "Kubert–Tate normal form with (0,0) of order 6."
 }

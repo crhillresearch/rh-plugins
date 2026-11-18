@@ -1,4 +1,4 @@
-# Mazur Torsion Families · v0.1.5
+# Mazur Torsion Families · v0.2.3
 
 Rank Hunter Family plugin providing prescribed-torsion search lanes for every rational torsion group allowed over `Q` by Mazur's theorem.
 
@@ -42,7 +42,7 @@ The noncyclic families impose exact splitting conditions on the remaining 2-divi
 
 - C2 × C4: `alpha=(t^2-1)/16`;
 - C2 × C6: `alpha=2(5-t)/(t^2-9)`;
-- C2 × C8: `alpha=2(t+4)/(8-t^2)`.
+- C2 × C8: `y^2=x(x+16t^4)(x+(t^2-1)^4)`, with an order-8 section and an independent order-2 section. This is the model described by Dujella, Gusić, and Tadić in [“Kihara's curve”](https://dujella.github.io/pdf/DGTKihara.pdf).
 
 ### Direct prescribed-torsion slices
 
@@ -56,6 +56,16 @@ C2 × C2
 ```
 
 The C2 × C2 lane is a Legendre-type full-2-torsion slice. Low-level torsion and twist normalization make it safer to describe these as search slices rather than pretend every Q-isomorphism/twist class is represented exactly once.
+
+## Marked generic torsion sections
+
+The family files record their known torsion sections instead of leaving the
+section lists empty. The cyclic models carry their marked `(0,0)` point, and
+the `C2 × C2`, `C2 × C4`, `C2 × C6`, and `C2 × C8` models record independent
+generators. `generic_torsion_certificates.json` records exact checks over
+`Q(t)` plus full rational torsion at a smooth fiber. The marked subgroup has
+the same order as the full torsion on that fiber; specialization injectivity
+then proves that the generic group has no additional torsion.
 
 ## Exact torsion proof gate
 
@@ -122,9 +132,23 @@ Its plugin-owned target buttons route into current core Pipeline recipes includi
 
 Rank Hunter inserts **Exact Torsion** ahead of the point/rank stages. Isogenous children keep separate evidence records even though rational rank is invariant under Q-isogeny.
 
-## Current-core ownership
+## Family and target point search
 
-This plugin exposes `candidate_generation` only. It does not carry a family-native Target Search adapter.
+The family adapter now provides both `family_search` and `target_search` for
+the plugin's 15 torsion lanes, including C10. It runs staged `ratpoints`
+searches on exact specializations and returns exact rational points through
+Rank Hunter's typed plugin result contract. The adapter does not declare a
+generic free basis for these universal torsion models: Rank Hunter core checks
+each returned point against the curve and known subgroup, then owns every
+independence certificate and rank promotion. A point search can therefore
+finish without finding a point independent of the known subgroup.
+
+For C10 specifically, the existing Kubert–Tate model remains the canonical
+family. The new adapter makes its specializations available to family and
+target point searches; it does not claim that a higher-rank specialization is
+already known or guaranteed.
+
+## Current-core ownership
 
 Rank Hunter 0.9.2 core owns:
 
@@ -142,6 +166,9 @@ The plugin owns:
 - provider-role metadata;
 - record-target metadata;
 - search presets.
+
+The plugin also owns the bounded point-search adapter and runner. Exact
+independence and evidence promotion remain core responsibilities.
 
 ## Sources
 
@@ -183,7 +210,34 @@ A direct exact torsion self-check is also available:
 sage -python families/mazur_torsion_families/verify_plugin.py
 ```
 
+That verifier checks every declared section over the rational function field,
+checks independence for the two-factor groups, computes full torsion on the
+listed rational fiber, and writes the certificate file. It currently verifies
+all 15 lanes.
+
 ## Version history
+
+### v0.2.3
+
+Corrects the C2 × C8 source equation and sections to the exact universal model,
+then records full generic-torsion certificates for all 15 lanes.
+
+### v0.2.2
+
+This release attempted a rational base change of the cyclic C8 model. Exact
+function-field checks found that its displayed sections did not lie on the
+recorded curve; use v0.2.3, which replaces that formula with the cited
+universal model and verifies it exactly.
+
+### v0.2.1
+
+Records marked cyclic torsion sections and independent generators for the `C2 × C2`, `C2 × C4`, and `C2 × C6` models, so Family Foundry can check and preserve them during base changes.
+
+### v0.2.0
+
+Adds staged exact rational point searches for family candidates and target
+curves across the 15 Mazur torsion lanes. The search result returns points only;
+core retains exact torsion, independence, and rank-promotion ownership.
 
 ### v0.1.5
 

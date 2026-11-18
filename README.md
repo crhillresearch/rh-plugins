@@ -28,7 +28,7 @@ Every installable plugin is its own directory with a `plugin.json` manifest. Ran
 | [Fibonacci Triples](families/fibonacci_triples/) | 0.1.3 | Odd/even elliptic families induced by Fibonacci Diophantine triples. |
 | [Kihara (2001)](families/kihara_rank14/) | 1.2.0 | Published generic-rank-at-least-14 family with 14 exact sections. |
 | [Kloosterman Rank-15 K3](families/kloosterman_rank15/) | 1.1.0 | Explicit K3 surface proved in the literature to have Mordell-Weil rank 15. |
-| [Mazur Torsion Families](families/mazur_torsion_families/) | 0.1.5 | Prescribed-torsion candidate lanes covering all 15 rational torsion groups allowed over Q. |
+| [Mazur Torsion Families](families/mazur_torsion_families/) | 0.2.3 | Prescribed-torsion lanes for all 15 rational torsion groups over Q, with verified generic torsion sections and staged Family/Target point search. |
 | [Mestre/Fermigier Sextuple](families/mestre_sextuple_rank11/) | 1.5.2 | Generic-rank-at-least-11 Mestre sextuple family with quartic/PGL2 deep search. |
 | [Dujella-Peral Z/4 Rank 6](families/dujella_peral_z4_rank6/) | 0.1.1 | Published Z/4 family with exact generic rank 6 and six reconstructed generators. |
 | [Dujella-Peral-Tadic Z/6 Rank 3 Families](families/dujella_peral_tadic_z6_rank3/) | 0.1.0 | Six explicit Z/6 rank-3 variants from the definitive 2016 treatment. |

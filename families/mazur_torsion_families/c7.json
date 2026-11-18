@@ -2,7 +2,20 @@
   "name": "Mazur torsion C7 universal family",
   "generic_rank": null,
   "parameter": "t",
-  "a_invariants": ["1-(t^2-t)", "-(t^3-t^2)", "-(t^3-t^2)", "0", "0"],
-  "sections": [],
+  "a_invariants": [
+    "1-(t^2-t)",
+    "-(t^3-t^2)",
+    "-(t^3-t^2)",
+    "0",
+    "0"
+  ],
+  "sections": [
+    {
+      "label": "P, marked point of order 7",
+      "x": "0",
+      "y": "0",
+      "order": 7
+    }
+  ],
   "notes": "Kubert–Tate normal form with (0,0) of order 7."
 }

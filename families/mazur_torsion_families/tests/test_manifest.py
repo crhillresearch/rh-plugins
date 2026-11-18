@@ -30,9 +30,12 @@ EXPECTED = {
 
 
 def test_release_version_and_sources_are_current():
-    assert MANIFEST["version"] == "0.1.5"
+    assert MANIFEST["version"] == "0.2.3"
     assert MANIFEST["minimum_rank_hunter_version"] == "0.9.2"
-    assert MANIFEST["capabilities"] == ["candidate_generation"]
+    assert MANIFEST["capabilities"] == [
+        "candidate_generation", "family_search", "target_search"
+    ]
+    assert MANIFEST["search_adapter"] == "search_adapter.py"
     assert MANIFEST["default_variant"] == "c2xc8"
 
     provenance = MANIFEST["provenance"]
@@ -168,7 +171,7 @@ def test_current_core_exact_torsion_validation_for_all_variants():
     plugin = read_plugin(ROOT)
     result = validate_plugin(plugin, import_science=True)
     assert result["status"] == "ready"
-    assert result["plugin_version"] == "0.1.5"
+    assert result["plugin_version"] == "0.2.3"
     assert result["default_variant"] == "c2xc8"
     assert len(result["variants"]) == 15
 
@@ -196,7 +199,9 @@ def test_no_generic_rank_evidence_is_declared_anywhere():
         assert "verified_generic_rank_lower" not in variant
         data = json.loads((ROOT / variant["family"]["file"]).read_text())
         assert data["generic_rank"] is None
-        assert data["sections"] == []
+        group = variant["torsion_groups"][0]
+        expected_sections = 0 if group == "Trivial" else 2 if "×" in group else 1
+        assert len(data["sections"]) == expected_sections
 
 
 def test_release_readme_is_portable():

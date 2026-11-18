@@ -9,6 +9,13 @@
     "t",
     "0"
   ],
-  "sections": [],
+  "sections": [
+    {
+      "label": "P, marked point of order 2",
+      "x": "0",
+      "y": "0",
+      "order": 2
+    }
+  ],
   "notes": "A direct C2 slice with forced rational 2-torsion at (0,0). It is not advertised as an exhaustive twist parametrization."
 }

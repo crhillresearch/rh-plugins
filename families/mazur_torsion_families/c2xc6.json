@@ -9,6 +9,19 @@
     "0",
     "0"
   ],
-  "sections": [],
+  "sections": [
+    {
+      "label": "P, marked point of order 6",
+      "x": "0",
+      "y": "0",
+      "order": 6
+    },
+    {
+      "label": "Q, independent point of order 2",
+      "x": "-2*(t-1)^2/((t+3)^2*(t-3))",
+      "y": "4*(t-1)^3/((t+3)^3*(t-3)^2)",
+      "order": 2
+    }
+  ],
   "notes": "C6 Tate family with alpha=2(5-t)/(t^2-9); the remaining 2-division discriminant becomes a square."
 }
