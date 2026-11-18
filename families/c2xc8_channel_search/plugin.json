@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "c2xc8_channel_search",
+  "name": "C2 × C8 · Naskręcki Channel Search",
+  "version": "0.1.0",
+  "icon": ":material/hub:",
+  "description": "Exact Naskręcki C2 × C8 fibers with bounded squareclass/channel point search.",
+  "enabled_by_default": false,
+  "family": {
+    "kind": "module",
+    "spec": "c2xc8_channel_search",
+    "file": "family.py"
+  },
+  "validation_parameter": "4",
+  "torsion_groups": ["C2 × C8"],
+  "torsion_provider_role": "prescribed_subfamily",
+  "search_adapter": "search_adapter.py",
+  "capabilities": ["candidate_generation", "family_search", "target_search"],
+  "candidate_defaults": {
+    "a_min": -100,
+    "a_max": 100,
+    "b_min": 1,
+    "b_max": 30,
+    "stage_bounds": "100,500,1000",
+    "stage_keeps": "2000,400,100",
+    "top": 100,
+    "engine": "sieve"
+  },
+  "search_options": {
+    "family": [
+      {"key": "generator", "type": "choice", "label": "Generator", "default": "squareclass", "choices": ["squareclass", "grid_control"]},
+      {"key": "x_abs_max", "type": "int", "label": "|X| bound", "default": 2000, "min": 1, "max": 10000000},
+      {"key": "z_max", "type": "int", "label": "Z bound", "default": 2, "min": 1, "max": 10000},
+      {"key": "k_max", "type": "int", "label": "k cap (0 = none)", "default": 0, "min": 0, "max": 1000000},
+      {"key": "max_points", "type": "int", "label": "Point budget", "default": 32, "min": 1, "max": 10000},
+      {"key": "max_candidates", "type": "int", "label": "Pair budget", "default": 300000, "min": 1, "max": 100000000},
+      {"key": "factor_timeout", "type": "int", "label": "Factor seconds", "default": 10, "min": 1, "max": 3600},
+      {"key": "run_timeout", "type": "int", "label": "Search seconds", "default": 90, "min": 1, "max": 86400},
+      {"key": "modular_sieve", "type": "bool", "label": "Modular square sieve", "default": true},
+      {"key": "torsion_orbit_dedupe", "type": "bool", "label": "Torsion orbit dedupe", "default": true},
+      {"key": "require_full_factorization", "type": "bool", "label": "Require full factorization", "default": true}
+    ],
+    "target": [
+      {"key": "generator", "type": "choice", "label": "Generator", "default": "squareclass", "choices": ["squareclass", "grid_control"]},
+      {"key": "x_abs_max", "type": "int", "label": "|X| bound", "default": 10000, "min": 1, "max": 10000000},
+      {"key": "z_max", "type": "int", "label": "Z bound", "default": 4, "min": 1, "max": 10000},
+      {"key": "k_max", "type": "int", "label": "k cap (0 = none)", "default": 0, "min": 0, "max": 1000000},
+      {"key": "max_points", "type": "int", "label": "Point budget", "default": 64, "min": 1, "max": 10000},
+      {"key": "max_candidates", "type": "int", "label": "Pair budget", "default": 1000000, "min": 1, "max": 100000000},
+      {"key": "factor_timeout", "type": "int", "label": "Factor seconds", "default": 15, "min": 1, "max": 3600},
+      {"key": "run_timeout", "type": "int", "label": "Search seconds", "default": 180, "min": 1, "max": 86400},
+      {"key": "modular_sieve", "type": "bool", "label": "Modular square sieve", "default": true},
+      {"key": "torsion_orbit_dedupe", "type": "bool", "label": "Torsion orbit dedupe", "default": true},
+      {"key": "require_full_factorization", "type": "bool", "label": "Require full factorization", "default": true}
+    ]
+  },
+  "search_presets": [
+    {"id": "scan", "label": "Channel scan", "description": "Small exact squareclass boxes across rational parameters.", "candidate": {"a_min": -100, "a_max": 100, "b_min": 1, "b_max": 30, "stage_bounds": "100,500,1000", "stage_keeps": "2000,400,100", "top": 100, "engine": "sieve"}, "family": {"generator": "squareclass", "x_abs_max": 2000, "z_max": 2}},
+    {"id": "deep", "label": "Channel deep", "description": "Larger exact box on a selected fiber.", "target": {"generator": "squareclass", "x_abs_max": 10000, "z_max": 4, "run_timeout": 180}}
+  ],
+  "provenance": {
+    "authors": "Stephanie Chan, Jeroen Hanselman, Wanlin Li; parametrization attributed to Bartosz Naskręcki",
+    "paper": "Ranks, 2-Selmer groups, and Tamagawa numbers of elliptic curves with Z/2Z × Z/8Z-torsion",
+    "url": "https://arxiv.org/abs/1805.10709",
+    "claim_boundary": "The parametrization is published. Squareclass enumeration supplies exact rational point candidates within declared bounds. Only Rank Hunter core may certify independent points or rank growth."
+  },
+  "minimum_rank_hunter_version": "0.10.1"
+}
