@@ -34,6 +34,9 @@ Every installable plugin is its own directory with a `plugin.json` manifest. Ran
 | [Hill C₂ Generic Rank-10 Covers](families/hill_c2_generic_rank10_2026/) | 0.1.0 | Two separate rational C2 covers, each with ten independent generic sections over Q(U). |
 | [Elkies-Klagsbrun Z/2 K3](families/elkies_klagsbrun_z2_rank9_2020/) | 1.2.4 | Z/2-torsion K3 family of generic rank 9 with a proven rank-20 specialization. |
 | [Nagao j=1728 Rank >=4 Twist Family](families/nagao_j1728_rank4/) | 0.1.0 | Nagao j=1728 family with four independent generic sections. |
+| [Jaswal C6 Generic Rank 4](families/jaswal_c6_rank4/) | 0.1.0 | Jaswal's rational C6 family of exact generic rank 4. |
+| [Jaswal C2 × C4 Genus-One Rank 6](families/jaswal_c2xc4_rank6/) | 0.1.0 | First genus-one family in Jaswal's rank-at-least-6 C2 × C4 paper. |
+| [Jaswal C2 × C6 Genus-One Rank 4](families/jaswal_c2xc6_rank4/) | 0.1.0 | Jaswal's infinite C2 × C6 family of rank at least 4. |
 | **ℤ/4ℤ** | | |
 | [Dujella–Peral E2 · C4 Rank 6](families/dujella_peral_joint_2026_e2/) | 0.1.0 | New inequivalent rank-6 C4 family from the joint quadratic base-change construction (2026). |
 | [Dujella-Peral Z/4 Rank 6](families/dujella_peral_z4_rank6/) | 0.1.1 | Published Z/4 family with exact generic rank 6 and six reconstructed generators. |

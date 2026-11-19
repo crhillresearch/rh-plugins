@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "jaswal_c2xc4_rank6",
+  "name": "Jaswal C2 × C4 genus-one rank 6",
+  "version": "0.1.0",
+  "description": "The first rank-six C2 x C4 family over a positive-rank genus-one base from Jaswal (2026).",
+  "enabled_by_default": false,
+  "family": {"kind": "module", "spec": "jaswal_c2xc4_rank6", "file": "family.py"},
+  "validation_parameter": "7401/2399",
+  "parameter_base_genus": 1,
+  "torsion_groups": ["C2 × C4"],
+  "historical_generic_rank_lower": 6,
+  "generic_rank_claim_state": "historical_record",
+  "provenance": {"author": "Manvir Jaswal", "source": "https://hexagonmath.org/pdf/2610.00586v1", "theorem": "Theorems 1.1 and 1.2", "claim_boundary": "The paper proves six independent sections on each genus-one base. This package records the first exact model and base point; no local six-section certificate is declared."}
+}

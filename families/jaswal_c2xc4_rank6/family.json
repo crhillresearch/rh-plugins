@@ -1,0 +1,13 @@
+{
+  "name": "Jaswal C2 x C4 rank-six first genus-one family",
+  "parameter": "m",
+  "parameter_base_genus": 1,
+  "base_equations": ["u^2=5*(3*m^2+242)", "v^2=5*(2*m^2+243)"],
+  "base_field": "Q(m,u,v)",
+  "rational_base_points": [{"m": "7401/2399", "u": "88235/2399", "v": "86835/2399"}],
+  "coefficient_definitions": {"a": "7*(m-99)*(m+1)*(m-11)*(m+9)", "b": "-7*(m+99)*(m-1)*(m+11)*(m-9)"},
+  "a_invariants": ["0", "a^2+b^2", "0", "a^2*b^2", "0"],
+  "torsion_groups": ["C2 × C4"],
+  "historical_generic_rank_lower": 6,
+  "generic_rank_claim_state": "historical_record"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "jaswal_c6_rank4",
+  "name": "Jaswal C6 generic rank 4",
+  "version": "0.1.0",
+  "description": "Jaswal's rational C6 family of exact generic rank four (Theorem 1.1).",
+  "enabled_by_default": false,
+  "family": {"kind": "module", "spec": "jaswal_c6_rank4", "file": "family.py"},
+  "validation_parameter": "13/6",
+  "torsion_groups": ["C6"],
+  "historical_generic_rank_lower": 4,
+  "generic_rank_claim_state": "historical_record",
+  "provenance": {"author": "Manvir Jaswal", "source": "https://doi.org/10.5281/zenodo.23735797", "theorem": "Theorem 1.1", "claim_boundary": "Exact generic rank four and C6 torsion are cited from the paper; this plugin supplies the curve model and torsion point, not a local rank certificate."}
+}

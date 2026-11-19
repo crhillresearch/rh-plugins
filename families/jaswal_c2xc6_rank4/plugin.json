@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "jaswal_c2xc6_rank4",
+  "name": "Jaswal C2 × C6 genus-one rank 4",
+  "version": "0.1.0",
+  "description": "Jaswal's infinite C2 x C6 rank-at-least-four family over a genus-one base.",
+  "enabled_by_default": false,
+  "family": {"kind": "module", "spec": "jaswal_c2xc6_rank4", "file": "family.py"},
+  "validation_parameter": "-13/4",
+  "parameter_base_genus": 1,
+  "torsion_groups": ["C2 × C6"],
+  "historical_generic_rank_lower": 4,
+  "generic_rank_claim_state": "historical_record",
+  "provenance": {"author": "Manvir Jaswal", "source": "https://doi.org/10.5281/zenodo.23364157", "claim_boundary": "The paper supplies the four-section proof; this package records the exact base and model but does not declare a local rank certificate."}
+}
