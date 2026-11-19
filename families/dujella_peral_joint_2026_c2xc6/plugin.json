@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "dujella_peral_joint_2026_c2xc6",
+  "name": "Dujella\u2013Peral \u00b7 C2 \u00d7 C6 \u00b7 Joint base changes (2026)",
+  "version": "0.1.0",
+  "enabled_by_default": true,
+  "description": "Four inequivalent rank-two families U3, U4, U7 and U9 from arXiv:2611.20161v1.",
+  "family": {
+    "kind": "json",
+    "file": "variants/u3/family.json",
+    "aliases": [
+      "dujella_peral_joint_2026_u3"
+    ]
+  },
+  "generic_rank": 2,
+  "historical_generic_rank_lower": 2,
+  "generic_rank_claim_state": "sections_verified",
+  "torsion_groups": [
+    "C2 \u00d7 C6"
+  ],
+  "parameter_base_genus": 0,
+  "base_field": "Q(u)",
+  "capabilities": [
+    "candidate_generation",
+    "family_search",
+    "target_search"
+  ],
+  "validation_parameter": "-1/6",
+  "provenance": {
+    "url": "https://arxiv.org/abs/2611.20161v1",
+    "rank_authority": "Theorem B",
+    "claim_boundary": "Published rank and torsion; exact section identities checked locally."
+  },
+  "search_adapter": "search_adapter.py",
+  "search_options": {
+    "family": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "Ratpoints height stages",
+        "default": "1000,10000,100000",
+        "help": "Exact searches on the selected family fiber. Declared generic sections are included automatically."
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 20,
+        "min": 1,
+        "max": 3600
+      },
+      {
+        "key": "max_points",
+        "type": "int",
+        "label": "Maximum additional points",
+        "default": 32,
+        "min": 0,
+        "max": 2000
+      },
+      {
+        "key": "model_prep_timeout",
+        "type": "int",
+        "label": "Minimal-model preparation seconds",
+        "default": 10,
+        "min": 0,
+        "max": 600
+      }
+    ],
+    "target": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "Ratpoints height stages",
+        "default": "1000,10000,100000,1000000",
+        "help": "Exact searches on this curve. Rank Hunter checks and stores all accepted points."
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 30,
+        "min": 1,
+        "max": 3600
+      },
+      {
+        "key": "max_points",
+        "type": "int",
+        "label": "Maximum additional points",
+        "default": 64,
+        "min": 0,
+        "max": 2000
+      },
+      {
+        "key": "model_prep_timeout",
+        "type": "int",
+        "label": "Minimal-model preparation seconds",
+        "default": 15,
+        "min": 0,
+        "max": 600
+      }
+    ]
+  },
+  "default_variant": "u3",
+  "variants": [
+    {
+      "id": "u3",
+      "name": "U3 \u00b7 rank 2",
+      "family": {
+        "kind": "json",
+        "file": "variants/u3/family.json",
+        "aliases": [
+          "dujella_peral_joint_2026_u3"
+        ]
+      },
+      "generic_rank": 2,
+      "historical_generic_rank_lower": 2,
+      "generic_rank_claim_state": "sections_verified",
+      "torsion_groups": [
+        "C2 \u00d7 C6"
+      ],
+      "validation_parameter": "-1/6",
+      "provenance": {
+        "url": "https://arxiv.org/abs/2611.20161v1",
+        "paper_label": "U3",
+        "base_change": "(5*u**4 + 180)/((u**2 - 6*u + 6)*(u**2 + 6*u + 6))",
+        "rank_authority": "Theorem B",
+        "claim_boundary": "Published exact rank and torsion; section identities checked locally, no local generic rank certificate."
+      }
+    },
+    {
+      "id": "u4",
+      "name": "U4 \u00b7 rank 2",
+      "family": {
+        "kind": "json",
+        "file": "variants/u4/family.json",
+        "aliases": [
+          "dujella_peral_joint_2026_u4"
+        ]
+      },
+      "generic_rank": 2,
+      "historical_generic_rank_lower": 2,
+      "generic_rank_claim_state": "sections_verified",
+      "torsion_groups": [
+        "C2 \u00d7 C6"
+      ],
+      "validation_parameter": "-3/8",
+      "provenance": {
+        "url": "https://arxiv.org/abs/2611.20161v1",
+        "paper_label": "U4",
+        "base_change": "(3*u**4 - 6*u**2 + 12)/((u**2 + u + 2)*(2*u**2 - 2*u + 4))",
+        "rank_authority": "Theorem B",
+        "claim_boundary": "Published exact rank and torsion; section identities checked locally, no local generic rank certificate."
+      }
+    },
+    {
+      "id": "u7",
+      "name": "U7 \u00b7 rank 2",
+      "family": {
+        "kind": "json",
+        "file": "variants/u7/family.json",
+        "aliases": [
+          "dujella_peral_joint_2026_u7"
+        ]
+      },
+      "generic_rank": 2,
+      "historical_generic_rank_lower": 2,
+      "generic_rank_claim_state": "sections_verified",
+      "torsion_groups": [
+        "C2 \u00d7 C6"
+      ],
+      "validation_parameter": "-1/4",
+      "provenance": {
+        "url": "https://arxiv.org/abs/2611.20161v1",
+        "paper_label": "U7",
+        "base_change": "(-9*u**4 - 21*u**2 - 81)/((u**2 + 7)*(7*u**2 + 9))",
+        "rank_authority": "Theorem B",
+        "claim_boundary": "Published exact rank and torsion; section identities checked locally, no local generic rank certificate."
+      }
+    },
+    {
+      "id": "u9",
+      "name": "U9 \u00b7 rank 2",
+      "family": {
+        "kind": "json",
+        "file": "variants/u9/family.json",
+        "aliases": [
+          "dujella_peral_joint_2026_u9"
+        ]
+      },
+      "generic_rank": 2,
+      "historical_generic_rank_lower": 2,
+      "generic_rank_claim_state": "sections_verified",
+      "torsion_groups": [
+        "C2 \u00d7 C6"
+      ],
+      "validation_parameter": "-3/5",
+      "provenance": {
+        "url": "https://arxiv.org/abs/2611.20161v1",
+        "paper_label": "U9",
+        "base_change": "3*u**2 + 3",
+        "rank_authority": "Theorem B",
+        "claim_boundary": "Published exact rank and torsion; section identities checked locally, no local generic rank certificate."
+      }
+    }
+  ]
+}

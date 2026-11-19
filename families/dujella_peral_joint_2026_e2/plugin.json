@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "plugin_type": "family",
+  "id": "dujella_peral_joint_2026_e2",
+  "name": "Dujella\u2013Peral E2 (C4, rank 6)",
+  "version": "0.1.0",
+  "enabled_by_default": true,
+  "description": "Family E2 from arXiv:2611.20161v1; published exact generic rank 6. Exact rational model and section identities supplied; published independence and upper bounds remain theorem provenance.",
+  "family": {
+    "kind": "json",
+    "file": "family.json"
+  },
+  "generic_rank": 6,
+  "historical_generic_rank_lower": 6,
+  "generic_rank_claim_state": "sections_verified",
+  "torsion_groups": [
+    "C4"
+  ],
+  "parameter_base_genus": 0,
+  "base_field": "Q(u)",
+  "capabilities": [
+    "candidate_generation",
+    "family_search",
+    "target_search"
+  ],
+  "validation_parameter": "-2",
+  "provenance": {
+    "url": "https://arxiv.org/abs/2611.20161v1",
+    "paper_label": "E2",
+    "base_change": "(-(1870*u**2 + 27)*(3167780*u**2 + 45738) + (-3257540*u**2 + 499284*u + 47034)*(-24310*u**2 + 3726*u + 351))/((1870*u**2 + 27)*(9755790*u**2 + 140859) + (-2698410*u**2 + 413586*u + 38961)*(-24310*u**2 + 3726*u + 351))",
+    "rank_authority": "Theorem A",
+    "claim_boundary": "Published exact rank and torsion; section identities checked locally, no local generic rank certificate."
+  },
+  "search_adapter": "search_adapter.py",
+  "search_options": {
+    "family": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "Ratpoints height stages",
+        "default": "1000,10000,100000",
+        "help": "Exact searches on the selected family fiber. Declared generic sections are included automatically."
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 20,
+        "min": 1,
+        "max": 3600
+      },
+      {
+        "key": "max_points",
+        "type": "int",
+        "label": "Maximum additional points",
+        "default": 32,
+        "min": 0,
+        "max": 2000
+      },
+      {
+        "key": "model_prep_timeout",
+        "type": "int",
+        "label": "Minimal-model preparation seconds",
+        "default": 10,
+        "min": 0,
+        "max": 600
+      }
+    ],
+    "target": [
+      {
+        "key": "stages",
+        "type": "str",
+        "label": "Ratpoints height stages",
+        "default": "1000,10000,100000,1000000",
+        "help": "Exact searches on this curve. Rank Hunter checks and stores all accepted points."
+      },
+      {
+        "key": "timeout",
+        "type": "int",
+        "label": "Seconds per stage",
+        "default": 30,
+        "min": 1,
+        "max": 3600
+      },
+      {
+        "key": "max_points",
+        "type": "int",
+        "label": "Maximum additional points",
+        "default": 64,
+        "min": 0,
+        "max": 2000
+      },
+      {
+        "key": "model_prep_timeout",
+        "type": "int",
+        "label": "Minimal-model preparation seconds",
+        "default": 15,
+        "min": 0,
+        "max": 600
+      }
+    ]
+  }
+}
