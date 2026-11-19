@@ -57,8 +57,8 @@ Every installable plugin is its own directory with a `plugin.json` manifest. Ran
 | [Dujella–Peral Joint C2 × C6 Rank-2 Families](families/dujella_peral_joint_2026_c2xc6/) | 0.1.0 | Four new inequivalent rank-2 variants U3, U4, U7, and U9 (2026). |
 | **ℤ/2ℤ × ℤ/8ℤ** | | |
 | [C2 × C8 · Naskręcki Channel Search](families/c2xc8_channel_search/) | 0.1.0 | Experimental bounded exact point search on C2 × C8 fibers, with Family and Target adapters; no generic rank claim. Requires Rank Hunter 0.10.1 or newer. |
-
-The [Mazur Torsion Families](families/mazur_torsion_families/) plugin (v0.2.3) provides candidate lanes across all 15 rational torsion groups.
+| **Misc.** | | |
+| [Mazur Torsion Families](families/mazur_torsion_families/) | 0.2.3 | Candidate lanes across all 15 rational torsion groups. |
 
 Each Family README/provenance file states its exact scientific claim boundary. A literature theorem, a verified generic lower bound, a specialized exact rank, and a heuristic search score are not interchangeable.
 
