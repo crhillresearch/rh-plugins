@@ -34,14 +34,12 @@ Every installable plugin is its own directory with a `plugin.json` manifest. Ran
 | [Hill C₂ Generic Rank-10 Covers](families/hill_c2_generic_rank10_2026/) | 0.1.0 | Two separate rational C2 covers, each with ten independent generic sections over Q(U). |
 | [Elkies-Klagsbrun Z/2 K3](families/elkies_klagsbrun_z2_rank9_2020/) | 1.2.4 | Z/2-torsion K3 family of generic rank 9 with a proven rank-20 specialization. |
 | [Nagao j=1728 Rank >=4 Twist Family](families/nagao_j1728_rank4/) | 0.1.0 | Nagao j=1728 family with four independent generic sections. |
-| [Jaswal C6 Generic Rank 4](families/jaswal_c6_rank4/) | 0.1.0 | Jaswal's rational C6 family of exact generic rank 4. |
-| [Jaswal C2 × C4 Genus-One Rank 6](families/jaswal_c2xc4_rank6/) | 0.1.0 | First genus-one family in Jaswal's rank-at-least-6 C2 × C4 paper. |
-| [Jaswal C2 × C6 Genus-One Rank 4](families/jaswal_c2xc6_rank4/) | 0.1.0 | Jaswal's infinite C2 × C6 family of rank at least 4. |
 | **ℤ/4ℤ** | | |
 | [Dujella–Peral E2 · C4 Rank 6](families/dujella_peral_joint_2026_e2/) | 0.1.0 | New inequivalent rank-6 C4 family from the joint quadratic base-change construction (2026). |
 | [Dujella-Peral Z/4 Rank 6](families/dujella_peral_z4_rank6/) | 0.1.1 | Published Z/4 family with exact generic rank 6 and six reconstructed generators. |
 | [Hill · C4 Rank ≥6 · S3 Genus-One Base](families/hill_c4_s3_genus1_rank6/) | 0.1.0 | Infinite C4 family with a verified rank-at-least-6 lower bound over a positive-rank genus-one base. |
 | **ℤ/6ℤ** | | |
+| [Jaswal C6 Generic Rank 4](families/jaswal_c6_rank4/) | 0.1.0 | Jaswal's rational C6 family of exact generic rank 4. |
 | [Dujella-Peral-Tadic Z/6 Rank 3 Families](families/dujella_peral_tadic_z6_rank3/) | 0.1.0 | Six explicit Z/6 rank-3 variants from the definitive 2016 treatment. |
 | **ℤ/8ℤ** | | |
 | [Z/8 Rank-2 Families](families/z8_rank2_families/) | 0.1.0 | Seven pairwise non-isomorphic Z/8 families of exact generic rank 2. |
@@ -51,8 +49,10 @@ Every installable plugin is its own directory with a `plugin.json` manifest. Ran
 | [DMT Triad Family](families/dmt_triad_rank4/) | 0.1.3 | Six Piezas-sextuple triads with full rational 2-torsion and four generic sections. |
 | [Fibonacci Triples](families/fibonacci_triples/) | 0.1.3 | Odd/even elliptic families induced by Fibonacci Diophantine triples. |
 | **ℤ/2ℤ × ℤ/4ℤ** | | |
+| [Jaswal C2 × C4 Genus-One Rank 6](families/jaswal_c2xc4_rank6/) | 0.1.0 | First genus-one family in Jaswal's rank-at-least-6 C2 × C4 paper. |
 | [Dujella-Peral Z/2 x Z/4 Diophantine Triple Rank 4](families/c2xc4_diophantine_rank4/) | 0.1.0 | Exact generic-rank-4 prescribed-torsion family induced by Diophantine triples. |
 | **ℤ/2ℤ × ℤ/6ℤ** | | |
+| [Jaswal C2 × C6 Genus-One Rank 4](families/jaswal_c2xc6_rank4/) | 0.1.0 | Jaswal's infinite C2 × C6 family of rank at least 4. |
 | [Z/2 x Z/6 Rank-2 Families](families/c2xc6_rank2_families/) | 0.1.0 | Five pairwise non-isomorphic Z/2 x Z/6 families of exact generic rank 2. |
 | [Dujella–Peral Joint C2 × C6 Rank-2 Families](families/dujella_peral_joint_2026_c2xc6/) | 0.1.0 | Four new inequivalent rank-2 variants U3, U4, U7, and U9 (2026). |
 | **ℤ/2ℤ × ℤ/8ℤ** | | |
